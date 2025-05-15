@@ -344,60 +344,61 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
     //------------------------- Service Cards in HOMEPAGE Tilt Effect--------------------//
-const serviceCards = document.querySelectorAll('.service-card');
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate service cards on scroll
+    const animateOnScroll = () => {
+        const serviceCards = document.querySelectorAll('.service-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 150);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
 
-// Check if device supports touch (mobile)
-const isTouchDevice = () => 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-serviceCards.forEach(card => {
-    if (!isTouchDevice()) {
-        // Apply mousemove effect only on non-touch devices
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const xAxis = (rect.width / 2 - (e.clientX - rect.left)) / 20;
-            const yAxis = (rect.height / 2 - (e.clientY - rect.top)) / 20;
-            card.style.transform = `translateY(-15px) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        serviceCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            card.style.transitionDelay = `${index * 0.1}s`;
+            observer.observe(card);
         });
+    };
 
-        card.addEventListener('mouseenter', () => {
-            card.style.transition = 'all 0.2s ease';
-        });
+    animateOnScroll();
 
-        card.addEventListener('mouseleave', () => {
-            card.style.transition = 'all 0.5s ease';
-            card.style.transform = 'translateY(-15px) rotateY(0deg) rotateX(0deg)';
+    // Add click effect to service buttons
+    const serviceButtons = document.querySelectorAll('.service-btn, .primary-btn');
+    serviceButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Create ripple effect
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple-effect');
+            this.appendChild(ripple);
+            
+            // Get click position
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Position ripple
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+            
+            // Remove ripple after animation
+            setTimeout(() => {
+                ripple.remove();
+                window.location.href = this.href;
+            }, 600);
         });
-    }
+    });
 });
-
-// Animate Service Highlights on Scroll
-const animateServiceHighlights = () => {
-    const highlights = document.querySelectorAll('.service-highlights span');
-    highlights.forEach((highlight, index) => {
-        setTimeout(() => {
-            highlight.style.transform = 'translateY(0)';
-            highlight.style.opacity = '1';
-        }, index * 100); // Reduced delay for faster mobile animation
-    });
-};
-
-const servicesSection = document.querySelector('.services');
-if (servicesSection) {
-    const servicesObserver = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-            animateServiceHighlights();
-            servicesObserver.unobserve(entries[0].target);
-        }
-    }, { threshold: 0.5 }); // Increased threshold for mobile
-    servicesObserver.observe(servicesSection);
-
-    const serviceHighlights = document.querySelectorAll('.service-highlights span');
-    serviceHighlights.forEach(highlight => {
-        highlight.style.transform = 'translateY(30px)';
-        highlight.style.opacity = '0';
-        highlight.style.transition = 'all 0.6s ease';
-    });
-}
     
     //----------------------------------- Client Testimonials Section------------------//
     const clientTrack = document.querySelector('.client-track');
