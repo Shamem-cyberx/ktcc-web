@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="64x64">
 </head>
 <body>
     <!-- Preloader -->
@@ -31,18 +31,19 @@
             <nav id="nav">
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
                     <li class="dropdown">
                         <a href="services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="services.html">Road Construction</a></li>
-                            <li><a href="services.html">Infrastructure Development</a></li>
+                            <li><a href="services.html">Trenchless</a></li>
+                            <li><a href="services.html">Road & Railway Construction</a></li>
+                            <li><a href="services.html">Infrastructure & Utility</a></li>
                             <li><a href="services.html">Building Construction</a></li>
-                            <li><a href="services.html">Sewage System</a></li>
                         </ul>
                     </li>
-                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    
                 </ul>
             </nav>
         </div>
@@ -52,207 +53,324 @@
 
 
 
-
-
     <!-- Our Services Frontpage Section -->
 <!-- Our Services Frontpage Section -->
-    <section class="inside-services">
-        <div class="floating-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
+<!-- Our Services Frontpage Section -->
+<section class="inside-services">
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+    
+    <div class="inside-services-container">
+        <div class="inside-section-title">
+            <h2>Our Expert Services</h2>
+            <div class="divider"></div>
+            <p>Delivering exceptional construction solutions with precision engineering and innovative techniques</p>
         </div>
-        
-        <div class="inside-services-container">
-            <div class="inside-section-title">
-                <h2>Our Expert Services</h2>
-                <div class="divider"></div>
-                <p>Delivering exceptional construction solutions with precision engineering and innovative techniques</p>
-            </div>
 
-            <div class="inside-service-categories">
-                <button class="inside-category-btn active" data-category="road-service">Road & Railway</button>
-                <button class="inside-category-btn" data-category="infra-service">Infrastructure</button>
-                <button class="inside-category-btn" data-category="building-service">Building Construction</button>
-            </div>
+        <div class="inside-service-categories">
+            <button class="inside-category-btn active" data-category="trenchless-service">Trenchless</button>
+            <button class="inside-category-btn" data-category="road-service">Road & Railways</button>
+            <button class="inside-category-btn" data-category="infra-service">Infrastructure</button>
+            <button class="inside-category-btn" data-category="utils-service">Utilities</button>
+            <button class="inside-category-btn" data-category="building-service">Building Construction</button>
+        </div>
 
-            <!-- Road & Railway Works -->
-            <div class="inside-service-content active" id="road-service-content">
-                <div class="inside-service-grid">
-                    <div class="inside-service-details">
-                        <h3 class="inside-service-title">Road & Railway Construction</h3>
-                        <div class="inside-service-list">
-                            <div class="inside-service-item">
-                                <h4>Filling of Road & Subbase</h4>
-                                <p>Precision grading and compaction for stable road foundations</p>
-                            </div>
-                            <div class="inside-service-item">
-                                <h4>Asphalt Works</h4>
-                                <p>High-quality asphalt paving for durable road surfaces</p>
-                            </div>
-                            <div class="inside-service-item">
-                                <h4>Kerb & Interlock Pavement</h4>
-                                <p>Aesthetic and functional edge restraints and paving solutions</p>
-                            </div>
-                            <div class="inside-service-item">
-                                <h4>Sheet Pile & Dewatering</h4>
-                                <p>Specialized earth retention and groundwater control systems</p>
-                            </div>
-                            <div class="inside-service-item">
-                                <h4>Embankment Filling</h4>
-                                <p>Engineered fill placement for stable transportation corridors</p>
-                            </div>
-                            <div class="inside-service-item">
-                                <h4>Dredging & Reclamation</h4>
-                                <p>Marine construction and land creation services</p>
-                            </div>
+        <!-- Trenchless Works -->
+        <div class="inside-service-content active" id="trenchless-service-content">
+            <div class="inside-service-grid">
+                <div class="inside-service-details">
+                    <h3 class="inside-service-title">Trenchless Construction</h3>
+                    <div class="inside-service-list">
+                        <div class="inside-service-item">
+                            <h4>Horizontal Directional Drilling</h4>
+                            <p>Precision underground pipeline installation with minimal surface disruption</p>
                         </div>
-                    </div>
-                    <div class="inside-service-slider" id="road-service-slider">
-                        <div class="slider-track">
-                            <div class="slider-slide">
-                                <img src="https://images.unsplash.com/photo-1601579112655-0c54a7addf13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Road Construction">
-                            </div>
-                            <div class="slider-slide">
-                                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Asphalt Works">
-                            </div>
-                            <div class="slider-slide">
-                                <img src="https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Railway Construction">
-                            </div>
+                        <div class="inside-service-item">
+                            <h4>Pipe Bursting</h4>
+                            <p>Replacing old pipes with new ones without excavation</p>
                         </div>
-                        <div class="slider-nav">
-                            <div class="slider-dot active"></div>
-                            <div class="slider-dot"></div>
-                            <div class="slider-dot"></div>
+                        <div class="inside-service-item">
+                            <h4>Cured-in-Place Pipe (CIPP)</h4>
+                            <p>Relining pipes with durable resin liners for seamless repairs</p>
                         </div>
-                        <div class="slider-arrows">
-                            <div class="slider-arrow prev"><i class="fas fa-chevron-left"></i></div>
-                            <div class="slider-arrow next"><i class="fas fa-chevron-right"></i></div>
+                        <div class="inside-service-item">
+                            <h4>Microtunneling</h4>
+                            <p>Small-diameter tunnel construction for utility installation</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Slip Lining</h4>
+                            <p>Inserting new pipes into existing ones for efficient upgrades</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Manhole Rehabilitation</h4>
+                            <p>Restoring underground access points for long-term durability</p>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Infrastructure Works -->
-            <div class="inside-service-content" id="infra-service-content">
-                <div class="inside-service-grid">
-                    <div class="inside-service-details">
-                        <h3 class="inside-service-title">Infrastructure & Utilities</h3>
-                        <div class="inside-service-list">
-                            <div class="inside-service-item">
-                                <h4>Deep Sewer & Storm Networks</h4>
-                                <p>Comprehensive underground drainage solutions</p>
-                            </div>
-                            <div class="inside-service-item">
-                                <h4>Pumping Stations</h4>
-                                <p>Custom-designed fluid handling systems</p>
-                            </div>
-                            <div class="inside-service-item">
-                                <h4>Manual Construction</h4>
-                                <p>Specialized hand-built infrastructure components</p>
-                            </div>
-                            <div class="inside-service-item">
-                                <h4>High Voltage Works (11kV-400kV)</h4>
-                                <p>Electrical infrastructure installation and maintenance</p>
-                            </div>
-                            <div class="inside-service-item">
-                                <h4>Sub-station Construction</h4>
-                                <p>Turnkey power distribution facilities</p>
-                            </div>
-                            <div class="inside-service-item">
-                                <h4>Utility Services</h4>
-                                <p>Integrated solutions for all urban utilities</p>
-                            </div>
+                <div class="inside-service-slider" id="trenchless-service-slider">
+                    <div class="slider-track">
+                        <div class="slider-slide">
+                            <img src="assets/images/trench1.png" alt="Trenchless Drilling">
+                        </div>
+                        <div class="slider-slide">
+                            <img src="assets/images/trench2.png" alt="Pipe Bursting">
+                        </div>
+                        <div class="slider-slide">
+                            <img src="assets/images/trench3.png" alt="Microtunneling">
                         </div>
                     </div>
-                    <div class="inside-service-slider" id="infra-service-slider">
-                        <div class="slider-track">
-                            <div class="slider-slide">
-                                <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Utility Construction">
-                            </div>
-                            <div class="slider-slide">
-                                <img src="https://images.unsplash.com/photo-1581093196276-6357ff20f723?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Electrical Works">
-                            </div>
-                            <div class="slider-slide">
-                                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Sewer Systems">
-                            </div>
-                        </div>
-                        <div class="slider-nav">
-                            <div class="slider-dot active"></div>
-                            <div class="slider-dot"></div>
-                            <div class="slider-dot"></div>
-                        </div>
-                        <div class="slider-arrows">
-                            <div class="slider-arrow prev"><i class="fas fa-chevron-left"></i></div>
-                            <div class="slider-arrow next"><i class="fas fa-chevron-right"></i></div>
-                        </div>
+                    <div class="slider-nav">
+                        <div class="slider-dot active"></div>
+                        <div class="slider-dot"></div>
+                        <div class="slider-dot"></div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Building Construction -->
-            <div class="inside-service-content" id="building-service-content">
-                <div class="inside-service-grid">
-                    <div class="inside-service-details">
-                        <h3 class="inside-service-title">Building Construction</h3>
-                        <div class="inside-service-list">
-                            <div class="inside-service-item">
-                                <h4>Earthwork Excavation</h4>
-                                <p>Precision grading and site preparation</p>
-                            </div>
-                            <div class="inside-service-item">
-                                <h4>Hardcore Fill Materials</h4>
-                                <p>Class 7, Type B, and Type A compaction</p>
-                            </div>
-                            <div class="inside-service-item">
-                                <h4>Civil & Structural Works</h4>
-                                <p>Complete building frameworks and finishes</p>
-                            </div>
-                            <div class="inside-service-item">
-                                <h4>Landscaping</h4>
-                                <p>Aesthetic and functional exterior designs</p>
-                            </div>
-                            <div class="inside-service-item">
-                                <h4>Swimming Pool Construction</h4>
-                                <p>Custom aquatic facilities</p>
-                            </div>
-                            <div class="inside-service-item">
-                                <h4>Boundary Walls</h4>
-                                <p>Secure and decorative perimeter solutions</p>
-                            </div>
-                            <div class="inside-service-item">
-                                <h4>Refurbishment</h4>
-                                <p>Building restoration and modernization</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="inside-service-slider" id="building-service-slider">
-                        <div class="slider-track">
-                            <div class="slider-slide">
-                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Building Construction">
-                            </div>
-                            <div class="slider-slide">
-                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Structural Works">
-                            </div>
-                            <div class="slider-slide">
-                                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Landscaping">
-                            </div>
-                        </div>
-                        <div class="slider-nav">
-                            <div class="slider-dot active"></div>
-                            <div class="slider-dot"></div>
-                            <div class="slider-dot"></div>
-                        </div>
-                        <div class="slider-arrows">
-                            <div class="slider-arrow prev"><i class="fas fa-chevron-left"></i></div>
-                            <div class="slider-arrow next"><i class="fas fa-chevron-right"></i></div>
-                        </div>
+                    <div class="slider-arrows">
+                        <div class="slider-arrow prev"><i class="fas fa-chevron-left"></i></div>
+                        <div class="slider-arrow next"><i class="fas fa-chevron-right"></i></div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
+        <!-- Road & Railway Works -->
+        <div class="inside-service-content" id="road-service-content">
+            <div class="inside-service-grid">
+                <div class="inside-service-details">
+                    <h3 class="inside-service-title">Road & Railway Construction</h3>
+                    <div class="inside-service-list">
+                        <div class="inside-service-item">
+                            <h4>Filling of Road & Subbase</h4>
+                            <p>Precision grading and compaction for stable road foundations</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Asphalt Works</h4>
+                            <p>High-quality asphalt paving for durable road surfaces</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Kerb & Interlock Pavement</h4>
+                            <p>Aesthetic and functional edge restraints and paving solutions</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Sheet Pile & Dewatering</h4>
+                            <p>Specialized earth retention and groundwater control systems</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Embankment Filling</h4>
+                            <p>Engineered fill placement for stable transportation corridors</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Dredging & Reclamation</h4>
+                            <p>Marine construction and land creation services</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="inside-service-slider" id="road-service-slider">
+                    <div class="slider-track">
+                        <div class="slider-slide">
+                            <img src="assets/images/road1.png" alt="Road Construction">
+                        </div>
+                        <div class="slider-slide">
+                            <img src="assets/images/road2.png" alt="Asphalt Works">
+                        </div>
+                        <div class="slider-slide">
+                            <img src="assets/images/road3.png" alt="Railway Construction">
+                        </div>
+                    </div>
+                    <div class="slider-nav">
+                        <div class="slider-dot active"></div>
+                        <div class="slider-dot"></div>
+                        <div class="slider-dot"></div>
+                    </div>
+                    <div class="slider-arrows">
+                        <div class="slider-arrow prev"><i class="fas fa-chevron-left"></i></div>
+                        <div class="slider-arrow next"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <!-- Infrastructure Works -->
+        <div class="inside-service-content" id="infra-service-content">
+            <div class="inside-service-grid">
+                <div class="inside-service-details">
+                    <h3 class="inside-service-title">Infrastructure & Utilities</h3>
+                    <div class="inside-service-list">
+                        <div class="inside-service-item">
+                            <h4>Deep Sewer & Storm Networks</h4>
+                            <p>Comprehensive underground drainage solutions</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Pumping Stations</h4>
+                            <p>Custom-designed fluid handling systems</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Manual Construction</h4>
+                            <p>Specialized hand-built infrastructure components</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>High Voltage Works (11kV-400kV)</h4>
+                            <p>Electrical infrastructure installation and maintenance</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Sub-station Construction</h4>
+                            <p>Turnkey power distribution facilities</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Utility Services</h4>
+                            <p>Integrated solutions for all urban utilities</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="inside-service-slider" id="infra-service-slider">
+                    <div class="slider-track">
+                        <div class="slider-slide">
+                            <img src="assets/images/infra1.png" alt="Utility Construction">
+                        </div>
+                        <div class="slider-slide">
+                            <img src="assets/images/infra2.png" alt="Electrical Works">
+                        </div>
+                        <div class="slider-slide">
+                            <img src="assets/images/infra3.png" alt="Sewer Systems">
+                        </div>
+                    </div>
+                    <div class="slider-nav">
+                        <div class="slider-dot active"></div>
+                        <div class="slider-dot"></div>
+                        <div class="slider-dot"></div>
+                    </div>
+                    <div class="slider-arrows">
+                        <div class="slider-arrow prev"><i class="fas fa-chevron-left"></i></div>
+                        <div class="slider-arrow next"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Utilities Works -->
+        <div class="inside-service-content" id="utils-service-content">
+            <div class="inside-service-grid">
+                <div class="inside-service-details">
+                    <h3 class="inside-service-title">Utilities Construction</h3>
+                    <div class="inside-service-list">
+                        <div class="inside-service-item">
+                            <h4>Long-Distance Pipelines & Power Lines</h4>
+                            <p>Civil works for cross-country infrastructure</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Urban Pipelines & Utilities</h4>
+                            <p>Communication, power, and ancillary urban systems</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Water Main Construction</h4>
+                            <p>Reliable water distribution networks</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Irrigation Systems & Reservoirs</h4>
+                            <p>Canals and storage for agricultural water supply</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Sewer Systems & Repairs</h4>
+                            <p>Underground drainage and maintenance</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Sewage Disposal Plants</h4>
+                            <p>Facilities for wastewater treatment</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Pumping Stations & Power Plants</h4>
+                            <p>Fluid handling and energy infrastructure</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="inside-service-slider" id="utils-service-slider">
+                    <div class="slider-track">
+                        <div class="slider-slide">
+                            <img src="assets/images/utility1.png" alt="Pipeline Construction">
+                        </div>
+                        <div class="slider-slide">
+                            <img src="assets/images/utility2.png" alt="Sewage Systems">
+                        </div>
+                        <div class="slider-slide">
+                            <img src="assets/images/utility3.png" alt="Power Plants">
+                        </div>
+                    </div>
+                    <div class="slider-nav">
+                        <div class="slider-dot active"></div>
+                        <div class="slider-dot"></div>
+                        <div class="slider-dot"></div>
+                    </div>
+                    <div class="slider-arrows">
+                        <div class="slider-arrow prev"><i class="fas fa-chevron-left"></i></div>
+                        <div class="slider-arrow next"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Building Construction -->
+        <div class="inside-service-content" id="building-service-content">
+            <div class="inside-service-grid">
+                <div class="inside-service-details">
+                    <h3 class="inside-service-title">Building Construction</h3>
+                    <div class="inside-service-list">
+                        <div class="inside-service-item">
+                            <h4>Earthwork Excavation</h4>
+                            <p>Precision grading and site preparation</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Hardcore Fill Materials</h4>
+                            <p>Class 7, Type B, and Type A compaction</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Civil & Structural Works</h4>
+                            <p>Complete building frameworks and finishes</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Landscaping</h4>
+                            <p>Aesthetic and functional exterior designs</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Swimming Pool Construction</h4>
+                            <p>Custom aquatic facilities</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Boundary Walls</h4>
+                            <p>Secure and decorative perimeter solutions</p>
+                        </div>
+                        <div class="inside-service-item">
+                            <h4>Refurbishment</h4>
+                            <p>Building restoration and modernization</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="inside-service-slider" id="building-service-slider">
+                    <div class="slider-track">
+                        <div class="slider-slide">
+                            <img src="assets/images/build1.png" alt="Building Construction">
+                        </div>
+                        <div class="slider-slide">
+                            <img src="assets/images/build2.png" alt="Structural Works">
+                        </div>
+                        <div class="slider-slide">
+                            <img src="assets/images/build3.png" alt="Landscaping">
+                        </div>
+                    </div>
+                    <div class="slider-nav">
+                        <div class="slider-dot active"></div>
+                        <div class="slider-dot"></div>
+                        <div class="slider-dot"></div>
+                    </div>
+                    <div class="slider-arrows">
+                        <div class="slider-arrow prev"><i class="fas fa-chevron-left"></i></div>
+                        <div class="slider-arrow next"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
@@ -270,7 +388,7 @@
                     <span class="cta-word">Efficient</span>
                     <span class="cta-word">Trusted</span>
                 </div>
-                <a href="#contact" class="btn btn-cta">Get Free Quote <i class="fas fa-arrow-right"></i></a>
+                <a href="contact.html" class="btn btn-cta">Get Free Quote <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="cta-image wow fadeInRight">
                 <img src="assets/mini-contact-image-Photoroom.png" alt="Construction worker" class="worker-img">
@@ -297,50 +415,59 @@
 
 
     <!-- Footer -->
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-col wow fadeInUp">
-                    <div class="logo">
-                        <img src="assets/ktcc-logo (1).png" alt="KTCC Logo">
-                    </div>
-                    <p>KTCC is a forward-thinking civil engineering firm committed to delivering high-quality, innovative solutions in the field of trenchless technology and infrastructure development.</p>
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-col wow fadeInUp">
+                <div class="logo">
+                    <img src="assets/ktcc-logo (1).png" alt="KTCC Logo">
                 </div>
-                <div class="footer-col wow fadeInUp" data-wow-delay="0.1s">
-                    <h3>Our Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="services.html">Road Construction</a></li>
-                        <li><a href="services.html">Building Construction</a></li>
-                        <li><a href="services.html">Infrastructure Development</a></li>
-                        <li><a href="services.html">Trenchless Technology</a></li>
-                        <li><a href="services.html">Project Management</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col wow fadeInUp" data-wow-delay="0.2s">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#team">Our Team</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col wow fadeInUp" data-wow-delay="0.3s">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for the latest updates and projects.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your Email">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
+                <p>KTCC is a forward-thinking civil engineering firm committed to delivering high-quality, innovative solutions in the field of trenchless technology and infrastructure development.</p>
             </div>
-            <div class="footer-bottom wow fadeInUp">
-                <p>&copy; 2025 <strong>Kapisha Trenchless & Contracting Company WLL</strong>. All Rights Reserved.</p>
+            <div class="footer-col wow fadeInUp" data-wow-delay="0.1s">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html">Trenchless Technology</a></li>
+                    <li><a href="services.html">Road Construction</a></li>
+                    <li><a href="services.html">Infrastructure Development</a></li>
+                    <li><a href="services.html">Utility</a></li>
+                    <li><a href="services.html">Building Construction</a></li>
+                </ul>
+            </div>
+            <div class="footer-col wow fadeInUp" data-wow-delay="0.2s">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                </ul>
+            </div>
+            <div class="footer-col wow fadeInUp" data-wow-delay="0.3s">
+                <h3>Connect With Us</h3>
+                <div class="footer-contact-methods">
+                    <a href="mailto:info@ktccgulf.com" class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@ktccgulf.com</span>
+                    </a>
+                    <a href="https://wa.me/97312345678" class="contact-method" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+973 1234 5678</span>
+                    </a>
+                    <a href="https://www.ktccgulf.com" class="contact-method" target="_blank">
+                        <i class="fas fa-globe"></i>
+                        <span>www.ktccgulf.com</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </footer>
+        <div class="footer-bottom wow fadeInUp">
+            <p>&copy; 2025 <strong>Kapisha Trenchless & Contracting Company WLL</strong>. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
 
 
 

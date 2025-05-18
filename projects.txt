@@ -1,85 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KTCC - Leading Construction Company in Bahrain</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="64x64">
-</head>
-<body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader">
-            <div class="loader-inner"></div>
-            <p>Building Your Digital Experience...</p>
-        </div>
-    </div>
-
-    <!------------------------- Header ------------------------>
-    <header id="header">
-        <div class="container header-container">
-            <div class="logo">
-                <img src="assets/ktcc-logo (1).png" alt="KTCC Logo">
-                <h1>KT<span>CC</span></h1>
-            </div>
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav id="nav">
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li class="dropdown">
-                        <a href="services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="services.html">Trenchless</a></li>
-                            <li><a href="services.html">Road & Railway Construction</a></li>
-                            <li><a href="services.html">Infrastructure & Utility</a></li>
-                            <li><a href="services.html">Building Construction</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
-
-
-
-
-    
 <!-- Inside Projects Section -->
 <section class="inside-projects" id="inside-projects">
     <div class="container">
         <div class="inside-section-title wow fadeInUp">
             <h2>KTCC's Landmark Projects</h2>
             <div class="inside-divider"></div>
-            <p class="inside-section-subtitle">Exciting projects are on the way, Stay Connected</p>
+            <p class="inside-section-subtitle">Transforming Bahrain's infrastructure with innovative engineering solutions</p>
         </div>
 
-
-
-
-        <!-- Heading 
         <div class="inside-projects-filter wow fadeInUp">
             <button class="inside-filter-btn active" data-filter="all">All Projects</button>
             <button class="inside-filter-btn" data-filter="road">Road Construction</button>
             <button class="inside-filter-btn" data-filter="building">Building Construction</button>
             <button class="inside-filter-btn" data-filter="infrastructure">Infrastructure</button>
             <button class="inside-filter-btn" data-filter="trenchless">Trenchless</button>
-        </div>   -->
-
-
+        </div>
 
         <div class="inside-projects-grid">
-            <!-- Project 1 
+            <!-- Project 1 -->
             <div class="inside-project-card wow fadeInUp" data-category="road" data-delay="0.1s">
                 <div class="inside-project-image">
                     <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Manama Highway Expansion">
@@ -107,11 +44,9 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
-
-
-            <!-- Project 2 
+            <!-- Project 2 -->
             <div class="inside-project-card wow fadeInUp" data-category="building" data-delay="0.2s">
                 <div class="inside-project-image">
                     <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Bahrain Financial Tower">
@@ -139,9 +74,9 @@
                         </div>
                     </div>
                 </div>
-            </div>    -->
+            </div>
 
-            <!-- Project 3 
+            <!-- Project 3 -->
             <div class="inside-project-card wow fadeInUp" data-category="infrastructure" data-delay="0.3s">
                 <div class="inside-project-image">
                     <img src="https://images.unsplash.com/photo-1601758003122-53c40e686a19?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Muharraq Sewage Network">
@@ -169,9 +104,9 @@
                         </div>
                     </div>
                 </div>
-            </div>  -->
+            </div>
 
-            <!-- Project 4 
+            <!-- Project 4 -->
             <div class="inside-project-card wow fadeInUp" data-category="trenchless" data-delay="0.4s">
                 <div class="inside-project-image">
                     <img src="https://images.unsplash.com/photo-1581093057305-25a0a6b9ca0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Riffa Pipe Jacking Project">
@@ -199,9 +134,9 @@
                         </div>
                     </div>
                 </div>
-            </div>  -->
+            </div>
 
-            <!-- Project 5 
+            <!-- Project 5 -->
             <div class="inside-project-card wow fadeInUp" data-category="road" data-delay="0.5s">
                 <div class="inside-project-image">
                     <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="King Fahd Causeway Upgrade">
@@ -229,9 +164,9 @@
                         </div>
                     </div>
                 </div>
-            </div>  -->
+            </div>
 
-            <!-- Project 6 
+            <!-- Project 6 -->
             <div class="inside-project-card wow fadeInUp" data-category="building" data-delay="0.6s">
                 <div class="inside-project-image">
                     <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Al Fateh Medical Center">
@@ -261,149 +196,10 @@
                 </div>
             </div>
         </div>
-    </div>  -->
-</section>
-
-
-
-
-
-
-
-<!-- Mini Contact CTA Section -->
-<section class="mini-contact-cta">
-    <div class="container">
-        <div class="cta-content">
-            <div class="cta-text wow fadeInLeft">
-                <span class="cta-subtitle">Building Together</span>
-                <h2 class="cta-title">Constructing Excellence, Delivering Quality</h2>
-                <p class="cta-description">Our team of dedicated professionals is ready to bring your vision to life. Let's collaborate on your next construction project.</p>
-                <div class="cta-words">
-                    <span class="cta-word">Reliable</span>
-                    <span class="cta-word">Innovative</span>
-                    <span class="cta-word">Efficient</span>
-                    <span class="cta-word">Trusted</span>
-                </div>
-                <a href="contact.html" class="btn btn-cta">Get Free Quote <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="cta-image wow fadeInRight">
-                <img src="assets/mini-contact-image-Photoroom.png" alt="Construction worker" class="worker-img">
-                <div class="years-badge">
-                    <span class="years-number">18+</span>
-                    <span class="years-text">Years Experience</span>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 
 
 
 
-
-
-
-
-    <!-- Footer -->
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="footer-container">
-            <div class="footer-col wow fadeInUp">
-                <div class="logo">
-                    <img src="assets/ktcc-logo (1).png" alt="KTCC Logo">
-                </div>
-                <p>KTCC is a forward-thinking civil engineering firm committed to delivering high-quality, innovative solutions in the field of trenchless technology and infrastructure development.</p>
-            </div>
-            <div class="footer-col wow fadeInUp" data-wow-delay="0.1s">
-                <h3>Our Services</h3>
-                <ul class="footer-links">
-                    <li><a href="services.html">Trenchless Technology</a></li>
-                    <li><a href="services.html">Road Construction</a></li>
-                    <li><a href="services.html">Infrastructure Development</a></li>
-                    <li><a href="services.html">Utility</a></li>
-                    <li><a href="services.html">Building Construction</a></li>
-                </ul>
-            </div>
-            <div class="footer-col wow fadeInUp" data-wow-delay="0.2s">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                </ul>
-            </div>
-            <div class="footer-col wow fadeInUp" data-wow-delay="0.3s">
-                <h3>Connect With Us</h3>
-                <div class="footer-contact-methods">
-                    <a href="mailto:info@ktccgulf.com" class="contact-method">
-                        <i class="fas fa-envelope"></i>
-                        <span>info@ktccgulf.com</span>
-                    </a>
-                    <a href="https://wa.me/97312345678" class="contact-method" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>+973 1234 5678</span>
-                    </a>
-                    <a href="https://www.ktccgulf.com" class="contact-method" target="_blank">
-                        <i class="fas fa-globe"></i>
-                        <span>www.ktccgulf.com</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom wow fadeInUp">
-            <p>&copy; 2025 <strong>Kapisha Trenchless & Contracting Company WLL</strong>. All Rights Reserved.</p>
-        </div>
-    </div>
-</footer>
-
-
-
-    <!------------------------------ Back to Top Button -------------------------------->
-    <a href="#" class="back-to-top" id="backToTop">
-    <i class="fas fa-arrow-up"></i>
-    </a>
-
-
-
-
-    <!--------------------------------------- Chatbot Widget --------------------------->
-    <div class="chatbot-container" id="chatbotContainer">
-        <div class="chatbot-header">
-            <h4>KTCC Assistant</h4>
-            <button class="chatbot-close" id="chatbotClose">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="chatbot-body" id="chatbotBody">
-            <div class="chatbot-message bot">
-                <p>Hello! I'm KTCC's virtual assistant. How can I help you today?</p>
-            </div>
-        </div>
-        <div class="chatbot-options" id="chatbotOptions">
-            <button class="chatbot-option">Request a Quote</button>
-            <button class="chatbot-option">Project Inquiry</button>
-            <button class="chatbot-option">Service Information</button>
-            <button class="chatbot-option">Contact Details</button>
-        </div>
-        <div class="chatbot-input">
-            <input type="text" placeholder="Type your message..." id="chatbotInput">
-            <button id="chatbotSend"><i class="fas fa-paper-plane"></i></button>
-        </div>
-    </div>
-    <button class="chatbot-toggle" id="chatbotToggle">
-        <i class="fas fa-comment-dots"></i>
-    </button>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/chatbot.js"></script>
-    <script>
-        // Initialize Wow.js
-        new WOW().init();
-    </script>
-</body>
-</html>
+CSS: 

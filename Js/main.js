@@ -324,6 +324,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+
+
+    
     // Team Section Animation
     const teamMembers = document.querySelectorAll('.team-member');
     const teamObserver = new IntersectionObserver(
@@ -646,102 +649,232 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //----------------------------------------------INSIDE SERVICES PAGE----------------------//
 
-        document.addEventListener('DOMContentLoaded', function() {
-            // Category Switching
-            const categoryBtns = document.querySelectorAll('.inside-category-btn');
-            const serviceContents = document.querySelectorAll('.inside-service-content');
+document.addEventListener('DOMContentLoaded', function() {
+    // Category Switching
+    const categoryBtns = document.querySelectorAll('.inside-category-btn');
+    const serviceContents = document.querySelectorAll('.inside-service-content');
 
-            categoryBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const category = this.dataset.category;
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const category = this.dataset.category;
+
+            // Update active category button
+            categoryBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            // Show corresponding content
+            serviceContents.forEach(content => {
+                content.classList.remove('active');
+                if (content.id === `${category}-content`) {
+                    content.classList.add('active');
+                }
+            });
+        });
+    });
+
+    // Slider Initialization
+    const sliders = document.querySelectorAll('.inside-service-slider');
+
+    sliders.forEach(slider => {
+        // Slider elements
+        const track = slider.querySelector('.slider-track');
+        const slides = slider.querySelectorAll('.slider-slide');
+        const dots = slider.querySelectorAll('.slider-dot');
+        const prevBtn = slider.querySelector('.slider-arrow.prev');
+        const nextBtn = slider.querySelector('.slider-arrow.next');
+        
+        let currentIndex = 0;
+        const slideCount = slides.length;
+        let autoSlide = null;
+
+        // Update slider position and dots
+        function updateSlider() {
+            if (!track || slideCount === 0) return;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        // Start auto-advance
+        function startAutoSlide() {
+            stopAutoSlide(); // Clear existing interval
+            autoSlide = setInterval(() => {
+                currentIndex = (currentIndex < slideCount - 1) ? currentIndex + 1 : 0;
+                updateSlider();
+            }, 5000);
+        }
+
+        // Stop auto-advance
+        function stopAutoSlide() {
+            if (autoSlide) {
+                clearInterval(autoSlide);
+                autoSlide = null;
+            }
+        }
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateSlider();
+                startAutoSlide(); // Reset auto-advance on manual interaction
+            });
+        });
+
+        // Arrow navigation
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : slideCount - 1;
+                updateSlider();
+                startAutoSlide(); // Reset auto-advance
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex < slideCount - 1) ? currentIndex + 1 : 0;
+                updateSlider();
+                startAutoSlide(); // Reset auto-advance
+            });
+        }
+
+        // Pause on hover
+        slider.addEventListener('mouseenter', stopAutoSlide);
+        slider.addEventListener('mouseleave', startAutoSlide);
+
+        // Initialize slider
+        updateSlider();
+        startAutoSlide();
+    });
+
+    // Floating shapes animation
+    const shapes = document.querySelectorAll('.shape');
+    
+    shapes.forEach(shape => {
+        const duration = Math.random() * 5 + 5;
+        shape.style.animationDuration = `${duration}s`;
+    });
+});
+
+
+
+
+//----------------------------------------------INSIDE ABOUT PAGE----------------------//
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create floating particles
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 15;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random properties
+                const size = Math.random() * 200 + 100;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 10 + 10;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+
+            // Animate counting stats
+            const animateStats = () => {
+                const stats = document.querySelectorAll('.inside-about-stat-number');
+                
+                stats.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-count'));
+                    const duration = 2000;
+                    const increment = target / (duration / 16);
                     
-                    // Update active category button
-                    categoryBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
+                    let current = 0;
                     
-                    // Show corresponding content
-                    serviceContents.forEach(content => {
-                        content.classList.remove('active');
-                        if (content.id === `${category}-content`) {
-                            content.classList.add('active');
+                    const updateCount = () => {
+                        current += increment;
+                        if (current < target) {
+                            stat.textContent = Math.floor(current);
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            stat.textContent = target;
+                        }
+                    };
+                    
+                    // Only animate when in viewport
+                    const observer = new IntersectionObserver((entries) => {
+                        if (entries[0].isIntersecting) {
+                            updateCount();
+                            observer.unobserve(stat);
                         }
                     });
-                });
-            });
-
-            // Initialize all sliders
-            const sliders = document.querySelectorAll('.inside-service-slider');
-            
-            sliders.forEach(slider => {
-                const track = slider.querySelector('.slider-track');
-                const slides = slider.querySelectorAll('.slider-slide');
-                const dots = slider.querySelectorAll('.slider-dot');
-                const prevBtn = slider.querySelector('.prev');
-                const nextBtn = slider.querySelector('.next');
-                
-                let currentIndex = 0;
-                const slideCount = slides.length;
-                
-                // Set initial positions
-                updateSlider();
-                
-                // Dot navigation
-                dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => {
-                        currentIndex = index;
-                        updateSlider();
-                    });
-                });
-                
-                // Arrow navigation
-                if (prevBtn) {
-                    prevBtn.addEventListener('click', () => {
-                        currentIndex = (currentIndex > 0) ? currentIndex - 1 : slideCount - 1;
-                        updateSlider();
-                    });
-                }
-                
-                if (nextBtn) {
-                    nextBtn.addEventListener('click', () => {
-                        currentIndex = (currentIndex < slideCount - 1) ? currentIndex + 1 : 0;
-                        updateSlider();
-                    });
-                }
-                
-                // Auto-advance
-                let autoSlide = setInterval(() => {
-                    currentIndex = (currentIndex < slideCount - 1) ? currentIndex + 1 : 0;
-                    updateSlider();
-                }, 5000);
-                
-                // Pause on hover
-                slider.addEventListener('mouseenter', () => {
-                    clearInterval(autoSlide);
-                });
-                
-                slider.addEventListener('mouseleave', () => {
-                    autoSlide = setInterval(() => {
-                        currentIndex = (currentIndex < slideCount - 1) ? currentIndex + 1 : 0;
-                        updateSlider();
-                    }, 5000);
-                });
-                
-                function updateSlider() {
-                    // Update track position
-                    track.style.transform = `translateX(-${currentIndex * 100}%)`;
                     
-                    // Update dots
-                    dots.forEach((dot, index) => {
-                        dot.classList.toggle('active', index === currentIndex);
-                    });
+                    observer.observe(stat);
+                });
+            };
+            
+            animateStats();
+
+            // Enhanced 3D Flip Card with touch support
+            const flipCard = document.getElementById('flipCard');
+            let isFlipped = false;
+            
+            // Mouse events for desktop
+            flipCard.addEventListener('mouseenter', () => {
+                if (!isFlipped) {
+                    flipCard.classList.add('active');
+                    isFlipped = true;
                 }
             });
-
-            // Floating shapes animation
-            const shapes = document.querySelectorAll('.shape');
             
-            shapes.forEach(shape => {
-                const duration = Math.random() * 5 + 5;
-                shape.style.animationDuration = `${duration}s`;
+            flipCard.addEventListener('mouseleave', () => {
+                if (isFlipped) {
+                    flipCard.classList.remove('active');
+                    isFlipped = false;
+                }
+            });
+            
+            // Touch events for mobile
+            flipCard.addEventListener('touchstart', (e) => {
+                e.preventDefault(); // Prevent scrolling
+                flipCard.classList.toggle('active');
+                isFlipped = !isFlipped;
+            }, { passive: false });
+            
+            // Click as fallback
+            flipCard.addEventListener('click', () => {
+                flipCard.classList.toggle('active');
+                isFlipped = !isFlipped;
+            });
+            
+            // Floating animation for value cards
+            const valueCards = document.querySelectorAll('.inside-about-value-card');
+            
+            valueCards.forEach(card => {
+                const floatIntensity = 5;
+                const floatDuration = 2 + Math.random() * 3;
+                
+                card.style.setProperty('--float-intensity', `${floatIntensity}px`);
+                card.style.setProperty('--float-duration', `${floatDuration}s`);
+                
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    card.style.transform = `translateY(-10px) rotateX(${(y - rect.height/2)/20}deg) rotateY(${(x - rect.width/2)/20}deg)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(-10px)';
+                });
             });
         });
