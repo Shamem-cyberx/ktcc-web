@@ -549,6 +549,79 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+//----------------------------------------------ABOUT IN INDEX PAGE----------------------//
+
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('aboutVideo');
+    const muteToggle = document.getElementById('muteToggle');
+    
+    // Try to autoplay with sound
+    video.muted = false;
+    
+    // Toggle mute/unmute
+    muteToggle.addEventListener('click', function() {
+        video.muted = !video.muted;
+        if (video.muted) {
+            this.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        } else {
+            this.innerHTML = '<i class="fas fa-volume-up"></i>';
+        }
+    });
+    
+    // Fallback for browsers that don't allow autoplay with sound
+    video.addEventListener('play', function() {
+        if (video.muted) {
+            muteToggle.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        } else {
+            muteToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
+        }
+    });
+    
+    // Handle cases where autoplay is blocked
+    video.addEventListener('pause', function() {
+        const playPromise = video.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.then(_ => {
+                // Autoplay started
+            })
+            .catch(error => {
+                // Show play button overlay if autoplay fails
+                muteToggle.innerHTML = '<i class="fas fa-play"></i>';
+                muteToggle.classList.add('play-prompt');
+            });
+        }
+    });
+    
+    // Initial play attempt
+    const playPromise = video.play();
+    
+    if (playPromise !== undefined) {
+        playPromise.then(_ => {
+            // Autoplay started
+        })
+        .catch(error => {
+            // Show play button overlay if autoplay fails
+            muteToggle.innerHTML = '<i class="fas fa-play"></i>';
+            muteToggle.classList.add('play-prompt');
+        });
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //----------------------------------------------INSIDE PROJECTS PAGE----------------------//
 // Inside Projects Filter Functionality - Corrected Version

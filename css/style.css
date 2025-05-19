@@ -600,8 +600,9 @@ nav ul li a.active::after {
 
 /*-------------------------------- About Section --------------------------------*/
 /* About Section Styles */
+/* About Section Styles */
 .about {
-    padding: 100px 0;
+    padding: 80px 0;
     background-color: #f9f9f9;
     position: relative;
     overflow: hidden;
@@ -616,67 +617,46 @@ nav ul li a.active::after {
 /* Section Title Styles */
 .section-title {
     text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-title span {
-    display: inline-block;
-    font-size: 16px;
-    font-weight: 600;
-    color: #1E88E5;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-    position: relative;
+    margin-bottom: 40px;
 }
 
 .section-title h2 {
     font-size: 42px;
     color: #1A237E;
-    margin: 15px 0;
+    margin: 0 0 10px 0;
     font-weight: 700;
     line-height: 1.2;
+}
+
+.section-title .subtitle {
+    font-size: 18px;
+    color: #6B7280;
+    margin-bottom: 0;
 }
 
 .divider {
     width: 60px;
     height: 4px;
     background: linear-gradient(to right, #1E88E5, #FF4081);
-    margin: 20px auto;
+    margin: 15px auto 25px auto;
     border-radius: 2px;
 }
 
-/* About Content Layout */
-.about-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 60px;
-}
-
-.about-img {
-    flex: 1;
-    min-width: 300px;
-    position: relative;
+/* Landscape Video Container */
+.about-video {
+    width: 100%;
+    margin-bottom: 40px;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
-.about-img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-}
-
-/* Video Container */
 .video-container {
     position: relative;
     width: 100%;
-    height: 0;
-    padding-bottom: 95%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
     overflow: hidden;
-    border-radius: 10px;
 }
 
 .video-container video {
@@ -694,181 +674,150 @@ nav ul li a.active::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(30, 136, 229, 0.1), rgba(30, 136, 229, 0.2));
+    background: linear-gradient(to right, rgba(30, 136, 229, 0.2), rgba(30, 136, 229, 0.05));
     z-index: 1;
 }
 
-.bahrain-flag {
+.video-caption {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    z-index: 2;
+    color: rgb(255, 255, 255);
+    max-width: 60%;
+}
+
+.video-caption h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.video-caption p {
+    font-size: 16px;
+    opacity: 0.9;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.government-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.9);
+    padding: 8px 15px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.government-badge i {
+    color: #1E88E5;
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.government-badge span {
+    color: #1A237E;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Sound Control Button */
+.sound-control {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    width: 60px;
+    width: 40px;
     height: 40px;
-    z-index: 2;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
+    background: rgba(0,0,0,0.6);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    z-index: 3;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
-.bahrain-flag:hover {
+.sound-control:hover {
+    background: rgba(0,0,0,0.8);
     transform: scale(1.1);
 }
 
-.bahrain-flag img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.sound-control i {
+    font-size: 18px;
 }
 
-/* About Text Content */
-.about {
-    padding: 100px 0;
-    background-color: #f9f9f9;
-    position: relative;
-    overflow: hidden;
-}
-
-.about .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Section Title Styles - Corrected Alignment */
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
-    width: 100%;
-}
-
-.section-title span {
-    display: block;
-    font-size: 16px;
-    font-weight: 600;
-    color: #1E88E5;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-    position: relative;
-}
-
-.section-title h2 {
-    font-size: 42px;
-    color: #1A237E;
-    margin: 0 0 15px 0;
-    font-weight: 700;
-    line-height: 1.2;
-    width: 100%;
-    text-align: center;
-}
-
-.divider {
+.sound-control.play-prompt {
     width: 60px;
-    height: 4px;
-    background: linear-gradient(to right, #1E88E5, #FF4081);
-    margin: 0 auto 20px auto;
-    border-radius: 2px;
+    height: 60px;
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    background: rgba(30, 136, 229, 0.8);
 }
 
-/* About Content Layout */
-.about-content {
+.sound-control.play-prompt i {
+    font-size: 24px;
+}
+
+/* Certification Badges */
+.certification-badges {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 60px;
+    gap: 20px;
+    margin: 25px 0;
 }
 
-.about-img {
+.badge-item {
     flex: 1;
-    min-width: 300px;
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.about-img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-}
-
-/* Video Container */
-.video-container {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 165%;
-    overflow: hidden;
+    min-width: 250px;
+    background: white;
     border-radius: 10px;
-}
-
-.video-container video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(30, 136, 229, 0.1), rgba(30, 136, 229, 0.2));
-    z-index: 1;
-}
-
-.bahrain-flag {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 40px;
-    z-index: 2;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
 }
 
-.bahrain-flag:hover {
-    transform: scale(1.1);
+.badge-item:hover {
+    transform: translateY(-5px);
 }
 
-.bahrain-flag img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.badge-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #1E88E5, #FF4081);
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.badge-content h4 {
+    color: #1A237E;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+.badge-content p {
+    color: #6B7280;
+    font-size: 14px;
+    margin: 0;
 }
 
 /* About Text Content */
 .about-text {
-    flex: 1;
-    min-width: 300px;
-}
-
-.about-text h3 {
-    font-size: 36px;
-    color: #1A237E;
-    margin-bottom: 25px;
-    line-height: 1.3;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.about-text h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(to right, #1E88E5, #FF4081);
+    width: 100%;
 }
 
 .about-text p {
@@ -934,6 +883,59 @@ nav ul li a.active::after {
     line-height: 1.6;
 }
 
+/* Safety Commitment */
+.safety-commitment {
+    margin: 40px 0;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.safety-header {
+    background: linear-gradient(to right, #1E88E5, #FF4081);
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.safety-header i {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.safety-header h4 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.safety-features {
+    padding: 20px;
+}
+
+.safety-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.safety-item:last-child {
+    border-bottom: none;
+}
+
+.safety-item i {
+    color: #1E88E5;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.safety-item span {
+    color: #6B7280;
+    font-size: 15px;
+}
+
 /* Bahraini Commitment */
 .bahraini-commitment {
     margin-top: 40px;
@@ -970,56 +972,77 @@ nav ul li a.active::after {
 /* Responsive Design */
 @media (max-width: 992px) {
     .about {
-        padding: 80px 0;
-    }
-    
-    .about-content {
-        gap: 40px;
+        padding: 70px 0;
     }
     
     .section-title h2 {
         font-size: 36px;
     }
     
-    .about-text h3 {
-        font-size: 32px;
+    .video-caption h3 {
+        font-size: 24px;
+    }
+    
+    .certification-badges {
+        flex-direction: column;
     }
 }
 
 @media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-    }
-    
-    .about-img, .about-text {
-        flex: none;
-        width: 100%;
-    }
-    
-    .section-title h2 {
-        font-size: 32px;
-    }
-    
-    .about-text h3 {
-        font-size: 28px;
-    }
-    
-    .about-features {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 576px) {
     .about {
         padding: 60px 0;
     }
     
     .section-title h2 {
+        font-size: 32px;
+    }
+    
+    .video-caption {
+        max-width: 80%;
+        bottom: 20px;
+        left: 20px;
+    }
+    
+    .video-caption h3 {
+        font-size: 20px;
+    }
+    
+    .video-caption p {
+        font-size: 14px;
+    }
+    
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .government-badge {
+        top: 15px;
+        right: 15px;
+        padding: 6px 12px;
+    }
+    
+    .sound-control {
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about {
+        padding: 50px 0;
+    }
+    
+    .section-title h2 {
         font-size: 28px;
     }
     
-    .about-text h3 {
-        font-size: 24px;
+    .video-caption {
+        max-width: 90%;
+    }
+    
+    .video-caption h3 {
+        font-size: 18px;
+        margin-bottom: 5px;
     }
     
     .feature-item {
@@ -1030,9 +1053,20 @@ nav ul li a.active::after {
         margin-bottom: 15px;
         margin-right: 0;
     }
+    
+    .badge-item {
+        min-width: 100%;
+    }
+    
+    .sound-control.play-prompt {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .sound-control.play-prompt i {
+        font-size: 20px;
+    }
 }
-
-
 
 
 /*-------------------------------- SERVICES-FRONTPAGE-SECTION --------------------------------*/
