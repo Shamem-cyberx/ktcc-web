@@ -549,66 +549,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-//----------------------------------------------ABOUT IN INDEX PAGE----------------------//
-
-document.addEventListener('DOMContentLoaded', function() {
-    const video = document.getElementById('aboutVideo');
-    const muteToggle = document.getElementById('muteToggle');
-    
-    // Try to autoplay with sound
-    video.muted = false;
-    
-    // Toggle mute/unmute
-    muteToggle.addEventListener('click', function() {
-        video.muted = !video.muted;
-        if (video.muted) {
-            this.innerHTML = '<i class="fas fa-volume-mute"></i>';
-        } else {
-            this.innerHTML = '<i class="fas fa-volume-up"></i>';
-        }
-    });
-    
-    // Fallback for browsers that don't allow autoplay with sound
-    video.addEventListener('play', function() {
-        if (video.muted) {
-            muteToggle.innerHTML = '<i class="fas fa-volume-mute"></i>';
-        } else {
-            muteToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
-        }
-    });
-    
-    // Handle cases where autoplay is blocked
-    video.addEventListener('pause', function() {
-        const playPromise = video.play();
-        
-        if (playPromise !== undefined) {
-            playPromise.then(_ => {
-                // Autoplay started
-            })
-            .catch(error => {
-                // Show play button overlay if autoplay fails
-                muteToggle.innerHTML = '<i class="fas fa-play"></i>';
-                muteToggle.classList.add('play-prompt');
-            });
-        }
-    });
-    
-    // Initial play attempt
-    const playPromise = video.play();
-    
-    if (playPromise !== undefined) {
-        playPromise.then(_ => {
-            // Autoplay started
-        })
-        .catch(error => {
-            // Show play button overlay if autoplay fails
-            muteToggle.innerHTML = '<i class="fas fa-play"></i>';
-            muteToggle.classList.add('play-prompt');
-        });
-    }
-});
-
-
 
 
 
@@ -951,3 +891,91 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
         });
+
+
+
+
+//----------------------------------------------ABOUT IN INDEX PAGE----------------------//
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const video = document.getElementById('aboutVideo');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const muteToggle = document.getElementById('muteToggle');
+        const downloadBtn = document.getElementById('downloadBtn');
+        
+        // Initialize video state - start muted due to browser restrictions
+        let isPlaying = false;
+        video.muted = true;
+        
+        // Try to autoplay muted video (most browsers allow this)
+        const playPromise = video.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                isPlaying = true;
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            })
+            .catch(error => {
+                console.log("Autoplay prevented:", error);
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            });
+        }
+        
+        // Play/Pause functionality
+        playPauseBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                video.pause();
+                this.innerHTML = '<i class="fas fa-play"></i>';
+            } else {
+                video.play()
+                    .then(() => {
+                        this.innerHTML = '<i class="fas fa-pause"></i>';
+                    })
+                    .catch(error => {
+                        console.error("Playback failed:", error);
+                    });
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        // Mute/Unmute functionality
+        muteToggle.addEventListener('click', function() {
+            video.muted = !video.muted;
+            if (video.muted) {
+                this.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            } else {
+                this.innerHTML = '<i class="fas fa-volume-up"></i>';
+            }
+        });
+        
+        // Video state change handlers
+        video.addEventListener('play', function() {
+            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            isPlaying = true;
+        });
+        
+        video.addEventListener('pause', function() {
+            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            isPlaying = false;
+        });
+        
+        // Allow clicking anywhere on video to play (except controls)
+        document.querySelector('.video-container').addEventListener('click', function(e) {
+            if (!e.target.closest('.video-control')) {
+                if (isPlaying) {
+                    video.pause();
+                } else {
+                    video.play();
+                }
+            }
+        });
+        
+        // Download button hover effect
+        downloadBtn.addEventListener('mouseenter', function() {
+            this.innerHTML = '<i class="fas fa-cloud-download-alt"></i>';
+        });
+        
+        downloadBtn.addEventListener('mouseleave', function() {
+            this.innerHTML = '<i class="fas fa-download"></i>';
+        });
+    });
