@@ -122,20 +122,49 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Hero Section Video Lazy Load
-    const videos = document.querySelectorAll('.hero-video, .card-video');
-    const videoObserver = new IntersectionObserver((entries, observer) => {
+// Modern Hero Section Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // Video lazy loading with intersection observer
+    const videoObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const videoElement = entry.target;
-                videoElement.play();
-                observer.unobserve(videoElement);
+                const video = entry.target;
+                video.play().catch(e => console.log("Video autoplay prevented:", e));
+                videoObserver.unobserve(video);
             }
         });
     }, { threshold: 0.1 });
 
-    videos.forEach(video => videoObserver.observe(video));
+    document.querySelectorAll('.hero-video').forEach(video => {
+        videoObserver.observe(video);
+    });
 
+    // Smooth scroll for scroll indicator
+    const scrollIndicator = document.querySelector('.hero-scroll-indicator');
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollBy({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+    }
 
+    // Parallax effect for decoration elements
+    window.addEventListener('mousemove', (e) => {
+        const deco1 = document.querySelector('.deco-1');
+        const deco2 = document.querySelector('.deco-2');
+        
+        if (deco1 && deco2) {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            deco1.style.transform = `translate(${x * 30 - 15}px, ${y * 30 - 15}px)`;
+            deco2.style.transform = `translate(${x * -40 + 20}px, ${y * -40 + 20}px)`;
+        }
+    });
+});
 
 
 
