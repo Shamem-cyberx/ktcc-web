@@ -1,6 +1,7 @@
 # KTCC static site — Hostinger / Apache
 # Ensures MP4 serves correctly; set default document.
-
+# -MultiViews: stops Apache from guessing wrong file for css/js (fixes “broken layout” on some hosts).
+Options -MultiViews
 DirectoryIndex index.html index.htm
 
 <IfModule mod_mime.c>
@@ -11,5 +12,10 @@ DirectoryIndex index.html index.htm
 <IfModule mod_headers.c>
     <FilesMatch "\.(mp4|webm)$">
         Header set Accept-Ranges bytes
+    </FilesMatch>
+    # Fresh HTML after deploy; avoid users seeing an old cached homepage.
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
     </FilesMatch>
 </IfModule>
