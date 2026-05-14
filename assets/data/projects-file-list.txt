@@ -1,0 +1,11 @@
+# KTCC project gallery — optional file list (no PHP required)
+# Put one filename per line exactly as stored in: assets/images/projects/
+# Lines starting with # are ignored.
+#
+# Example:
+# 18-04-2026.jpeg
+# WhatsApp Image 2026-04-18 at 12.57.00.jpeg
+#
+# Tip: in FileZilla, select all files in the remote projects folder, copy names
+# from the listing into this file (one per line), save, upload to:
+#   public_html/assets/data/projects-file-list.txt

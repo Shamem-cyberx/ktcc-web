@@ -30,7 +30,7 @@
             </button>
             <nav id="nav">
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li class="dropdown">
                         <a href="services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
@@ -40,7 +40,8 @@
                             <li><a href="services.html">Building Construction</a></li>
                         </ul>
                     </li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="ims-policy.html">IMS Policy</a></li>
                     <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     
@@ -175,6 +176,7 @@
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
+                    <li><a href="ims-policy.html">IMS Policy</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="projects.html">Projects</a></li>
@@ -214,31 +216,34 @@
 
 
     <!--------------------------------------- Chatbot Widget --------------------------->
-    <div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-container" id="chatbotContainer" role="dialog" aria-modal="true" aria-labelledby="chatbotHeading" aria-hidden="true">
         <div class="chatbot-header">
-            <h4>KTCC Assistant</h4>
-            <button class="chatbot-close" id="chatbotClose">
-                <i class="fas fa-times"></i>
+            <div class="chatbot-header-info">
+                <div class="chatbot-avatar" aria-hidden="true"><i class="fas fa-hard-hat"></i></div>
+                <div class="chatbot-header-text">
+                    <h4 id="chatbotHeading">KTCC Assistant</h4>
+                    <p class="chatbot-status"><span class="chatbot-status-dot" aria-hidden="true"></span> Online · Replies instantly</p>
+                </div>
+            </div>
+            <button type="button" class="chatbot-close" id="chatbotClose" aria-label="Close chat">
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
         </div>
-        <div class="chatbot-body" id="chatbotBody">
-            <div class="chatbot-message bot">
-                <p>Hello! I'm KTCC's virtual assistant. How can I help you today?</p>
+        <div class="chatbot-body" id="chatbotBody" role="log" aria-live="polite" aria-relevant="additions"></div>
+        <div class="chatbot-options" id="chatbotOptions"></div>
+        <div class="chatbot-composer">
+            <label class="chatbot-sr-only" for="chatbotInput">Your message</label>
+            <div class="chatbot-composer-inner">
+                <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                <input type="text" placeholder="Ask about trenchless, quotes, contact…" id="chatbotInput" autocomplete="off">
             </div>
-        </div>
-        <div class="chatbot-options" id="chatbotOptions">
-            <button class="chatbot-option">Request a Quote</button>
-            <button class="chatbot-option">Project Inquiry</button>
-            <button class="chatbot-option">Service Information</button>
-            <button class="chatbot-option">Contact Details</button>
-        </div>
-        <div class="chatbot-input">
-            <input type="text" placeholder="Type your message..." id="chatbotInput">
-            <button id="chatbotSend"><i class="fas fa-paper-plane"></i></button>
+            <button type="button" class="chatbot-send" id="chatbotSend" aria-label="Send message">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            </button>
         </div>
     </div>
-    <button class="chatbot-toggle" id="chatbotToggle">
-        <i class="fas fa-comment-dots"></i>
+    <button type="button" class="chatbot-toggle pulse" id="chatbotToggle" aria-expanded="false" aria-controls="chatbotContainer" title="Open chat">
+        <i class="fas fa-comments" aria-hidden="true"></i>
     </button>
 
     <!-- Scripts -->

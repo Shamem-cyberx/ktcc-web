@@ -150,23 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
-    // Parallax effect for decoration elements
-    window.addEventListener('mousemove', (e) => {
-        const deco1 = document.querySelector('.deco-1');
-        const deco2 = document.querySelector('.deco-2');
-        
-        if (deco1 && deco2) {
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            
-            deco1.style.transform = `translate(${x * 30 - 15}px, ${y * 30 - 15}px)`;
-            deco2.style.transform = `translate(${x * -40 + 20}px, ${y * -40 + 20}px)`;
-        }
-    });
 });
-
-
 
     //------------------------- PROJECT HOMEPAGE SECTION SLIDER------------------------------------------------//
     const projectSlider = document.querySelector('.project-slider');
@@ -593,42 +577,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //----------------------------------------------INSIDE PROJECTS PAGE----------------------//
-// Inside Projects Filter Functionality - Corrected Version
+// Filter uses event delegation so it works with async-loaded project cards.
+// projects-gallery.js owns filters when .ktcc-projects-root is present.
 document.addEventListener('DOMContentLoaded', function() {
-    const insideFilterButtons = document.querySelectorAll('.inside-filter-btn');
-    const insideProjectCards = document.querySelectorAll('.inside-project-card');
-
-    // Filter Functionality
-    insideFilterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            insideFilterButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            
-            const filterValue = this.getAttribute('data-filter');
-            
-            insideProjectCards.forEach(card => {
-                if (filterValue === 'all') {
+    if (document.querySelector('.ktcc-projects-root')) return;
+    const filterBar = document.querySelector('.inside-projects-filter');
+    if (filterBar && !filterBar.dataset.ktccFilterBound) {
+        filterBar.dataset.ktccFilterBound = '1';
+        filterBar.addEventListener('click', function(e) {
+            const btn = e.target.closest('.inside-filter-btn');
+            if (!btn) return;
+            filterBar.querySelectorAll('.inside-filter-btn').forEach(function(b) {
+                b.classList.remove('active');
+            });
+            btn.classList.add('active');
+            const filterValue = btn.getAttribute('data-filter');
+            document.querySelectorAll('.inside-project-card').forEach(function(card) {
+                const cardCategory = card.getAttribute('data-category');
+                if (filterValue === 'all' || cardCategory === filterValue) {
                     card.style.display = 'flex';
                 } else {
-                    const cardCategory = card.getAttribute('data-category');
-                    if (cardCategory === filterValue) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
+                    card.style.display = 'none';
                 }
             });
         });
-    });
-
-    // Initialize with all projects visible
-    if (insideFilterButtons[0]) {
-        insideFilterButtons[0].click();
+        const first = filterBar.querySelector('.inside-filter-btn');
+        if (first) first.click();
     }
+});
 
-    // Project Card Animation on Scroll
-    const insideProjectObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+window.ktccInsideProjectsInit = function() {
+    const cards = document.querySelectorAll('.inside-project-card');
+    if (!cards.length) return;
+
+    const insideProjectObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 const delay = entry.target.getAttribute('data-delay') || '0s';
                 entry.target.style.animationDelay = delay;
@@ -637,54 +620,49 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.1 });
 
-    insideProjectCards.forEach(card => {
+    cards.forEach(function(card) {
+        if (card.dataset.ktccObserved) return;
+        card.dataset.ktccObserved = '1';
         insideProjectObserver.observe(card);
     });
 
-    // Touch Interaction for Mobile
-    const isTouchDevice = () => 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const isTouchDevice = function() {
+        return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    };
 
     if (isTouchDevice()) {
-        insideProjectCards.forEach(card => {
+        cards.forEach(function(card) {
+            if (card.dataset.ktccTouchBound) return;
+            card.dataset.ktccTouchBound = '1';
             card.addEventListener('touchstart', function(e) {
-                // Prevent default to avoid immediate link follow on first tap
-                e.preventDefault();
-                
-                // Remove touched class from all cards
-                insideProjectCards.forEach(otherCard => otherCard.classList.remove('touched'));
-                
-                // Toggle touched class on tapped card
-                this.classList.toggle('touched');
-                
-                // Allow link follow-through on second tap
                 const link = this.querySelector('.inside-project-link');
-                if (link && this.classList.contains('touched')) {
-                    // Store the touch position to check if it's a true tap
+                if (link) {
+                    e.preventDefault();
+                    document.querySelectorAll('.inside-project-card').forEach(function(c) {
+                        c.classList.remove('touched');
+                    });
+                    this.classList.toggle('touched');
                     const touch = e.touches[0];
                     const startX = touch.clientX;
                     const startY = touch.clientY;
-
-                    const touchEndHandler = (endEvent) => {
+                    const touchEndHandler = function(endEvent) {
                         const endTouch = endEvent.changedTouches[0];
-                        const endX = endTouch.clientX;
-                        const endY = endTouch.clientY;
-
-                        // Check if touch moved significantly (to avoid swipes)
-                        if (Math.abs(endX - startX) < 10 && Math.abs(endY - startY) < 10) {
-                            // If already touched, follow link on second tap
-                            if (this.classList.contains('touched')) {
-                                link.click();
-                            }
+                        if (Math.abs(endTouch.clientX - startX) < 10 && Math.abs(endTouch.clientY - startY) < 10) {
+                            if (this.classList.contains('touched')) link.click();
                         }
                         this.removeEventListener('touchend', touchEndHandler);
-                    };
-                    
+                    }.bind(this);
                     this.addEventListener('touchend', touchEndHandler);
+                } else {
+                    document.querySelectorAll('.inside-project-card').forEach(function(c) {
+                        c.classList.remove('touched');
+                    });
+                    this.classList.toggle('touched');
                 }
             });
         });
     }
-});
+};
 
 
 
@@ -931,7 +909,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const playPauseBtn = document.getElementById('playPauseBtn');
         const muteToggle = document.getElementById('muteToggle');
         const downloadBtn = document.getElementById('downloadBtn');
-        
+        const aboutVessel = document.querySelector('.about .video-container');
+
+        if (!aboutVessel || !video || !playPauseBtn || !muteToggle || !downloadBtn) {
+            return;
+        }
+
         // Initialize video state - start muted due to browser restrictions
         let isPlaying = false;
         video.muted = true;
@@ -988,14 +971,19 @@ document.addEventListener('DOMContentLoaded', function() {
             isPlaying = false;
         });
         
-        // Allow clicking anywhere on video to play (except controls)
-        document.querySelector('.video-container').addEventListener('click', function(e) {
-            if (!e.target.closest('.video-control')) {
-                if (isPlaying) {
-                    video.pause();
-                } else {
-                    video.play();
-                }
+        // Tap video or dimmed area to play/pause — not UI chrome
+        aboutVessel.addEventListener('click', function(e) {
+            if (
+                e.target.closest('.video-control') ||
+                e.target.closest('.video-ui-bar') ||
+                e.target.closest('.government-badge')
+            ) {
+                return;
+            }
+            if (isPlaying) {
+                video.pause();
+            } else {
+                video.play();
             }
         });
         

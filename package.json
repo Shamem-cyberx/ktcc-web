@@ -1,0 +1,11 @@
+{
+  "name": "ktcc-web",
+  "private": true,
+  "description": "KTCC static site — helper scripts for deployment",
+  "scripts": {
+    "projects:scan": "node scripts/build-projects-manifest.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

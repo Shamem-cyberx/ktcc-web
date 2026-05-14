@@ -2,3 +2,6 @@
 "*.mp4" 
 "ktcc.zip" 
 "*.zip" 
+.env
+ftp.env
+*.local

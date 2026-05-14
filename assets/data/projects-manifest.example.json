@@ -1,0 +1,12 @@
+{
+  "images": [
+    {
+      "file": "your-photo-filename.jpg",
+      "title": "Project or site name",
+      "category": "trenchless",
+      "caption": "Short description shown on hover",
+      "year": "2025",
+      "status": "In progress"
+    }
+  ]
+}

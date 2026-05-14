@@ -30,7 +30,7 @@
             </button>
             <nav id="nav">
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li class="dropdown">
                         <a href="services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
@@ -41,7 +41,8 @@
                         </ul>
                     </li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
+                    <li><a href="ims-policy.html">IMS Policy</a></li>
+                    <li><a href="contact.html" class="contact-btn active">Contact Us</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     
                 </ul>
@@ -78,7 +79,7 @@
                             </div>
                             <div class="contact-text">
                                 <h4>Phone</h4>
-                                <a href="tel:+97312345678">+973 35034495</a>
+                                <a href="tel:+97335034495">+973 35034495</a>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -101,9 +102,8 @@
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="https://www.ktcc.com" target="_blank"><i class="fas fa-globe"></i></a>
-                        <a href="https://wa.me/97335034495" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
+                        <a href="https://www.ktcc.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i></a>
+                        <a href="https://wa.me/97335034495" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="contact-form wow fadeInRight">
@@ -124,19 +124,24 @@
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
                 </div>
+
+                <div class="contact-map-panel wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="contact-map-head">
+                        <h3 class="contact-map-title">Find us on the map</h3>
+                        <a class="contact-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Building+194+Road+84+Block+903+Riffa+Bahrain" target="_blank" rel="noopener noreferrer">Open directions in Google Maps <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="contact-map-frame">
+                        <iframe
+                            title="KTCC office, Riffa, Bahrain"
+                            src="https://www.google.com/maps?q=Building+194+Road+84+Block+903+Riffa+Bahrain&amp;z=15&amp;hl=en&amp;output=embed"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen=""></iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- Map Section -->
-    <div class="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2876.092080713426!2d50.57292731550168!3d26.23811247988476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49aef2e3c7b7a9%3A0x7ba0c7f6e1d4e1b8!2sManama%2C%20Bahrain!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-
-
-
-
-
 
 
 
@@ -179,6 +184,7 @@
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
+                    <li><a href="ims-policy.html">IMS Policy</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="projects.html">Projects</a></li>
@@ -219,31 +225,34 @@
 
 
     <!--------------------------------------- Chatbot Widget --------------------------->
-    <div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-container" id="chatbotContainer" role="dialog" aria-modal="true" aria-labelledby="chatbotHeading" aria-hidden="true">
         <div class="chatbot-header">
-            <h4>KTCC Assistant</h4>
-            <button class="chatbot-close" id="chatbotClose">
-                <i class="fas fa-times"></i>
+            <div class="chatbot-header-info">
+                <div class="chatbot-avatar" aria-hidden="true"><i class="fas fa-hard-hat"></i></div>
+                <div class="chatbot-header-text">
+                    <h4 id="chatbotHeading">KTCC Assistant</h4>
+                    <p class="chatbot-status"><span class="chatbot-status-dot" aria-hidden="true"></span> Online · Replies instantly</p>
+                </div>
+            </div>
+            <button type="button" class="chatbot-close" id="chatbotClose" aria-label="Close chat">
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
         </div>
-        <div class="chatbot-body" id="chatbotBody">
-            <div class="chatbot-message bot">
-                <p>Hello! I'm KTCC's virtual assistant. How can I help you today?</p>
+        <div class="chatbot-body" id="chatbotBody" role="log" aria-live="polite" aria-relevant="additions"></div>
+        <div class="chatbot-options" id="chatbotOptions"></div>
+        <div class="chatbot-composer">
+            <label class="chatbot-sr-only" for="chatbotInput">Your message</label>
+            <div class="chatbot-composer-inner">
+                <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                <input type="text" placeholder="Ask about trenchless, quotes, contact…" id="chatbotInput" autocomplete="off">
             </div>
-        </div>
-        <div class="chatbot-options" id="chatbotOptions">
-            <button class="chatbot-option">Request a Quote</button>
-            <button class="chatbot-option">Project Inquiry</button>
-            <button class="chatbot-option">Service Information</button>
-            <button class="chatbot-option">Contact Details</button>
-        </div>
-        <div class="chatbot-input">
-            <input type="text" placeholder="Type your message..." id="chatbotInput">
-            <button id="chatbotSend"><i class="fas fa-paper-plane"></i></button>
+            <button type="button" class="chatbot-send" id="chatbotSend" aria-label="Send message">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            </button>
         </div>
     </div>
-    <button class="chatbot-toggle" id="chatbotToggle">
-        <i class="fas fa-comment-dots"></i>
+    <button type="button" class="chatbot-toggle pulse" id="chatbotToggle" aria-expanded="false" aria-controls="chatbotContainer" title="Open chat">
+        <i class="fas fa-comments" aria-hidden="true"></i>
     </button>
 
     <!-- Scripts -->

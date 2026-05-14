@@ -38,6 +38,7 @@
                         </ul>
                     </li>
                     <li><a href="about.html">About Us</a></li>
+                    <li><a href="ims-policy.html">IMS Policy</a></li>
                     <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     
@@ -46,37 +47,47 @@
         </div>
     </header>
 
-<!------------------------ Hero Section with Bahrain Skyline Animation ------------------------->
+<!------------------------ Hero: full-width video background ------------------------->
 <section class="hero" id="home">
     <div class="hero-media">
-        <video class="hero-video hero-video-desktop" autoplay muted loop playsinline poster="https://assets.mixkit.co/videos/preview/mixkit-bahrain-skyline-1234-large.jpg">
+        <video class="hero-video hero-video-desktop" autoplay muted loop playsinline>
             <source src="assets/want (Banner (Landscape)).mp4" type="video/mp4">
         </video>
-        <video class="hero-video hero-video-mobile" autoplay muted loop playsinline poster="https://assets.mixkit.co/videos/preview/mixkit-bahrain-cityscape-5678-large.jpg">
+        <video class="hero-video hero-video-mobile" autoplay muted loop playsinline>
             <source src="assets/want (Banner (portrait)).mp4" type="video/mp4">
         </video>
-        <div class="hero-gradient-overlay"></div>
+        <div class="hero-gradient-overlay" aria-hidden="true"></div>
     </div>
     
     <div class="hero-content-container">
-        <div class="container">
+        <div class="container hero-container-tight">
             <div class="hero-content">
-                <h1 class="wow fadeInUp">
-                    <span class="text-gradient">Elevating Excellence</span><br>
-                    <span class="text-outline">In Every Construction</span>
+                <p class="home-hero-eyebrow wow fadeInUp">
+                    <span class="home-hero-eyebrow-line" aria-hidden="true"></span>
+                    <span class="home-hero-eyebrow-text">Trenchless &amp; civil contracting · Kingdom of Bahrain</span>
+                </p>
+                <ul class="home-hero-pills wow fadeInUp" data-wow-delay="0.05s" aria-label="Core disciplines">
+                    <li>HDD &amp; guided drilling</li>
+                    <li>Microtunneling</li>
+                    <li>Roads &amp; utilities</li>
+                    <li>IMS-led delivery</li>
+                </ul>
+                <h1 class="home-hero-heading wow fadeInUp" data-wow-delay="0.1s">
+                    <span class="text-gradient">Underground precision</span><br>
+                    <span class="home-hero-title-strong">Built for corridors, utilities &amp; heavy civil</span>
                 </h1>
-                <p class="wow fadeInUp" data-wow-delay="0.2s">KTCC delivers <span class="text-pink">innovative solutions</span> with <span class="text-blue">precision engineering</span> and visionary design</p>
+                <p class="home-hero-lead wow fadeInUp" data-wow-delay="0.2s">KTCC plans and executes <span class="text-pink">horizontal directional drilling</span>, trenchless crossings, and <span class="text-blue">conventional civil packages</span> — with crews, plant, and controls aligned to Bahrain authority requirements.</p>
                 
-                <div class="hero-btns wow fadeInUp" data-wow-delay="0.4s">
+                <div class="hero-btns wow fadeInUp" data-wow-delay="0.35s">
                     <a href="services.html" class="btn btn-primary">
-                        <span>Explore Services</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <span>View capabilities</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                             <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
                     <a href="contact.html" class="btn btn-secondary">
-                        <span>Get Free Quote</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <span>Request site support</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                             <path d="M3 8L10.8906 13.2604C11.5624 13.7083 12.4376 13.7083 13.1094 13.2604L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
@@ -89,12 +100,6 @@
         <div class="mouse-scroll"></div>
         <span>Scroll Down</span>
     </div>
-    
-    <div class="hero-decoration">
-        <div class="deco-circle deco-1"></div>
-        <div class="deco-circle deco-2"></div>
-        <div class="deco-line deco-3"></div>
-    </div>
 </section>
     <!---------------------------------- ABOUT SECTION ------------------------------------------>
     <!---------------------------------- ABOUT SECTION ------------------------------------------>
@@ -103,120 +108,131 @@
             <div class="section-title wow fadeInUp">
                 <h2>About KTCC W.L.L</h2>
                 <div class="divider"></div>
-                <p class="subtitle">Bahrain's Premier Trenchless Technology Solutions Provider</p>
+                <p class="subtitle">Trenchless delivery and civil contracting for utilities, corridors, and authority-led projects across Bahrain.</p>
             </div>
-            
-            <div class="about-video wow fadeIn">
-                <div class="video-container">
-                    <video id="aboutVideo" loop playsinline muted>
-                        <source src="assets/about-video-fix.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="video-overlay"></div>
-                    <div class="video-caption">
-                        <h3>Innovative Trenchless Solutions</h3>
-                        <p>Minimizing surface disruption with advanced HDD technology</p>
-                    </div>
-                    <div class="government-badge">
-                        <i class="fas fa-certificate"></i>
-                        <span>CR Registered</span>
-                    </div>
-                    <div class="video-controls">
-                        <button id="playPauseBtn" class="video-control">
-                            <i class="fas fa-play"></i>
-                        </button>
-                        <button id="muteToggle" class="video-control">
-                            <i class="fas fa-volume-mute"></i>
-                        </button>
-                        <a id="downloadBtn" class="video-control" href="assets/about-video-fix.mp4" download="KTCC-Trenchless-Technology.mp4">
-                            <i class="fas fa-download"></i>
-                        </a>
+
+            <figure class="about-video-stage wow fadeIn" aria-label="KTCC trenchless operations">
+                <div class="about-video">
+                    <div class="video-container">
+                        <video id="aboutVideo" loop playsinline muted>
+                            <source src="assets/about-video-fix.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-overlay"></div>
+                        <div class="government-badge">
+                            <i class="fas fa-certificate"></i>
+                            <span>CR Registered</span>
+                        </div>
+                        <div class="video-ui-bar">
+                            <div class="video-caption">
+                                <h3>Trenchless in the field</h3>
+                                <p>HDD and utility crossings with controlled surface impact</p>
+                            </div>
+                            <div class="video-controls">
+                                <button type="button" id="playPauseBtn" class="video-control" aria-label="Play or pause video">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button type="button" id="muteToggle" class="video-control" aria-label="Mute or unmute video">
+                                    <i class="fas fa-volume-mute"></i>
+                                </button>
+                                <a id="downloadBtn" class="video-control" href="assets/about-video-fix.mp4" download="KTCC-Trenchless-Technology.mp4" aria-label="Download video">
+                                    <i class="fas fa-download"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <p>KTCC W.L.L is Bahrain's premier trenchless technology specialist, revolutionizing underground infrastructure & Utility installation with minimal environmental impact. Our Horizontal Directional Drilling (HDD) expertise sets industry standards for precision and efficiency.</p>
-                    
-                    <div class="certification-badges">
-                        <div class="badge-item">
-                            <div class="badge-icon">
-                                <i class="fas fa-file-contract"></i>
-                            </div>
-                            <div class="badge-content">
-                                <h4>Government Registered</h4>
-                                <p>CR No. 184157-1 • Licensed by Ministry of Works</p>
-                            </div>
-                        </div>
-                        <div class="badge-item">
-                            <div class="badge-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div class="badge-content">
-                                <h4>Trust & Safety</h4>
-                                <p>Committed to Safety • Proven Accident-Free Record</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <p>Specializing in trenchless pipeline installations across diverse geological conditions in Bahrain, we deliver efficient solutions for both government and private sector projects.</p>
+            </figure>
 
-                    
-                    <div class="about-features">
-                        <div class="feature-item wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="feature-icon">
-                                <i class="fas fa-bore-hole"></i>
+            <div class="about-body">
+                <div class="about-body-inner">
+                    <div class="about-intro">
+                        <p class="about-lead">KTCC W.L.L is a Bahrain-based trenchless and civil contractor focused on underground utilities and corridor work with minimal surface disruption. We plan and execute HDD and related crossings alongside conventional civil packages, aligned to local authority requirements.</p>
+                        <p class="about-support">From dense urban routes to open corridors, we support government and private clients with engineered trenchless crossings and integrated civil scope.</p>
+                    </div>
+
+                    <div class="about-panel">
+                        <h3 class="about-panel-title" id="about-credentials">Registration &amp; trust</h3>
+                        <div class="certification-badges">
+                            <div class="badge-item">
+                                <div class="badge-icon">
+                                    <i class="fas fa-file-contract"></i>
+                                </div>
+                                <div class="badge-content">
+                                    <h4>Government registered</h4>
+                                    <p>CR No. 184157-1 • Licensed by Ministry of Works</p>
+                                </div>
                             </div>
-                            <div class="feature-text">
-                                <h4>HDD Specialists</h4>
-                                <p>Equipped for large-diameter HDD — up to 48" and 500m+ spans</p>
-                            </div>
-                        </div>
-                        <div class="feature-item wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="feature-icon">
-                                <i class="fas fa-road"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Zero Surface Disruption</h4>
-                                <p>Roads, landscapes,infrastructure and Utilities remain intact</p>
-                            </div>
-                        </div>
-                        <div class="feature-item wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="feature-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Rapid Deployment</h4>
-                                <p>Projects completed 40% faster than traditional open-cut methods</p>
+                            <div class="badge-item">
+                                <div class="badge-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="badge-content">
+                                    <h4>Trust &amp; safety</h4>
+                                    <p>Committed to safety • Proven accident-free record</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="safety-commitment">
-                        <div class="safety-header">
-                            <i class="fas fa-hard-hat"></i>
-                            <h4>Our Safety & Compliance Promise</h4>
-                        </div>
-                        <div class="safety-features">
-                            <div class="safety-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>100% Compliance with Bahrain Safety Regulations</span>
+
+                    <div class="about-panel">
+                        <h3 class="about-panel-title" id="about-capabilities">Capabilities</h3>
+                        <div class="about-features">
+                            <div class="feature-item wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="feature-icon">
+                                    <i class="fas fa-bore-hole"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>HDD specialists</h4>
+                                    <p>Large-diameter HDD — up to 48&quot; and 500m+ spans</p>
+                                </div>
                             </div>
-                            <div class="safety-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Regular Ministry of Works Audits</span>
+                            <div class="feature-item wow fadeInUp" data-wow-delay="0.15s">
+                                <div class="feature-icon">
+                                    <i class="fas fa-road"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Surface-friendly work</h4>
+                                    <p>Roads, landscapes, infrastructure and utilities stay intact where the method allows</p>
+                                </div>
                             </div>
-                            <div class="safety-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>All Operators Certified in HDD Safety Protocols</span>
+                            <div class="feature-item wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="feature-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Rapid deployment</h4>
+                                    <p>Delivering faster than traditional open-cut where conditions suit</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="bahraini-commitment">
-                        <h4><i class="fas fa-flag"></i> Bahraini Engineering Excellence</h4>
-                        <p>As a Bahrain based with liabilty limited company, we combine international trenchless technology standards with unparalleled local expertise in Bahrain's unique underground conditions.</p>
+
+                    <div class="about-panel about-panel--split">
+                        <div class="safety-commitment">
+                            <div class="safety-header">
+                                <i class="fas fa-hard-hat"></i>
+                                <h4>Safety &amp; compliance</h4>
+                            </div>
+                            <div class="safety-features">
+                                <div class="safety-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Aligned with Bahrain safety regulations</span>
+                                </div>
+                                <div class="safety-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Ministry of Works audit readiness</span>
+                                </div>
+                                <div class="safety-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>HDD crews trained on site protocols</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bahraini-commitment">
+                            <h4><i class="fas fa-flag"></i> Rooted in Bahrain</h4>
+                            <p>As a Bahrain-based limited liability company (W.L.L.), we combine recognised trenchless practice with local knowledge of ground conditions, authorities, and delivery expectations.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -317,95 +333,84 @@
 
 
 
-    <!-- Our Services Frontpage Section -->
-<!-- Premium Services Section - Modern Layout -->
-<!-- Premium Services Section - Modern Layout -->
-<section class="services" id="services">
+    <!-- Our Services — homepage -->
+<section class="services services-home" id="services">
     <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Our Premium Services</h2>
+        <div class="section-header services-home-header">
+            <p class="home-section-kicker">What we deliver on site</p>
+            <h2 class="section-title">Engineering services</h2>
             <div class="title-divider">
                 <span class="divider-line"></span>
                 <span class="divider-dot"></span>
                 <span class="divider-line"></span>
             </div>
-            <p class="section-subtitle">Building future with innovative solutions and cutting-edge technology</p>
+            <p class="section-subtitle">Trenchless crossings, utility corridors, and civil packages — structured for government and private programmes across Bahrain.</p>
         </div>
 
-        <div class="services-grid">
+        <div class="services-grid services-home-grid">
+            <div class="service-card">
+                <div class="service-image" style="background-image: url('assets/images/team/HDD.jpeg')"></div>
+                <div class="service-content">
+                    <div class="service-icon">
+                        <i class="fas fa-screwdriver-wrench" aria-hidden="true"></i>
+                    </div>
+                    <h3>Trenchless &amp; HDD</h3>
+                    <div class="service-tags">
+                        <span>HDD</span>
+                        <span>Pipe jacking</span>
+                        <span>Microtunneling</span>
+                    </div>
+                    <p class="service-description">Guided drilling and trenchless crossings for power, water, and telecom corridors — engineered to protect roads, ROW, and live utilities.</p>
+                    <a href="services.html" class="service-btn">
+                        View details <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
 
-
-            
-
-
-
-            <!-- Service 1 -->
             <div class="service-card">
                 <div class="service-image" style="background-image: url('assets/images/3.jpg')"></div>
                 <div class="service-content">
                     <div class="service-icon">
-                        <i class="fas fa-road"></i>
+                        <i class="fas fa-road" aria-hidden="true"></i>
                     </div>
-                    <h3>Road Construction</h3>
+                    <h3>Road &amp; civil works</h3>
                     <div class="service-tags">
                         <span>Highways</span>
-                        <span>Bridges</span>
-                        <span>Urban Roads</span>
+                        <span>Urban links</span>
+                        <span>Structures</span>
                     </div>
-                    <p class="service-description">Comprehensive road construction solutions including highways, bridges, and urban road networks with advanced pavement technology.</p>
+                    <p class="service-description">Road construction and heavy civil coordination with clear staging, traffic management, and quality checkpoints from mobilisation to handover.</p>
                     <a href="services.html" class="service-btn">
-                        View Details <i class="fas fa-arrow-right"></i>
+                        View details <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Service 2 -->
-<!-- Service 1 - Trenchless Works -->
-<div class="service-card">
-    <div class="service-image" style="background-image: url('assets/images/team/HDD.jpeg')"></div>
-    <div class="service-content">
-        <div class="service-icon">
-            <i class="fa-solid fa-wrench"></i>
-        </div>
-        <h3>Trenchless Technology</h3>
-        <div class="service-tags">
-            <span>HDD</span>
-            <span>Pipe Jacking</span>
-            <span>Microtunneling</span>
-        </div>
-        <p class="service-description">Advanced trenchless solutions for underground utility installation and rehabilitation with minimal surface disruption and environmental impact.</p>
-        <a href="services.html" class="service-btn">
-            View Details <i class="fas fa-arrow-right"></i>
-        </a>
-    </div>
-</div>
-
-            <!-- Service 3 -->
             <div class="service-card">
                 <div class="service-image" style="background-image: url('assets/images/5.jpg')"></div>
                 <div class="service-content">
                     <div class="service-icon">
-                        <i class="fas fa-network-wired"></i>
+                        <i class="fas fa-network-wired" aria-hidden="true"></i>
                     </div>
-                    <h3>Infrastructure Development</h3>
+                    <h3>Infrastructure &amp; utilities</h3>
                     <div class="service-tags">
-                        <span>Trenchless</span>
                         <span>Utilities</span>
                         <span>Drainage</span>
+                        <span>Substations</span>
                     </div>
-                    <p class="service-description">Advanced infrastructure solutions including trenchless technology, underground utilities, and drainage systems.</p>
+                    <p class="service-description">Underground infrastructure, utility diversions, and supporting civil scope — sequenced with trenchless options where open cut is not viable.</p>
                     <a href="services.html" class="service-btn">
-                        View Details <i class="fas fa-arrow-right"></i>
+                        View details <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     </a>
                 </div>
             </div>
         </div>
 
-        <div class="cta-section">
-            <p>Need a custom solution? We specialize in tailored construction services.</p>
+        <div class="cta-section services-home-cta">
+            <p>Need a bore plan, utility protection, or a joint civil–trenchless package? Our engineers and rig crews work as one team.</p>
             <a href="contact.html" class="primary-btn">
-                <span>Discuss Your Project</span>
-                <i class="fas fa-paper-plane"></i>
+                <span>Discuss your package</span>
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
             </a>
         </div>
     </div>
@@ -766,6 +771,7 @@
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
+                    <li><a href="ims-policy.html">IMS Policy</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="projects.html">Projects</a></li>
@@ -806,38 +812,34 @@
 
 
     <!--------------------------------------- Chatbot Widget --------------------------->
-    <div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-container" id="chatbotContainer" role="dialog" aria-modal="true" aria-labelledby="chatbotHeading" aria-hidden="true">
         <div class="chatbot-header">
-            <h4><i class="fas fa-hard-hat"></i> KTCC Construction Assistant</h4>
-            <button class="chatbot-close" id="chatbotClose">
-                <i class="fas fa-times"></i>
+            <div class="chatbot-header-info">
+                <div class="chatbot-avatar" aria-hidden="true"><i class="fas fa-hard-hat"></i></div>
+                <div class="chatbot-header-text">
+                    <h4 id="chatbotHeading">KTCC Assistant</h4>
+                    <p class="chatbot-status"><span class="chatbot-status-dot" aria-hidden="true"></span> Online · Replies instantly</p>
+                </div>
+            </div>
+            <button type="button" class="chatbot-close" id="chatbotClose" aria-label="Close chat">
+                <i class="fas fa-times" aria-hidden="true"></i>
             </button>
         </div>
-        <div class="chatbot-body" id="chatbotBody">
-            <div class="chatbot-message bot">
-                <p>Hello! 👋 I'm KTCC's Construction Assistant. I can help you with:</p>
-                <ul style="margin: 10px 0 0 20px; padding: 0;">
-                    <li>Project inquiries & quotes</li>
-                    <li>Service information</li>
-                    <li>Company details</li>
-                    <li>Construction advice</li>
-                </ul>
-                <p style="margin-top: 10px;">How can I assist you today?</p>
+        <div class="chatbot-body" id="chatbotBody" role="log" aria-live="polite" aria-relevant="additions"></div>
+        <div class="chatbot-options" id="chatbotOptions"></div>
+        <div class="chatbot-composer">
+            <label class="chatbot-sr-only" for="chatbotInput">Your message</label>
+            <div class="chatbot-composer-inner">
+                <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                <input type="text" placeholder="Ask about trenchless, quotes, contact…" id="chatbotInput" autocomplete="off">
             </div>
-        </div>
-        <div class="chatbot-options" id="chatbotOptions">
-            <button class="chatbot-option">Request a Quote</button>
-            <button class="chatbot-option">Our Services</button>
-            <button class="chatbot-option">Current Projects</button>
-            <button class="chatbot-option">Contact Executive</button>
-        </div>
-        <div class="chatbot-input">
-            <input type="text" placeholder="Type your construction query..." id="chatbotInput" autocomplete="off">
-            <button id="chatbotSend"><i class="fas fa-paper-plane"></i></button>
+            <button type="button" class="chatbot-send" id="chatbotSend" aria-label="Send message">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            </button>
         </div>
     </div>
-    <button class="chatbot-toggle pulse" id="chatbotToggle">
-        <i class="fas fa-hard-hat"></i>
+    <button type="button" class="chatbot-toggle pulse" id="chatbotToggle" aria-expanded="false" aria-controls="chatbotContainer" title="Open chat">
+        <i class="fas fa-comments" aria-hidden="true"></i>
     </button>
 
     <!-- Scripts -->
