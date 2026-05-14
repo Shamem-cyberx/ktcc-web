@@ -431,7 +431,12 @@ nav ul li a.active::after {
     height: 100%;
     z-index: 1;
     overflow: hidden;
-    background: #0a1628;
+    background-color: #0a1628;
+    /* Visible if video is missing, blocked, or still loading (production-safe) */
+    background-image: url('../assets/images/road-construction-192894_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-video {
@@ -598,6 +603,14 @@ nav ul li a.active::after {
 .text-pink {
     color: var(--secondary);
     font-weight: 600;
+}
+
+/* Hero lead: gradient phrase reads like dev (Safari + Chrome) */
+.home-hero-lead .text-pink {
+    background: linear-gradient(90deg, var(--secondary), #c084fc, var(--primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .hero-btns {

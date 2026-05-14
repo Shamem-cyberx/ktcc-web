@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (logo) {
         logo.addEventListener('click', function(e) {
             e.preventDefault();
-            window.location.href = '/'; // Adjust to 'index.html' if needed
+            window.location.href = 'index.html';
             if (nav && nav.classList.contains('active')) {
                 nav.classList.remove('active');
                 if (mobileMenuBtn) {
