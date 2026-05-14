@@ -1,0 +1,15 @@
+# KTCC static site — Hostinger / Apache
+# Ensures MP4 serves correctly; set default document.
+
+DirectoryIndex index.html index.htm
+
+<IfModule mod_mime.c>
+    AddType video/mp4 mp4 m4v
+    AddType video/webm webm
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(mp4|webm)$">
+        Header set Accept-Ranges bytes
+    </FilesMatch>
+</IfModule>

@@ -121,36 +121,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Hero Section Video Lazy Load
-// Modern Hero Section Interactions
-document.addEventListener('DOMContentLoaded', function() {
-    // Video lazy loading with intersection observer
-    const videoObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const video = entry.target;
-                video.play().catch(e => console.log("Video autoplay prevented:", e));
-                videoObserver.unobserve(video);
+    // Hero background videos: ensure autoplay after load (production/CDN safe)
+    document.querySelectorAll('.hero-video').forEach(function(video) {
+        video.muted = true;
+        video.defaultMuted = true;
+        video.setAttribute('playsinline', '');
+        var tryPlay = function() {
+            var p = video.play();
+            if (p && typeof p.catch === 'function') {
+                p.catch(function() { /* autoplay policy */ });
             }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.hero-video').forEach(video => {
-        videoObserver.observe(video);
+        };
+        video.addEventListener('loadeddata', tryPlay);
+        video.addEventListener('canplay', tryPlay);
+        if (video.readyState >= 2) tryPlay();
+        var vo = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    tryPlay();
+                    vo.unobserve(video);
+                }
+            });
+        }, { threshold: 0.05 });
+        vo.observe(video);
     });
 
-    // Smooth scroll for scroll indicator
-    const scrollIndicator = document.querySelector('.hero-scroll-indicator');
-    if (scrollIndicator) {
-        scrollIndicator.addEventListener('click', (e) => {
+    var heroScrollIndicator = document.querySelector('.hero-scroll-indicator');
+    if (heroScrollIndicator) {
+        heroScrollIndicator.addEventListener('click', function(e) {
             e.preventDefault();
-            window.scrollBy({
-                top: window.innerHeight,
-                behavior: 'smooth'
-            });
+            window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
         });
     }
-});
 
     //------------------------- PROJECT HOMEPAGE SECTION SLIDER------------------------------------------------//
     const projectSlider = document.querySelector('.project-slider');
