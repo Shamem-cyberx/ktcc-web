@@ -1,11 +1,56 @@
-# KTCC project gallery — optional file list (no PHP required)
-# Put one filename per line exactly as stored in: assets/images/projects/
-# Lines starting with # are ignored.
-#
-# Example:
-# 18-04-2026.jpeg
-# WhatsApp Image 2026-04-18 at 12.57.00.jpeg
-#
-# Tip: in FileZilla, select all files in the remote projects folder, copy names
-# from the listing into this file (one per line), save, upload to:
-#   public_html/assets/data/projects-file-list.txt
+# Auto-synced from projects-manifest.json — gallery uses this if JSON/PHP unavailable
+18-04-2026.jpeg
+WhatsApp Image 2025-12-30 at 11.26.25 AM.jpeg
+WhatsApp Image 2025-12-31 at 7.44.01 PM.jpeg
+WhatsApp Image 2025-12-31 at 7.44.07 PM.jpeg
+WhatsApp Image 2025-12-31 at 7.44.08 PM.jpeg
+WhatsApp Image 2026-01-02 at 12.18.26 AM.jpeg
+WhatsApp Image 2026-01-02 at 12.18.28 AM.jpeg
+WhatsApp Image 2026-01-02 at 12.18.30 AM.jpeg
+WhatsApp Image 2026-01-02 at 12.18.32 AM.jpeg
+WhatsApp Image 2026-01-02 at 12.22.01 AM.jpeg
+WhatsApp Image 2026-01-20 at 12.31.04 PM.jpeg
+WhatsApp Image 2026-01-23 at 8.17.17 AM.jpeg
+WhatsApp Image 2026-01-27 at 1.36.05 PM.jpeg
+WhatsApp Image 2026-01-27 at 1.58.29 PM.jpeg
+WhatsApp Image 2026-01-27 at 7.38.26 AM.jpeg
+WhatsApp Image 2026-01-29 at 6.23.10 AM.jpeg
+WhatsApp Image 2026-01-30 at 3.21.59 PM.jpeg
+WhatsApp Image 2026-02-02 at 11.06.49 AM.jpeg
+WhatsApp Image 2026-02-04 at 8.47.08 AM.jpeg
+WhatsApp Image 2026-02-05 at 4.08.58 PM.jpeg
+WhatsApp Image 2026-02-06 at 12.03.48 PM.jpeg
+WhatsApp Image 2026-02-07 at 9.54.07 AM.jpeg
+WhatsApp Image 2026-02-12 at 11.18.03 AM.jpeg
+WhatsApp Image 2026-02-12 at 8.38.42 AM.jpeg
+WhatsApp Image 2026-02-14 at 10.27.43 AM.jpeg
+WhatsApp Image 2026-02-16 at 1.41.30 PM.jpeg
+WhatsApp Image 2026-02-16 at 8.32.11 AM.jpeg
+WhatsApp Image 2026-03-12 at 8.58.20 AM.jpeg
+WhatsApp Image 2026-03-19 at 9.30.40 AM.jpeg
+WhatsApp Image 2026-03-19 at 9.30.41 AM (1).jpeg
+WhatsApp Image 2026-03-19 at 9.30.41 AM.jpeg
+WhatsApp Image 2026-03-19 at 9.30.42 AM.jpeg
+WhatsApp Image 2026-03-28 at 10.02.10 AM.jpeg
+WhatsApp Image 2026-03-28 at 10.54.33 AM.jpeg
+WhatsApp Image 2026-03-30 at 2.28.47 PM.jpeg
+WhatsApp Image 2026-03-30 at 7.21.57 AM.jpeg
+WhatsApp Image 2026-03-31 at 3.07.31 PM.jpeg
+WhatsApp Image 2026-03-31 at 4.30.08 PM.jpeg
+WhatsApp Image 2026-04-02 at 4.44.40 PM.jpeg
+WhatsApp Image 2026-04-03 at 6.44.21 AM.jpeg
+WhatsApp Image 2026-04-06 at 2.24.11 PM.jpeg
+WhatsApp Image 2026-04-09 at 4.08.27 PM.jpeg
+WhatsApp Image 2026-04-11 at 10.58.26 AM.jpeg
+WhatsApp Image 2026-04-12 at 2.49.22 PM.jpeg
+WhatsApp Image 2026-04-13 at 8.01.20 AM.jpeg
+WhatsApp Image 2026-04-13 at 9.57.24 AM.jpeg
+WhatsApp Image 2026-04-13 at 9.57.25 AM.jpeg
+WhatsApp Image 2026-04-13 at 9.57.26 AM.jpeg
+WhatsApp Image 2026-04-16 at 2.08.37 PM.jpeg
+WhatsApp Image 2026-04-16 at 7.42.19 AM.jpeg
+WhatsApp Image 2026-04-16 at 8.29.12 AM.jpeg
+WhatsApp Image 2026-04-16 at 8.29.59 AM.jpeg
+WhatsApp Image 2026-04-18 at 10.29.24 AM.jpeg
+WhatsApp Image 2026-04-18 at 3.17.35 PM.jpeg
+WhatsApp Image 2026-04-18 at 7.18.16 AM.jpeg

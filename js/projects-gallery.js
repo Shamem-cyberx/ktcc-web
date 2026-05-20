@@ -10,6 +10,35 @@
     var FILE_LIST = 'assets/data/projects-file-list.txt';
     var IMAGE_BASE = 'assets/images/projects/';
 
+    function resolveAssetUrl(relPath) {
+        try {
+            return new URL(relPath, window.location.href).toString();
+        } catch (e) {
+            return relPath;
+        }
+    }
+
+    /** Last resort if manifest, PHP, and file-list all fail (e.g. JSON blocked/404 on host). */
+    function inlineHardcodedImages() {
+        var cats = ['trenchless', 'infrastructure', 'road', 'building'];
+        var files = [
+            '18-04-2026.jpeg',
+            'WhatsApp Image 2026-04-18 at 7.18.16 AM.jpeg',
+            'WhatsApp Image 2026-04-16 at 8.29.59 AM.jpeg'
+        ];
+        return files.map(function (file, idx) {
+            var cat = cats[idx % 4];
+            return {
+                file: file,
+                title: humanizeProjectTitle(file, '', idx, cat),
+                category: cat,
+                caption: 'Bahrain field execution — HDD, utilities & related civil scope.',
+                year: '—',
+                status: 'Field photo'
+            };
+        });
+    }
+
     var state = {
         allItems: [],
         filter: 'all'
@@ -26,14 +55,22 @@
 
     function getSrc(item) {
         var f = (item.file || '').trim();
-        if (!f) return (item.url || '').trim();
+        if (!f) {
+            var u = (item.url || '').trim();
+            if (!u) return '';
+            try {
+                return new URL(u, window.location.href).toString();
+            } catch (e2) {
+                return u;
+            }
+        }
         var parts = f.split(/[/\\]/);
         var encoded = parts
             .map(function (seg) {
                 return encodeURIComponent(seg);
             })
             .join('/');
-        return IMAGE_BASE + encoded;
+        return resolveAssetUrl(IMAGE_BASE + encoded);
     }
 
     /** Strip auto filenames (e.g. chat exports); never show "WhatsApp Image…" in the UI. */
@@ -511,7 +548,7 @@
         }
 
         function fetchPhpList(url) {
-            return fetch(url + bust, { cache: 'no-store' })
+            return fetch(resolveAssetUrl(url) + bust, { cache: 'no-store' })
                 .then(function (r) {
                     if (!r.ok) throw new Error('no-php');
                     return r.text();
@@ -530,7 +567,7 @@
         }
 
         function fetchFileListTxt() {
-            return fetch(FILE_LIST + bust, { cache: 'no-store' }).then(function (r) {
+            return fetch(resolveAssetUrl(FILE_LIST) + bust, { cache: 'no-store' }).then(function (r) {
                 if (!r.ok) throw new Error('no-list');
                 return r.text();
             }).then(function (text) {
@@ -572,7 +609,7 @@
         }
 
         var bust = '?v=' + Date.now();
-        fetch(MANIFEST + bust, { cache: 'no-store' })
+        fetch(resolveAssetUrl(MANIFEST) + bust, { cache: 'no-store' })
             .then(function (r) {
                 if (!r.ok) throw new Error('manifest');
                 return r.json();
@@ -586,7 +623,7 @@
                 return tryPhpSequential().then(function (imgs) {
                     if (imgs && imgs.length) return imgs;
                     return fetchFileListTxt().catch(function () {
-                        return [];
+                        return inlineHardcodedImages();
                     });
                 });
             })
@@ -594,7 +631,7 @@
                 applyLoadedImages(imgs || []);
             })
             .catch(function () {
-                applyLoadedImages([]);
+                applyLoadedImages(inlineHardcodedImages());
             });
     });
 })();

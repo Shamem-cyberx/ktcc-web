@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectNext = document.querySelector('.project-next');
     const projectDotsContainer = document.querySelector('.project-dots');
     
-    if (projectSlider && projectSlides.length > 0) {
+    if (projectSlider && projectSlides.length > 0 && projectDotsContainer) {
         projectSlides.forEach((_, index) => {
             const dot = document.createElement('div');
             dot.classList.add('project-dot');
@@ -171,18 +171,19 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             projectDotsContainer.appendChild(dot);
         });
-        
-        const projectDots = document.querySelectorAll('.project-dot');
+
+        const projectDots = projectDotsContainer.querySelectorAll('.project-dot');
         let currentSlide = 0;
-        
+
         function goToSlide(slideIndex) {
-            projectSlides.forEach((slide, index) => {
-                slide.style.transform = `translateX(-${slideIndex * 100}%)`;
-                projectDots[index].classList.remove('active');
+            projectSlider.style.transform = 'translateX(-' + slideIndex * 100 + '%)';
+            projectDots.forEach((d, index) => {
+                d.classList.toggle('active', index === slideIndex);
             });
-            projectDots[slideIndex].classList.add('active');
             currentSlide = slideIndex;
         }
+
+        goToSlide(0);
         
         if (projectNext) {
             projectNext.addEventListener('click', () => {

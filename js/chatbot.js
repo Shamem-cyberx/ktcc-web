@@ -15,9 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
         name: 'KTCC W.L.L',
         phone: '+973 35034495',
         phoneTel: '+97335034495',
+        phoneLandline: '+973 17670813',
+        phoneLandlineTel: '+97317670813',
         whatsapp: '+973 35034495',
         email: 'info@ktccgulf.com',
-        address: 'Flat No. 0, Building No. 194, Road No. 84, Block No. 903, Riffa, Bahrain',
+        address:
+            'Flat 43, Building 49, Road/ Street 2701, Block 327, Adliyah, Manama, Kingdom of Bahrain',
         workingHours: 'Sunday to Thursday, 8:00 AM - 5:00 PM',
         services: [
             {
@@ -73,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contact: {
             response: `Reach ${companyInfo.name}:<br><br>
             <strong><i class="fas fa-phone"></i> Phone:</strong> ${companyInfo.phone}<br>
+            <strong><i class="fas fa-phone-alt"></i> TEL:</strong> ${companyInfo.phoneLandline}<br>
             <strong><i class="fab fa-whatsapp"></i> WhatsApp:</strong> ${companyInfo.whatsapp}<br>
             <strong><i class="fas fa-envelope"></i> Email:</strong> ${companyInfo.email}<br>
             <strong><i class="fas fa-map-marker-alt"></i> Address:</strong> ${companyInfo.address}<br><br>
