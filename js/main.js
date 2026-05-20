@@ -695,6 +695,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    function activateServiceFromHash() {
+        const slug = window.location.hash.replace(/^#/, '');
+        if (!slug) return;
+        const matchBtn = document.querySelector(`.inside-category-btn[data-category="${slug}"]`);
+        if (!matchBtn) return;
+        matchBtn.click();
+        const servicesSection = document.getElementById('services');
+        if (servicesSection) {
+            requestAnimationFrame(() => {
+                servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        }
+    }
+
+    activateServiceFromHash();
+    window.addEventListener('hashchange', activateServiceFromHash);
+
     // Slider Initialization
     const sliders = document.querySelectorAll('.inside-service-slider');
 

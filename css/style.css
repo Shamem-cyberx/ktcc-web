@@ -309,9 +309,20 @@ nav ul li a.active::after {
     backdrop-filter: blur(10px);
     border-radius: 8px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    min-width: 220px;
+    min-width: min(320px, calc(100vw - 32px));
+    max-width: 380px;
     padding: 10px 0;
     z-index: 1000;
+}
+
+.dropdown-menu li a .dropdown-service-sub {
+    display: block;
+    font-size: 0.78em;
+    font-weight: 400;
+    opacity: 0.92;
+    margin-top: 3px;
+    line-height: 1.35;
+    white-space: normal;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -5069,7 +5080,7 @@ footer {
     border-radius: 999px;
     border: 1px solid rgba(30, 136, 229, 0.12);
     box-shadow: var(--ktcc-shadow-soft);
-    max-width: 920px;
+    max-width: 1120px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -5136,6 +5147,14 @@ footer {
     height: 4px;
     background: linear-gradient(to right, var(--primary), var(--secondary));
     border-radius: 2px;
+}
+
+.inside-service-scope-line {
+    margin: -8px 0 22px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--primary);
+    line-height: 1.45;
 }
 
 .inside-service-list {
