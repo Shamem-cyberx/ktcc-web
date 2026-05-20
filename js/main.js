@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
     // Team Section Animation
-    const teamMembers = document.querySelectorAll('.team-member');
+    const teamMembers = document.querySelectorAll('.team-member, .team-card');
     const teamObserver = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
