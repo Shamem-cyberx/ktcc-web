@@ -1746,13 +1746,118 @@ nav ul li a.active::after {
     background: #e3f2fd;
 }
 
-.contact-map-frame iframe {
+.contact-map-leaflet {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border: 0;
+    z-index: 0;
+}
+
+.contact-map-frame .leaflet-container {
+    width: 100%;
+    height: 100%;
+    font-family: inherit;
+    background: #e3f2fd;
+}
+
+.contact-map-frame .leaflet-control-zoom a {
+    color: var(--dark);
+}
+
+/* Construction-style marker (truck icon + triangle pin), replaces default green OSM pin */
+.leaflet-div-icon.ktcc-leaflet-marker {
+    background: transparent !important;
+    border: none !important;
+}
+
+.ktcc-map-marker-pin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+}
+
+.ktcc-map-marker-body {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #ffb347 0%, #ff7b35 42%, #ea580c 100%);
+    border: 3px solid #fff;
+    box-shadow: 0 4px 14px rgba(234, 88, 12, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.15rem;
+    animation: ktcc-marker-float 2.2s ease-in-out infinite;
+    position: relative;
+}
+
+.ktcc-map-marker-body svg {
+    display: block;
+    flex-shrink: 0;
+}
+
+.contact-map-leaflet--failed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--dark);
+    background: #fff3e0;
+}
+
+.contact-map-leaflet--failed::after {
+    content: 'Map could not load. Use “Open directions in Google Maps” above, or refresh the page.';
+}
+
+.ktcc-map-marker-body::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 154, 60, 0.55);
+    animation: ktcc-marker-pulse 2.2s ease-out infinite;
+    pointer-events: none;
+}
+
+.ktcc-map-marker-point {
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 11px solid #c2410c;
+    margin-top: -3px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+@keyframes ktcc-marker-float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes ktcc-marker-pulse {
+    0% {
+        transform: scale(0.92);
+        opacity: 0.9;
+    }
+    70% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
 }
 
 .contact-info h3 {

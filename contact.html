@@ -6,7 +6,8 @@
     <title>KTCC - Leading Construction Company in Bahrain</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/animate.css?v=ktcc3">
-    <link rel="stylesheet" href="css/style.css?v=ktcc3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/style.css?v=ktcc7">
     <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="64x64">
 </head>
 <body>
@@ -132,12 +133,7 @@
                         <a class="contact-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Flat+43%2C+Building+49%2C+Road+2701%2C+Block+327%2C+Adliyah%2C+Manama%2C+Kingdom+of+Bahrain" target="_blank" rel="noopener noreferrer">Open directions in Google Maps <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
                     </div>
                     <div class="contact-map-frame">
-                        <iframe
-                            title="KTCC office, Adliyah, Manama, Kingdom of Bahrain (map)"
-                            src="https://www.openstreetmap.org/export/embed.html?bbox=50.5790%2C26.2095%2C50.5960%2C26.2195&amp;layer=map&amp;marker=26.2145%2C50.5875"
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            allowfullscreen=""></iframe>
+                        <div id="contactMap" class="contact-map-leaflet" title="KTCC office, Adliyah, Manama, Kingdom of Bahrain" role="region" aria-label="Interactive map of KTCC office location"></div>
                     </div>
                 </div>
             </div>
@@ -270,6 +266,8 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/contact-map.js?v=ktcc3"></script>
     <script src="js/main.js?v=ktcc3"></script>
     <script src="js/chatbot.js?v=ktcc4"></script>
 </body>
