@@ -157,8 +157,8 @@ section {
     }
 }
 
-/* Header Styles */
-header {
+/* Header Styles — #header only (avoid styling in-page <header> landmarks) */
+#header {
     position: fixed;
     top: 0;
     left: 0;
@@ -172,7 +172,7 @@ header {
     padding: 15px 0;
 }
 
-header.scrolled {
+#header.scrolled {
     background-color: var(--ktcc-shell-bg-scrolled);
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
     padding: 10px 0;
@@ -194,7 +194,7 @@ header.scrolled {
 }
 
 /* Light plate: logo PNG uses dark ink — needs contrast on blue shell */
-header .logo img,
+#header .logo img,
 footer .logo img {
     height: 48px;
     width: auto;
@@ -420,7 +420,7 @@ nav ul li a.active::after {
 }
 
 @media (max-width: 576px) {
-    header .logo img,
+    #header .logo img,
     footer .logo img {
         height: 36px;
         padding: 5px 10px;
@@ -1704,17 +1704,6 @@ nav ul li a.active::after {
 .ktcc-cap-item:hover {
     border-color: rgba(30, 136, 229, 0.35);
     transform: translateY(-3px);
-}
-
-.ktcc-cap-item__num {
-    position: absolute;
-    top: 12px;
-    right: 14px;
-    font-size: 2rem;
-    font-weight: 800;
-    line-height: 1;
-    color: rgba(13, 71, 161, 0.08);
-    pointer-events: none;
 }
 
 .ktcc-cap-item__icon {
