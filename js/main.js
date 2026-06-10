@@ -154,64 +154,97 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    //------------------------- PROJECT HOMEPAGE SECTION SLIDER------------------------------------------------//
-    const projectSlider = document.querySelector('.project-slider');
-    const projectSlides = document.querySelectorAll('.project-slide');
-    const projectPrev = document.querySelector('.project-prev');
-    const projectNext = document.querySelector('.project-next');
-    const projectDotsContainer = document.querySelector('.project-dots');
-    
-    if (projectSlider && projectSlides.length > 0 && projectDotsContainer) {
-        projectSlides.forEach((_, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('project-dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => {
-                goToSlide(index);
-            });
-            projectDotsContainer.appendChild(dot);
-        });
-
-        const projectDots = projectDotsContainer.querySelectorAll('.project-dot');
+    //------------------------- PROJECT HOMEPAGE HIGHLIGHT GALLERY (crossfade) -------------------------//
+    const highlightGallery = document.querySelector('.ktcc-highlight-gallery');
+    if (highlightGallery) {
+        const projectSlides = highlightGallery.querySelectorAll('.project-slide');
+        const projectPrev = highlightGallery.querySelector('.project-prev');
+        const projectNext = highlightGallery.querySelector('.project-next');
+        const thumbs = highlightGallery.querySelectorAll('.ktcc-highlight-gallery__thumb');
+        const currentEl = highlightGallery.querySelector('.ktcc-highlight-gallery__current');
+        const progressFill = highlightGallery.querySelector('.ktcc-highlight-gallery__progress-fill');
+        const stage = highlightGallery.querySelector('.ktcc-highlight-gallery__stage');
         let currentSlide = 0;
+        let autoTimer = null;
+        let touchStartX = 0;
+
+        function padIndex(n) {
+            return String(n + 1).padStart(2, '0');
+        }
+
+        function restartProgress() {
+            if (!progressFill) return;
+            progressFill.classList.remove('is-running');
+            void progressFill.offsetWidth;
+            progressFill.classList.add('is-running');
+        }
 
         function goToSlide(slideIndex) {
-            projectSlider.style.transform = 'translateX(-' + slideIndex * 100 + '%)';
-            projectDots.forEach((d, index) => {
-                d.classList.toggle('active', index === slideIndex);
+            if (!projectSlides.length) return;
+            currentSlide = (slideIndex + projectSlides.length) % projectSlides.length;
+            projectSlides.forEach((slide, index) => {
+                slide.classList.toggle('is-active', index === currentSlide);
             });
-            currentSlide = slideIndex;
+            thumbs.forEach((thumb, index) => {
+                thumb.classList.toggle('is-active', index === currentSlide);
+            });
+            if (currentEl) currentEl.textContent = padIndex(currentSlide);
+            restartProgress();
+        }
+
+        function nextSlide() {
+            goToSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentSlide - 1);
+        }
+
+        function startAuto() {
+            stopAuto();
+            restartProgress();
+            autoTimer = setInterval(nextSlide, 6000);
+        }
+
+        function stopAuto() {
+            if (autoTimer) {
+                clearInterval(autoTimer);
+                autoTimer = null;
+            }
+            if (progressFill) progressFill.classList.remove('is-running');
         }
 
         goToSlide(0);
-        
-        if (projectNext) {
-            projectNext.addEventListener('click', () => {
-                if (currentSlide === projectSlides.length - 1) {
-                    goToSlide(0);
-                } else {
-                    goToSlide(currentSlide + 1);
+        startAuto();
+
+        if (projectNext) projectNext.addEventListener('click', () => { nextSlide(); startAuto(); });
+        if (projectPrev) projectPrev.addEventListener('click', () => { prevSlide(); startAuto(); });
+
+        thumbs.forEach((thumb) => {
+            thumb.addEventListener('click', () => {
+                const idx = parseInt(thumb.getAttribute('data-index'), 10);
+                if (!isNaN(idx)) {
+                    goToSlide(idx);
+                    startAuto();
                 }
             });
-        }
-        
-        if (projectPrev) {
-            projectPrev.addEventListener('click', () => {
-                if (currentSlide === 0) {
-                    goToSlide(projectSlides.length - 1);
-                } else {
-                    goToSlide(currentSlide - 1);
+        });
+
+        if (stage) {
+            stage.addEventListener('mouseenter', stopAuto);
+            stage.addEventListener('mouseleave', startAuto);
+            stage.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                stopAuto();
+            }, { passive: true });
+            stage.addEventListener('touchend', (e) => {
+                const dx = e.changedTouches[0].screenX - touchStartX;
+                if (Math.abs(dx) > 50) {
+                    if (dx < 0) nextSlide(); else prevSlide();
                 }
-            });
+                startAuto();
+            }, { passive: true });
         }
-        
-        setInterval(() => {
-            if (currentSlide === projectSlides.length - 1) {
-                goToSlide(0);
-            } else {
-                goToSlide(currentSlide + 1);
-            }
-        }, 5000);
     }
 
 

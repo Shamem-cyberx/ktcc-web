@@ -1,0 +1,359 @@
+/* Homepage — KTCC project gallery highlights (scoped) */
+
+.projects#projects {
+    background: linear-gradient(180deg, var(--light-gray) 0%, var(--white) 100%);
+    padding: clamp(72px, 10vw, 108px) 0;
+}
+
+.projects#projects .section-title .subtitle {
+    max-width: 40rem;
+    margin: 14px auto 0;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.ktcc-highlight-gallery__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: clamp(16px, 2.5vw, 24px);
+    align-items: stretch;
+}
+
+.ktcc-highlight-gallery__stage {
+    position: relative;
+    min-height: clamp(380px, 52vw, 520px);
+    border-radius: var(--ktcc-radius-lg);
+    overflow: hidden;
+    background: var(--dark);
+    box-shadow: 0 24px 64px rgba(13, 71, 161, 0.18);
+    border: 1px solid rgba(30, 136, 229, 0.12);
+}
+
+.ktcc-highlight-gallery .project-slider {
+    position: absolute;
+    inset: 0;
+    display: block;
+    overflow: visible;
+    border-radius: 0;
+    box-shadow: none;
+    transform: none !important;
+    transition: none;
+}
+
+.ktcc-highlight-gallery .project-slide {
+    position: absolute;
+    inset: 0;
+    min-width: 0;
+    flex: none;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0.75s;
+    z-index: 0;
+}
+
+.ktcc-highlight-gallery .project-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+.ktcc-highlight-gallery .project-image {
+    position: absolute;
+    inset: 0;
+}
+
+.ktcc-highlight-gallery .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.08);
+    transition: transform 7s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: transform;
+}
+
+.ktcc-highlight-gallery .project-slide.is-active .project-image img {
+    transform: scale(1);
+}
+
+.ktcc-highlight-gallery__shade {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(
+        105deg,
+        rgba(13, 71, 161, 0.55) 0%,
+        rgba(13, 71, 161, 0.12) 42%,
+        rgba(0, 0, 0, 0.35) 100%
+    );
+}
+
+.ktcc-highlight-gallery .project-content {
+    position: absolute;
+    z-index: 3;
+    left: clamp(16px, 3vw, 28px);
+    bottom: clamp(16px, 3vw, 28px);
+    right: clamp(16px, 3vw, 28px);
+    max-width: 34rem;
+    margin: 0;
+    padding: clamp(20px, 3vw, 28px);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: var(--ktcc-radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.22);
+    transform: translateY(16px);
+    opacity: 0;
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.12s,
+                opacity 0.55s ease 0.12s;
+}
+
+.ktcc-highlight-gallery .project-slide.is-active .project-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.ktcc-highlight-gallery .project-content h3 {
+    font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.ktcc-highlight-gallery .project-content > p {
+    font-size: 14px;
+    line-height: 1.75;
+    margin-bottom: 18px;
+    color: var(--gray);
+}
+
+.ktcc-highlight-gallery .project-details {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.ktcc-highlight-gallery .detail-item {
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(30, 136, 229, 0.06);
+    border: 1px solid rgba(30, 136, 229, 0.1);
+}
+
+.ktcc-highlight-gallery .detail-item span {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 3px;
+}
+
+.ktcc-highlight-gallery .detail-item strong {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--dark);
+    line-height: 1.35;
+}
+
+.ktcc-highlight-gallery .project-content .btn-primary {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 12px 22px;
+    border-radius: 6px;
+}
+
+.ktcc-highlight-gallery__progress {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.ktcc-highlight-gallery__progress-fill {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    transition: width 0.15s linear;
+}
+
+.ktcc-highlight-gallery__progress-fill.is-running {
+    width: 100%;
+    transition: width 6s linear;
+}
+
+.ktcc-highlight-gallery__counter {
+    position: absolute;
+    top: clamp(14px, 2vw, 20px);
+    right: clamp(14px, 2vw, 20px);
+    z-index: 4;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(13, 71, 161, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.ktcc-highlight-gallery__sep {
+    opacity: 0.55;
+    margin: 0 2px;
+}
+
+.ktcc-highlight-gallery__rail {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px 16px;
+    border-radius: var(--ktcc-radius-md);
+    background: var(--white);
+    border: 1px solid rgba(30, 136, 229, 0.1);
+    box-shadow: 0 12px 36px rgba(13, 71, 161, 0.08);
+}
+
+.ktcc-highlight-gallery__rail-label {
+    margin: 0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--secondary);
+}
+
+.ktcc-highlight-gallery__thumbs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.ktcc-highlight-gallery__thumb {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 10px;
+    align-items: center;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1.5px solid rgba(30, 136, 229, 0.12);
+    background: var(--white);
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.22s ease, background 0.22s ease, transform 0.22s ease;
+}
+
+.ktcc-highlight-gallery__thumb img {
+    width: 56px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.ktcc-highlight-gallery__thumb span {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--dark);
+    line-height: 1.3;
+}
+
+.ktcc-highlight-gallery__thumb:hover {
+    border-color: rgba(30, 136, 229, 0.35);
+    transform: translateX(3px);
+}
+
+.ktcc-highlight-gallery__thumb.is-active {
+    border-color: var(--primary);
+    background: rgba(30, 136, 229, 0.06);
+    box-shadow: inset 3px 0 0 var(--primary);
+}
+
+.ktcc-highlight-gallery .project-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    justify-content: stretch;
+}
+
+.ktcc-highlight-gallery .project-prev,
+.ktcc-highlight-gallery .project-next {
+    flex: 1;
+    width: auto;
+    height: 42px;
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--primary);
+    border: 1.5px solid rgba(30, 136, 229, 0.18);
+    box-shadow: 0 4px 14px rgba(30, 136, 229, 0.1);
+    transition: all 0.22s ease;
+}
+
+.ktcc-highlight-gallery .project-prev:hover,
+.ktcc-highlight-gallery .project-next:hover {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+@media (max-width: 900px) {
+    .ktcc-highlight-gallery__layout {
+        grid-template-columns: 1fr;
+    }
+
+    .ktcc-highlight-gallery__rail {
+        order: 2;
+    }
+
+    .ktcc-highlight-gallery__thumbs {
+        flex-direction: row;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .ktcc-highlight-gallery__thumbs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .ktcc-highlight-gallery__thumb {
+        flex: 0 0 148px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 52px auto;
+    }
+
+    .ktcc-highlight-gallery__thumb img {
+        width: 100%;
+        height: 52px;
+    }
+
+    .ktcc-highlight-gallery .project-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .ktcc-highlight-gallery__stage {
+        min-height: 420px;
+    }
+
+    .ktcc-highlight-gallery .project-content {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 16px;
+    }
+}
