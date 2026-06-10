@@ -1,0 +1,66 @@
+/* Premium scroll & interaction animations — KTCC */
+
+@keyframes pageEntry {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    animation: pageEntry 0.55s ease both;
+}
+
+.stagger-1 { animation-delay: 0.08s !important; }
+.stagger-2 { animation-delay: 0.16s !important; }
+.stagger-3 { animation-delay: 0.24s !important; }
+.stagger-4 { animation-delay: 0.32s !important; }
+.stagger-5 { animation-delay: 0.40s !important; }
+.stagger-6 { animation-delay: 0.48s !important; }
+
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.btn:active::after {
+    opacity: 1;
+    transform: scale(2.5);
+}
+
+.card-lift {
+    transition: transform var(--ktcc-transition-glide),
+                box-shadow var(--ktcc-transition-glide);
+}
+
+.card-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--ktcc-shadow-blue-deep);
+}
+
+.count-up {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.count-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -409,7 +409,38 @@
 
         updateDots();
 
+        var autoPlayTimer = null;
+        function startAutoPlay() {
+            if (solo) return;
+            stopAutoPlay();
+            autoPlayTimer = setInterval(function () {
+                var idx = activeIndex();
+                var w = slideW();
+                if (idx >= slides.length - 1) {
+                    viewport.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    viewport.scrollTo({ left: (idx + 1) * w, behavior: 'smooth' });
+                }
+            }, 6000);
+        }
+        function stopAutoPlay() {
+            if (autoPlayTimer) {
+                clearInterval(autoPlayTimer);
+                autoPlayTimer = null;
+            }
+        }
+        startAutoPlay();
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', startAutoPlay);
+        carousel.addEventListener('focusin', stopAutoPlay);
+        carousel.addEventListener('focusout', startAutoPlay);
+
         carouselCleanup = function () {
+            stopAutoPlay();
+            carousel.removeEventListener('mouseenter', stopAutoPlay);
+            carousel.removeEventListener('mouseleave', startAutoPlay);
+            carousel.removeEventListener('focusin', stopAutoPlay);
+            carousel.removeEventListener('focusout', startAutoPlay);
             prev.removeEventListener('click', onPrev);
             next.removeEventListener('click', onNext);
             viewport.removeEventListener('scroll', onScroll);

@@ -156,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //------------------------- PROJECT HOMEPAGE SECTION SLIDER------------------------------------------------//
     const projectSlider = document.querySelector('.project-slider');
+    const projectViewport = document.querySelector('.project-slider-viewport');
     const projectSlides = document.querySelectorAll('.project-slide');
     const projectPrev = document.querySelector('.project-prev');
     const projectNext = document.querySelector('.project-next');
@@ -163,8 +164,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (projectSlider && projectSlides.length > 0 && projectDotsContainer) {
         projectSlides.forEach((_, index) => {
-            const dot = document.createElement('div');
+            const dot = document.createElement('button');
+            dot.type = 'button';
             dot.classList.add('project-dot');
+            dot.setAttribute('aria-label', 'Go to slide ' + (index + 1));
             if (index === 0) dot.classList.add('active');
             dot.addEventListener('click', () => {
                 goToSlide(index);
@@ -174,44 +177,64 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const projectDots = projectDotsContainer.querySelectorAll('.project-dot');
         let currentSlide = 0;
+        let autoTimer = null;
+        let touchStartX = 0;
 
         function goToSlide(slideIndex) {
-            projectSlider.style.transform = 'translateX(-' + slideIndex * 100 + '%)';
+            currentSlide = slideIndex;
+            projectSlider.style.transform = 'translate3d(-' + slideIndex * 100 + '%, 0, 0)';
             projectDots.forEach((d, index) => {
                 d.classList.toggle('active', index === slideIndex);
             });
-            currentSlide = slideIndex;
+        }
+
+        function nextSlide() {
+            goToSlide(currentSlide >= projectSlides.length - 1 ? 0 : currentSlide + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentSlide <= 0 ? projectSlides.length - 1 : currentSlide - 1);
+        }
+
+        function startAuto() {
+            stopAuto();
+            autoTimer = setInterval(nextSlide, 5500);
+        }
+
+        function stopAuto() {
+            if (autoTimer) {
+                clearInterval(autoTimer);
+                autoTimer = null;
+            }
         }
 
         goToSlide(0);
-        
-        if (projectNext) {
-            projectNext.addEventListener('click', () => {
-                if (currentSlide === projectSlides.length - 1) {
-                    goToSlide(0);
-                } else {
-                    goToSlide(currentSlide + 1);
-                }
-            });
+        startAuto();
+
+        if (projectNext) projectNext.addEventListener('click', () => { nextSlide(); startAuto(); });
+        if (projectPrev) projectPrev.addEventListener('click', () => { prevSlide(); startAuto(); });
+
+        const hoverRoot = projectViewport || projectSlider.parentElement;
+        if (hoverRoot) {
+            hoverRoot.addEventListener('mouseenter', stopAuto);
+            hoverRoot.addEventListener('mouseleave', startAuto);
+            hoverRoot.addEventListener('focusin', stopAuto);
+            hoverRoot.addEventListener('focusout', startAuto);
         }
-        
-        if (projectPrev) {
-            projectPrev.addEventListener('click', () => {
-                if (currentSlide === 0) {
-                    goToSlide(projectSlides.length - 1);
-                } else {
-                    goToSlide(currentSlide - 1);
+
+        if (hoverRoot) {
+            hoverRoot.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                stopAuto();
+            }, { passive: true });
+            hoverRoot.addEventListener('touchend', (e) => {
+                const dx = e.changedTouches[0].screenX - touchStartX;
+                if (Math.abs(dx) > 48) {
+                    if (dx < 0) nextSlide(); else prevSlide();
                 }
-            });
+                startAuto();
+            }, { passive: true });
         }
-        
-        setInterval(() => {
-            if (currentSlide === projectSlides.length - 1) {
-                goToSlide(0);
-            } else {
-                goToSlide(currentSlide + 1);
-            }
-        }, 5000);
     }
 
 
@@ -561,6 +584,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize Wow.js for animations
     new WOW().init();
+
+    // Hero stats count-up reveal
+    const countUpEls = document.querySelectorAll('.count-up');
+    if (countUpEls.length > 0) {
+        const countObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    countObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        countUpEls.forEach((el) => countObserver.observe(el));
+    }
 });
 
 
