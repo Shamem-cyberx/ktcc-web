@@ -1539,57 +1539,261 @@ nav ul li a.active::after {
     display: block;
 }
 
-.about-trust-bento {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(18px, 2.5vw, 24px);
-}
-
-.about-bento-card {
-    background: var(--white);
-    border-radius: var(--ktcc-radius-md);
-    padding: clamp(20px, 3vw, 26px);
+/* Credentials hub — registration, capabilities, compliance (homepage about) */
+.ktcc-credentials-hub {
+    padding: clamp(28px, 4vw, 40px);
+    border-radius: var(--ktcc-radius-lg);
+    background: linear-gradient(180deg, #f8fafc 0%, var(--white) 100%);
     border: 1px solid rgba(13, 71, 161, 0.08);
-    box-shadow: var(--ktcc-shadow-soft);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-.about-bento-card--wide {
-    grid-column: 1 / -1;
+.ktcc-credentials-hub__header {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto clamp(24px, 4vw, 36px);
 }
 
-.about-bento-card--full {
-    grid-column: 1 / -1;
+.ktcc-credentials-kicker {
+    margin: 0 0 10px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--primary);
 }
 
-.about-bento-card .about-panel-title {
-    margin-bottom: 1rem;
-}
-
-.about-bento-card .safety-commitment,
-.about-bento-card .bahraini-commitment--bento {
+.ktcc-credentials-title {
     margin: 0;
-    box-shadow: none;
-    border: none;
-    padding: 0;
-    background: transparent;
+    font-size: clamp(1.25rem, 2.8vw, 1.75rem);
+    font-weight: 600;
+    color: var(--dark);
+    line-height: 1.35;
 }
 
-.about-bento-card .bahraini-commitment--bento {
-    border-left: none;
-    border-radius: 0;
+.ktcc-credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: clamp(14px, 2vw, 20px);
 }
 
-.about-bento-card .safety-commitment {
-    overflow: visible;
-}
-
-.about-bento-card .safety-header {
+.ktcc-cred-card {
+    position: relative;
+    padding: clamp(22px, 3vw, 28px);
     border-radius: var(--ktcc-radius-md);
+    background: var(--white);
+    border: 1px solid rgba(13, 71, 161, 0.09);
+    box-shadow: 0 10px 32px rgba(13, 71, 161, 0.06);
+    overflow: hidden;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
-.about-bento-card .safety-features {
-    padding-left: 0;
-    padding-right: 0;
+.ktcc-cred-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.ktcc-cred-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 44px rgba(13, 71, 161, 0.12);
+}
+
+.ktcc-cred-card--register,
+.ktcc-cred-card--safety-trust {
+    grid-column: span 6;
+}
+
+.ktcc-cred-card--safety-trust::before {
+    background: linear-gradient(90deg, #2e7d32, #66bb6a);
+}
+
+.ktcc-cred-card__label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 14px;
+}
+
+.ktcc-cred-card__label--light {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.ktcc-cred-card__icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--primary), #1565c0);
+    margin-bottom: 16px;
+    box-shadow: 0 8px 20px rgba(30, 136, 229, 0.28);
+}
+
+.ktcc-cred-card--safety-trust .ktcc-cred-card__icon {
+    background: linear-gradient(135deg, #2e7d32, #43a047);
+    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.28);
+}
+
+.ktcc-cred-card__icon--light {
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: none;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.ktcc-cred-card__title {
+    margin: 0 0 8px;
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: var(--dark);
+    line-height: 1.3;
+}
+
+.ktcc-cred-card__text {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--gray);
+}
+
+.ktcc-cred-capabilities {
+    grid-column: 1 / -1;
+    padding: clamp(22px, 3vw, 28px);
+    border-radius: var(--ktcc-radius-md);
+    background: var(--white);
+    border: 1px solid rgba(13, 71, 161, 0.09);
+    box-shadow: 0 10px 32px rgba(13, 71, 161, 0.06);
+}
+
+.ktcc-cred-capabilities__head {
+    margin-bottom: clamp(18px, 3vw, 24px);
+}
+
+.ktcc-cred-capabilities__title {
+    margin: 6px 0 0;
+    font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.ktcc-cap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(12px, 2vw, 18px);
+}
+
+.ktcc-cap-item {
+    position: relative;
+    padding: 22px 18px 20px;
+    border-radius: 12px;
+    background: linear-gradient(160deg, #f5f9ff 0%, var(--white) 100%);
+    border: 1px solid rgba(30, 136, 229, 0.12);
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.ktcc-cap-item:hover {
+    border-color: rgba(30, 136, 229, 0.35);
+    transform: translateY(-3px);
+}
+
+.ktcc-cap-item__num {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    color: rgba(13, 71, 161, 0.08);
+    pointer-events: none;
+}
+
+.ktcc-cap-item__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    color: var(--primary);
+    background: var(--white);
+    border: 1px solid rgba(30, 136, 229, 0.15);
+    margin-bottom: 14px;
+}
+
+.ktcc-cap-item h5 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.ktcc-cap-item p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--gray);
+}
+
+.ktcc-cred-card--compliance {
+    grid-column: span 7;
+    background: linear-gradient(145deg, #0d47a1 0%, #1565c0 55%, #1976d2 100%);
+    color: var(--white);
+    border: none;
+}
+
+.ktcc-cred-card--compliance::before {
+    display: none;
+}
+
+.ktcc-cred-card--compliance:hover {
+    box-shadow: 0 20px 48px rgba(13, 71, 161, 0.35);
+}
+
+.ktcc-compliance-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ktcc-compliance-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.ktcc-compliance-list i {
+    margin-top: 3px;
+    color: #a5d6a7;
+    flex-shrink: 0;
+}
+
+.ktcc-cred-card--bahrain {
+    grid-column: span 5;
+    background: linear-gradient(145deg, #e3f2fd 0%, var(--white) 72%);
+}
+
+.ktcc-cred-card--bahrain .ktcc-cred-card__title {
+    font-size: 1.05rem;
 }
 
 @media (max-width: 992px) {
@@ -1609,7 +1813,14 @@ nav ul li a.active::after {
         height: min(460px, 55vh);
     }
 
-    .about-trust-bento {
+    .ktcc-cred-card--register,
+    .ktcc-cred-card--safety-trust,
+    .ktcc-cred-card--compliance,
+    .ktcc-cred-card--bahrain {
+        grid-column: 1 / -1;
+    }
+
+    .ktcc-cap-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1623,9 +1834,23 @@ nav ul li a.active::after {
     }
 }
 
+@media (min-width: 641px) and (max-width: 992px) {
+    .ktcc-cap-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ktcc-cap-item:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
 @media (max-width: 640px) {
     .about .certification-badges {
         grid-template-columns: 1fr;
+    }
+
+    .ktcc-credentials-hub {
+        padding: 20px 16px;
     }
 }
 
