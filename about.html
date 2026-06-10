@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/animate.css?v=ktcc3">
     <link rel="stylesheet" href="css/style.css?v=ktcc15">
+    <link rel="stylesheet" href="css/about-page.css?v=1">
     <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="64x64">
 </head>
 <body>
@@ -58,86 +59,217 @@
 
 
 
-    <!--------------------------------------INSIDE ABOUT SECTION ------------------------>
-    <section class="inside-about-section">
-        <div class="particles" id="particles"></div>
-        
-        <div class="container">
-            <div class="inside-about-grid">
-                <div class="inside-about-content">
-                    <span class="inside-about-tagline">Building The Future</span>
-                    <h1 class="inside-about-title">Redefining Construction Excellence</h1>
-                    <p class="inside-about-text">
-                        Founded with a vision to transform the construction landscape, we are a dynamic startup bringing fresh perspectives to the industry. While our cranes may be new to the skyline, our team's collective expertise spans decades of groundbreaking projects worldwide.
-                    </p>
-                    <p class="inside-about-text">
-                        We approach each potential project not as a blueprint to follow, but as a blank canvas for innovation. Our methodology combines cutting-edge technology with time-tested craftsmanship to deliver structures that stand the test of time.
-                    </p>
-
-                    <div class="inside-about-values-container">
-                        <div class="inside-about-value-card">
-                            <div class="inside-about-value-icon">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <h3 class="inside-about-value-title">Innovation First</h3>
-                            <p class="inside-about-value-desc">We embrace emerging technologies and modern methodologies to solve age-old construction challenges.</p>
-                        </div>
-                        <div class="inside-about-value-card">
-                            <div class="inside-about-value-icon">
-                                <i class="fas fa-hands-helping"></i>
-                            </div>
-                            <h3 class="inside-about-value-title">Client-Centric</h3>
-                            <p class="inside-about-value-desc">Your vision becomes our mission. We listen first, then build with your objectives as our foundation.</p>
-                        </div>
-                        <div class="inside-about-value-card">
-                            <div class="inside-about-value-icon">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <h3 class="inside-about-value-title">Sustainable Future</h3>
-                            <p class="inside-about-value-desc">Green building isn't an option - it's our standard. We construct with tomorrow's environment in mind.</p>
-                        </div>
-                        <div class="inside-about-value-card">
-                            <div class="inside-about-value-icon">
-                                <i class="fas fa-medal"></i>
-                            </div>
-                            <h3 class="inside-about-value-title">Quality Obsessed</h3>
-                            <p class="inside-about-value-desc">From material selection to final finishes, we accept nothing less than exceptional craftsmanship.</p>
-                        </div>
-                    </div>
+    <main class="ktcc-about-page">
+        <section class="ktcc-about-hero" aria-labelledby="about-hero-title">
+            <div class="ktcc-about-hero__media" aria-hidden="true">
+                <img src="assets/images/construction-7226875_1280.jpg" alt="" loading="eager" decoding="async">
+            </div>
+            <div class="ktcc-about-hero__shade" aria-hidden="true"></div>
+            <div class="ktcc-about-hero__content">
+                <div class="container">
+                    <h1 class="ktcc-about-hero__title wow fadeInUp" id="about-hero-title">About us</h1>
+                    <p class="ktcc-about-hero__lead wow fadeInUp" data-wow-delay="0.08s">Kapisha Trenchless &amp; Contracting Company W.L.L. plans and executes horizontal directional drilling, micro tunneling, and civil packages across Bahrain — with crews, plant, and controls aligned to local authority requirements.</p>
                 </div>
+            </div>
+        </section>
 
-                <!-- Optimized 3D Flip Card -->
-                <div class="inside-about-flip-card-container" id="flipCard">
-                    <div class="inside-about-flip-card">
-                        <div class="inside-about-flip-card-front">
-                            <h3>Our Vision</h3>
-                            <p>"To build not just structures, but legacies that inspire future generations of builders."</p>
+        <nav class="ktcc-about-breadcrumb" aria-label="Breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a>
+                <span class="ktcc-about-breadcrumb__sep" aria-hidden="true">/</span>
+                <span class="ktcc-about-breadcrumb__current">About Us</span>
+            </div>
+        </nav>
+
+        <section class="ktcc-about-split" aria-labelledby="about-bahrain-title">
+            <div class="container">
+                <div class="ktcc-about-split__grid">
+                    <div class="ktcc-about-split__content wow fadeInUp">
+                        <p class="ktcc-about-split__eyebrow">Where we work</p>
+                        <h2 class="ktcc-about-split__title" id="about-bahrain-title">KTCC in Bahrain</h2>
+                        <p class="ktcc-about-split__text">KTCC W.L.L is a Bahrain-based trenchless and civil contractor focused on underground utilities and corridor work with minimal surface disruption. From dense urban routes to open corridors, we support government and private clients with engineered crossings and integrated civil scope.</p>
+                        <p class="ktcc-about-split__text">We combine recognised trenchless practice with local knowledge of ground conditions, authorities, and delivery expectations across the Kingdom.</p>
+                        <a href="contact.html" class="ktcc-about-link">Contact our team <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                    <figure class="ktcc-about-split__media wow fadeInUp" data-wow-delay="0.1s">
+                        <img src="assets/images/team/HDD.jpeg" alt="KTCC horizontal directional drilling operations in Bahrain" loading="lazy" decoding="async">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="ktcc-about-split ktcc-about-split--reverse ktcc-about-split--muted" aria-labelledby="about-credentials-title">
+            <div class="container">
+                <div class="ktcc-about-split__grid">
+                    <div class="ktcc-about-split__content wow fadeInUp">
+                        <p class="ktcc-about-split__eyebrow">Registration &amp; systems</p>
+                        <h2 class="ktcc-about-split__title" id="about-credentials-title">Credentials &amp; compliance</h2>
+                        <p class="ktcc-about-split__text">We are government registered and licensed for civil and trenchless works in Bahrain. Our integrated management systems are certified to ISO 9001:2015, ISO 14001:2015, and ISO 45001:2018 — supporting quality, environmental, and occupational health &amp; safety expectations on live sites.</p>
+                        <ul class="ktcc-about-split__facts">
+                            <li>CR No. 184157-1</li>
+                            <li>Ministry of Works licensed</li>
+                            <li>ISO 9001 · 14001 · 45001</li>
+                        </ul>
+                        <a href="ims-policy.html" class="ktcc-about-link">View IMS policy <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                    <figure class="ktcc-about-split__media wow fadeInUp" data-wow-delay="0.1s">
+                        <img src="assets/images/projects/18-04-2026.jpeg" alt="KTCC site operations with safety and compliance controls" loading="lazy" decoding="async">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="ktcc-about-expertise" aria-labelledby="about-expertise-title">
+            <div class="container">
+                <header class="ktcc-about-section-head wow fadeInUp">
+                    <p class="ktcc-about-section-kicker">What we deliver</p>
+                    <h2 class="ktcc-about-section-title" id="about-expertise-title">Our expertise</h2>
+                </header>
+                <div class="ktcc-about-expertise__grid">
+                    <a class="ktcc-about-expertise__card wow fadeInUp" href="services.html#hdd-service">
+                        <div class="ktcc-about-expertise__card-media">
+                            <img src="assets/images/HDD-Scheme-10-20.jpg" alt="" loading="lazy" decoding="async">
                         </div>
-                        <div class="inside-about-flip-card-back">
-                            <h3>Why Choose a Startup?</h3>
-                            <p>As a new player, we bring unbridled passion, agility to adapt, and the latest industry knowledge without legacy constraints. We're not weighed down by "how it's always been done" - we're free to focus on how it should be done.</p>
-                            <div class="inside-about-signature">Ktcc</div>
+                        <div class="ktcc-about-expertise__card-body">
+                            <h3 class="ktcc-about-expertise__card-title">HDD works</h3>
+                            <p class="ktcc-about-expertise__card-text">Horizontal directional drilling for cables, ducts, and carriers — including large-diameter HDD up to 48&quot; and 500m+ spans for EWA and Oil &amp; Gas corridors.</p>
+                            <span class="ktcc-about-expertise__card-cta">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
                         </div>
+                    </a>
+                    <a class="ktcc-about-expertise__card wow fadeInUp" data-wow-delay="0.05s" href="services.html#micro-tunneling-service">
+                        <div class="ktcc-about-expertise__card-media">
+                            <img src="assets/images/trench8.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                        <div class="ktcc-about-expertise__card-body">
+                            <h3 class="ktcc-about-expertise__card-title">Micro tunneling</h3>
+                            <p class="ktcc-about-expertise__card-text">Precision drives and pipe jacking for gravity sewers, ducts, and sleeve crossings where open-cut is constrained.</p>
+                            <span class="ktcc-about-expertise__card-cta">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+                    <a class="ktcc-about-expertise__card wow fadeInUp" data-wow-delay="0.1s" href="services.html#infrastructure-service">
+                        <div class="ktcc-about-expertise__card-media">
+                            <img src="assets/images/infra1.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                        <div class="ktcc-about-expertise__card-body">
+                            <h3 class="ktcc-about-expertise__card-title">Infrastructure works</h3>
+                            <p class="ktcc-about-expertise__card-text">Sewer, storm water, and road works — coordinated civil packages with reinstatement aligned to authority criteria.</p>
+                            <span class="ktcc-about-expertise__card-cta">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+                    <a class="ktcc-about-expertise__card wow fadeInUp" href="services.html#water-transmission-service">
+                        <div class="ktcc-about-expertise__card-media">
+                            <img src="assets/images/utility1.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                        <div class="ktcc-about-expertise__card-body">
+                            <h3 class="ktcc-about-expertise__card-title">Water transmission</h3>
+                            <p class="ktcc-about-expertise__card-text">Transmission mains, tie-ins, and corridor civils for potable and non-potable networks.</p>
+                            <span class="ktcc-about-expertise__card-cta">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+                    <a class="ktcc-about-expertise__card wow fadeInUp" data-wow-delay="0.05s" href="services.html#electrical-transmission-service">
+                        <div class="ktcc-about-expertise__card-media">
+                            <img src="assets/images/utility2.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                        <div class="ktcc-about-expertise__card-body">
+                            <h3 class="ktcc-about-expertise__card-title">Electrical transmission civil</h3>
+                            <p class="ktcc-about-expertise__card-text">Civil works for 11KV through 400KV corridors — ducts, pits, and route preparation coordinated with utility programmes.</p>
+                            <span class="ktcc-about-expertise__card-cta">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+                    <a class="ktcc-about-expertise__card wow fadeInUp" data-wow-delay="0.1s" href="services.html#building-service">
+                        <div class="ktcc-about-expertise__card-media">
+                            <img src="assets/images/build1.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                        <div class="ktcc-about-expertise__card-body">
+                            <h3 class="ktcc-about-expertise__card-title">Building construction</h3>
+                            <p class="ktcc-about-expertise__card-text">Supporting structures, substation civils, and building packages alongside trenchless and corridor scope.</p>
+                            <span class="ktcc-about-expertise__card-cta">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="ktcc-about-approach" aria-labelledby="about-approach-title">
+            <div class="container">
+                <header class="ktcc-about-section-head ktcc-about-section-head--center wow fadeInUp">
+                    <p class="ktcc-about-section-kicker">How we work</p>
+                    <h2 class="ktcc-about-section-title" id="about-approach-title">Our approach</h2>
+                </header>
+                <div class="ktcc-about-approach__grid">
+                    <article class="ktcc-about-approach__item wow fadeInUp">
+                        <div class="ktcc-about-approach__thumb">
+                            <img src="assets/images/trench7.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                        <div>
+                            <h3 class="ktcc-about-approach__item-title">Health &amp; safety</h3>
+                            <p class="ktcc-about-approach__item-text">Guided by ISO 45001 and site-specific protocols. HDD crews are trained on live-corridor procedures with a commitment to safe delivery and a proven accident-free record.</p>
+                        </div>
+                    </article>
+                    <article class="ktcc-about-approach__item wow fadeInUp" data-wow-delay="0.05s">
+                        <div class="ktcc-about-approach__thumb">
+                            <img src="assets/images/5.jpg" alt="" loading="lazy" decoding="async">
+                        </div>
+                        <div>
+                            <h3 class="ktcc-about-approach__item-title">Integrated management</h3>
+                            <p class="ktcc-about-approach__item-text">Quality, environmental, and safety systems are integrated under one IMS policy — supporting audit readiness for Ministry of Works and client prequalification.</p>
+                        </div>
+                    </article>
+                    <article class="ktcc-about-approach__item wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="ktcc-about-approach__thumb">
+                            <img src="assets/images/HDD.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                        <div>
+                            <h3 class="ktcc-about-approach__item-title">Trenchless methodology</h3>
+                            <p class="ktcc-about-approach__item-text">We plan bore profiles, utility protection, and pullback sequencing so roads, landscapes, and live infrastructure stay intact where the method allows.</p>
+                        </div>
+                    </article>
+                    <article class="ktcc-about-approach__item wow fadeInUp" data-wow-delay="0.15s">
+                        <div class="ktcc-about-approach__thumb">
+                            <img src="assets/images/road-construction-192894_1280.jpg" alt="" loading="lazy" decoding="async">
+                        </div>
+                        <div>
+                            <h3 class="ktcc-about-approach__item-title">Authority alignment</h3>
+                            <p class="ktcc-about-approach__item-text">Deliverables are coordinated with Electricity &amp; Water Authority programmes, Ministry of Works expectations, and Bahrain safety regulations on active corridors.</p>
+                        </div>
+                    </article>
+                    <article class="ktcc-about-approach__item wow fadeInUp">
+                        <div class="ktcc-about-approach__thumb">
+                            <img src="assets/images/HDD-machine.png" alt="" loading="lazy" decoding="async">
+                        </div>
+                        <div>
+                            <h3 class="ktcc-about-approach__item-title">Planning &amp; preconstruction</h3>
+                            <p class="ktcc-about-approach__item-text">Bore planning, conflict checks, pit layouts, and mud programmes are tailored to geology and corridor constraints before mobilisation.</p>
+                        </div>
+                    </article>
+                    <article class="ktcc-about-approach__item wow fadeInUp" data-wow-delay="0.05s">
+                        <div class="ktcc-about-approach__thumb">
+                            <img src="assets/images/3.jpg" alt="" loading="lazy" decoding="async">
+                        </div>
+                        <div>
+                            <h3 class="ktcc-about-approach__item-title">Local delivery</h3>
+                            <p class="ktcc-about-approach__item-text">As a Manama-based W.L.L., we bring local knowledge of ground conditions and authority processes together with recognised trenchless practice.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="ktcc-about-cta" aria-labelledby="about-cta-title">
+            <div class="container">
+                <div class="ktcc-about-cta__inner wow fadeInUp">
+                    <div>
+                        <h2 class="ktcc-about-cta__title" id="about-cta-title">Ready to discuss a corridor or crossing?</h2>
+                        <p class="ktcc-about-cta__text">Share your route, utility protection needs, or civil–trenchless package — our team will respond with scope aligned to your programme.</p>
+                    </div>
+                    <div class="ktcc-about-cta__actions">
+                        <a href="contact.html" class="btn btn-primary">Request a quote</a>
+                        <a href="projects.html" class="btn btn-secondary">View projects</a>
                     </div>
                 </div>
             </div>
-
-            <div class="inside-about-stats-container">
-                <div class="inside-about-stat-item">
-                    <div class="inside-about-stat-number" data-count="20">0</div>
-                    <div class="inside-about-stat-label">Combined Years Experience</div>
-                </div>
-                <div class="inside-about-stat-item">
-                    <div class="inside-about-stat-number" data-count="5">0</div>
-                    <div class="inside-about-stat-label">Industry Certifications</div>
-                </div>
-                <div class="inside-about-stat-item">
-                    <div class="inside-about-stat-number" data-count="100">0</div>
-                    <div class="inside-about-stat-label">Satisfaction Guarantee</div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
 
 
