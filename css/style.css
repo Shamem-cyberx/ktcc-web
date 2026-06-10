@@ -1376,9 +1376,241 @@ nav ul li a.active::after {
     margin: 0;
 }
 
+/* ISO certification showcase (homepage about) */
+.about-iso-showcase {
+    position: relative;
+    padding: clamp(28px, 4vw, 40px);
+    border-radius: var(--ktcc-radius-lg);
+    background: linear-gradient(145deg, #0d47a1 0%, #1565c0 42%, #1e88e5 100%);
+    color: var(--white);
+    box-shadow: 0 24px 56px rgba(13, 71, 161, 0.28);
+    overflow: hidden;
+}
+
+.about-iso-showcase__glow {
+    position: absolute;
+    top: -40%;
+    right: -15%;
+    width: 55%;
+    height: 140%;
+    background: radial-gradient(circle, rgba(255, 64, 129, 0.22) 0%, transparent 68%);
+    pointer-events: none;
+}
+
+.about-iso-showcase__head {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 52rem;
+    margin: 0 auto clamp(22px, 3vw, 32px);
+}
+
+.about-iso-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 12px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.about-iso-title {
+    margin: 0;
+    font-size: clamp(1.2rem, 2.8vw, 1.65rem);
+    font-weight: 600;
+    line-height: 1.45;
+    color: var(--white);
+}
+
+.about-iso-badges {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(12px, 2vw, 18px);
+    margin-bottom: clamp(22px, 3vw, 30px);
+}
+
+.about-iso-badge {
+    position: relative;
+    padding: 18px 16px 18px 18px;
+    border-radius: var(--ktcc-radius-md);
+    background: rgba(255, 255, 255, 0.97);
+    color: var(--dark);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+    text-align: left;
+    min-height: 100%;
+}
+
+.about-iso-badge__code {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 6px;
+}
+
+.about-iso-badge__name {
+    display: block;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: var(--gray);
+    padding-right: 22px;
+}
+
+.about-iso-badge__tick {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    color: #2e7d32;
+    font-size: 1.1rem;
+}
+
+.about-certificate-panel {
+    position: relative;
+    z-index: 1;
+    background: var(--white);
+    border-radius: var(--ktcc-radius-md);
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+.about-certificate-panel__toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px 24px;
+    padding: 20px 22px 16px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.about-certificate-panel__toolbar h4 {
+    margin: 0 0 6px;
+    font-size: 1.05rem;
+    color: var(--dark);
+}
+
+.about-certificate-panel__toolbar h4 i {
+    margin-right: 8px;
+    color: var(--primary);
+}
+
+.about-certificate-panel__toolbar p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--gray);
+    line-height: 1.5;
+    max-width: 36rem;
+}
+
+.about-certificate-panel__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.about-cert-btn {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.about-certificate-frame-wrap {
+    position: relative;
+    width: 100%;
+    min-height: 420px;
+    background: #eceff1;
+}
+
+.about-certificate-iframe {
+    width: 100%;
+    height: min(520px, 62vh);
+    border: 0;
+    display: block;
+}
+
+.about-trust-bento {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(18px, 2.5vw, 24px);
+}
+
+.about-bento-card {
+    background: var(--white);
+    border-radius: var(--ktcc-radius-md);
+    padding: clamp(20px, 3vw, 26px);
+    border: 1px solid rgba(13, 71, 161, 0.08);
+    box-shadow: var(--ktcc-shadow-soft);
+}
+
+.about-bento-card--wide {
+    grid-column: 1 / -1;
+}
+
+.about-bento-card--full {
+    grid-column: 1 / -1;
+}
+
+.about-bento-card .about-panel-title {
+    margin-bottom: 1rem;
+}
+
+.about-bento-card .safety-commitment,
+.about-bento-card .bahraini-commitment--bento {
+    margin: 0;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    background: transparent;
+}
+
+.about-bento-card .bahraini-commitment--bento {
+    border-left: none;
+    border-radius: 0;
+}
+
+.about-bento-card .safety-commitment {
+    overflow: visible;
+}
+
+.about-bento-card .safety-header {
+    border-radius: var(--ktcc-radius-md);
+}
+
+.about-bento-card .safety-features {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 @media (max-width: 992px) {
     .about {
         padding: 64px 0;
+    }
+
+    .about-iso-badges {
+        grid-template-columns: 1fr;
+    }
+
+    .about-certificate-frame-wrap {
+        min-height: 360px;
+    }
+
+    .about-certificate-iframe {
+        height: min(460px, 55vh);
+    }
+
+    .about-trust-bento {
+        grid-template-columns: 1fr;
     }
 
     .about-panel--split {

@@ -29,12 +29,17 @@
         "addressCountry": "BH"
       },
       "areaServed": ["Bahrain", "Saudi Arabia"],
-      "knowsAbout": ["Horizontal directional drilling", "Microtunneling", "Trenchless utilities", "Infrastructure works", "Electrical transmission civil works"]
+      "knowsAbout": ["Horizontal directional drilling", "Microtunneling", "Trenchless utilities", "Infrastructure works", "Electrical transmission civil works"],
+      "hasCredential": [
+        { "@type": "EducationalOccupationalCredential", "name": "ISO 9001:2015 Quality Management System" },
+        { "@type": "EducationalOccupationalCredential", "name": "ISO 14001:2015 Environmental Management System" },
+        { "@type": "EducationalOccupationalCredential", "name": "ISO 45001:2018 Occupational Health and Safety Management System" }
+      ]
     }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/animate.css?v=ktcc3">
-    <link rel="stylesheet" href="css/style.css?v=ktcc11">
+    <link rel="stylesheet" href="css/style.css?v=ktcc13">
     <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="64x64">
 
 
@@ -186,87 +191,140 @@
                         <p class="about-support">From dense urban routes to open corridors, we support government and private clients with engineered trenchless crossings and integrated civil scope.</p>
                     </div>
 
-                    <div class="about-panel">
-                        <h3 class="about-panel-title" id="about-credentials">Registration &amp; trust</h3>
-                        <div class="certification-badges">
-                            <div class="badge-item">
-                                <div class="badge-icon">
-                                    <i class="fas fa-file-contract"></i>
+                    <div class="about-iso-showcase wow fadeInUp" id="iso-certification">
+                        <div class="about-iso-showcase__glow" aria-hidden="true"></div>
+                        <div class="about-iso-showcase__head">
+                            <p class="about-iso-kicker"><i class="fas fa-award" aria-hidden="true"></i> Certified management systems</p>
+                            <h3 class="about-iso-title">We are pleased to announce that our company is now certified for:</h3>
+                        </div>
+                        <div class="about-iso-badges" role="list">
+                            <article class="about-iso-badge" role="listitem">
+                                <span class="about-iso-badge__code">ISO 9001:2015</span>
+                                <span class="about-iso-badge__name">Quality Management System</span>
+                                <i class="fas fa-check-circle about-iso-badge__tick" aria-hidden="true"></i>
+                            </article>
+                            <article class="about-iso-badge" role="listitem">
+                                <span class="about-iso-badge__code">ISO 14001:2015</span>
+                                <span class="about-iso-badge__name">Environmental Management System</span>
+                                <i class="fas fa-check-circle about-iso-badge__tick" aria-hidden="true"></i>
+                            </article>
+                            <article class="about-iso-badge" role="listitem">
+                                <span class="about-iso-badge__code">ISO 45001:2018</span>
+                                <span class="about-iso-badge__name">Occupational Health &amp; Safety Management System</span>
+                                <i class="fas fa-check-circle about-iso-badge__tick" aria-hidden="true"></i>
+                            </article>
+                        </div>
+                        <div class="about-certificate-panel">
+                            <div class="about-certificate-panel__toolbar">
+                                <div>
+                                    <h4><i class="fas fa-certificate" aria-hidden="true"></i> Official certificate</h4>
+                                    <p>View or download our integrated ISO certification document for client records and prequalification.</p>
                                 </div>
-                                <div class="badge-content">
-                                    <h4>Government registered</h4>
-                                    <p>CR No. 184157-1 • Licensed by Ministry of Works</p>
+                                <div class="about-certificate-panel__actions">
+                                    <a class="btn btn-primary about-cert-btn" href="assets/documents/ktcc-iso-certificate.pdf" download="KTCC-ISO-Certificate.pdf">
+                                        <i class="fas fa-download" aria-hidden="true"></i> Download PDF
+                                    </a>
+                                    <a class="btn btn-secondary about-cert-btn" href="ims-policy.html">
+                                        <i class="fas fa-file-shield" aria-hidden="true"></i> IMS Policy
+                                    </a>
                                 </div>
                             </div>
-                            <div class="badge-item">
-                                <div class="badge-icon">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <div class="badge-content">
-                                    <h4>Trust &amp; safety</h4>
-                                    <p>Committed to safety • Proven accident-free record</p>
-                                </div>
+                            <div class="about-certificate-frame-wrap">
+                                <iframe
+                                    class="about-certificate-iframe"
+                                    title="KTCC ISO 9001, 14001 and 45001 certificate (PDF)"
+                                    src="assets/documents/ktcc-iso-certificate.pdf#view=FitH"
+                                    loading="lazy"></iframe>
                             </div>
                         </div>
                     </div>
 
-                    <div class="about-panel">
-                        <h3 class="about-panel-title" id="about-capabilities">Capabilities</h3>
-                        <div class="about-features">
-                            <div class="feature-item wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="feature-icon">
-                                    <i class="fas fa-bore-hole"></i>
+                    <div class="about-trust-bento">
+                        <div class="about-bento-card about-bento-card--wide wow fadeInUp" id="about-credentials">
+                            <h3 class="about-panel-title">Registration &amp; trust</h3>
+                            <div class="certification-badges">
+                                <div class="badge-item">
+                                    <div class="badge-icon">
+                                        <i class="fas fa-file-contract"></i>
+                                    </div>
+                                    <div class="badge-content">
+                                        <h4>Government registered</h4>
+                                        <p>CR No. 184157-1 • Licensed by Ministry of Works</p>
+                                    </div>
                                 </div>
-                                <div class="feature-text">
-                                    <h4>HDD specialists</h4>
-                                    <p>Large-diameter HDD — up to 48&quot; and 500m+ spans</p>
-                                </div>
-                            </div>
-                            <div class="feature-item wow fadeInUp" data-wow-delay="0.15s">
-                                <div class="feature-icon">
-                                    <i class="fas fa-road"></i>
-                                </div>
-                                <div class="feature-text">
-                                    <h4>Surface-friendly work</h4>
-                                    <p>Roads, landscapes, infrastructure and utilities stay intact where the method allows</p>
-                                </div>
-                            </div>
-                            <div class="feature-item wow fadeInUp" data-wow-delay="0.2s">
-                                <div class="feature-icon">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <div class="feature-text">
-                                    <h4>Rapid deployment</h4>
-                                    <p>Delivering faster than traditional open-cut where conditions suit</p>
+                                <div class="badge-item">
+                                    <div class="badge-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="badge-content">
+                                        <h4>Trust &amp; safety</h4>
+                                        <p>Committed to safety • Proven accident-free record</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="about-panel about-panel--split">
-                        <div class="safety-commitment">
-                            <div class="safety-header">
-                                <i class="fas fa-hard-hat"></i>
-                                <h4>Safety &amp; compliance</h4>
-                            </div>
-                            <div class="safety-features">
-                                <div class="safety-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Aligned with Bahrain safety regulations</span>
+                        <div class="about-bento-card about-bento-card--full wow fadeInUp" data-wow-delay="0.05s" id="about-capabilities">
+                            <h3 class="about-panel-title">Capabilities</h3>
+                            <div class="about-features">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-bore-hole"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h4>HDD specialists</h4>
+                                        <p>Large-diameter HDD — up to 48&quot; and 500m+ spans</p>
+                                    </div>
                                 </div>
-                                <div class="safety-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Ministry of Works audit readiness</span>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-road"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h4>Surface-friendly work</h4>
+                                        <p>Roads, landscapes, infrastructure and utilities stay intact where the method allows</p>
+                                    </div>
                                 </div>
-                                <div class="safety-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>HDD crews trained on site protocols</span>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="feature-text">
+                                        <h4>Rapid deployment</h4>
+                                        <p>Delivering faster than traditional open-cut where conditions suit</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="bahraini-commitment">
-                            <h4><i class="fas fa-flag"></i> Rooted in Bahrain</h4>
-                            <p>As a Bahrain-based limited liability company (W.L.L.), we combine recognised trenchless practice with local knowledge of ground conditions, authorities, and delivery expectations.</p>
+
+                        <div class="about-bento-card wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="safety-commitment">
+                                <div class="safety-header">
+                                    <i class="fas fa-hard-hat"></i>
+                                    <h4>Safety &amp; compliance</h4>
+                                </div>
+                                <div class="safety-features">
+                                    <div class="safety-item">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Aligned with Bahrain safety regulations</span>
+                                    </div>
+                                    <div class="safety-item">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>Ministry of Works audit readiness</span>
+                                    </div>
+                                    <div class="safety-item">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>HDD crews trained on site protocols</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about-bento-card wow fadeInUp" data-wow-delay="0.12s">
+                            <div class="bahraini-commitment bahraini-commitment--bento">
+                                <h4><i class="fas fa-flag"></i> Rooted in Bahrain</h4>
+                                <p>As a Bahrain-based limited liability company (W.L.L.), we combine recognised trenchless practice with local knowledge of ground conditions, authorities, and delivery expectations.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
