@@ -392,6 +392,56 @@ document.addEventListener('DOMContentLoaded', function() {
         teamObserver.observe(member);
     });
 
+    // Editorial team filters (IDEO-style)
+    const teamFilterFunction = document.getElementById('teamFilterFunction');
+    const teamFilterFocus = document.getElementById('teamFilterFocus');
+    const ktccTeamGrid = document.getElementById('ktccTeamGrid');
+    const ktccTeamEmpty = document.getElementById('ktccTeamEmpty');
+
+    function applyTeamFilters() {
+        if (!ktccTeamGrid) return;
+        const fn = teamFilterFunction ? teamFilterFunction.value : 'all';
+        const focus = teamFilterFocus ? teamFilterFocus.value : 'all';
+        const cards = ktccTeamGrid.querySelectorAll('.team-card');
+        let visible = 0;
+
+        cards.forEach((card) => {
+            const cardFn = card.getAttribute('data-team-function') || '';
+            const cardFocus = card.getAttribute('data-team-focus') || '';
+            let show = true;
+
+            if (fn !== 'all') {
+                show = fn === cardFn;
+            } else if (focus !== 'all') {
+                show = focus === cardFocus;
+            }
+
+            card.classList.toggle('is-filtered-out', !show);
+            if (show) visible += 1;
+        });
+
+        if (ktccTeamEmpty) {
+            ktccTeamEmpty.classList.toggle('is-visible', visible === 0);
+        }
+    }
+
+    if (teamFilterFunction) {
+        teamFilterFunction.addEventListener('change', function () {
+            if (teamFilterFocus && teamFilterFunction.value !== 'all') {
+                teamFilterFocus.value = 'all';
+            }
+            applyTeamFilters();
+        });
+    }
+    if (teamFilterFocus) {
+        teamFilterFocus.addEventListener('change', function () {
+            if (teamFilterFunction && teamFilterFocus.value !== 'all') {
+                teamFilterFunction.value = 'all';
+            }
+            applyTeamFilters();
+        });
+    }
+
 
 
     

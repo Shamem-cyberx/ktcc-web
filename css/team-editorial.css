@@ -1,0 +1,258 @@
+/* Team section — editorial IDEO-style layout (KTCC colors) */
+
+.team.ktcc-team {
+    background: var(--light-gray);
+    padding: clamp(80px, 11vw, 120px) 0;
+    text-align: left;
+}
+
+.ktcc-team__wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 4vw, 32px);
+}
+
+.ktcc-team__header {
+    max-width: 54rem;
+    margin-bottom: clamp(36px, 5vw, 52px);
+}
+
+.ktcc-team__kicker {
+    margin: 0 0 16px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--secondary);
+}
+
+.ktcc-team__headline {
+    margin: 0;
+    font-size: clamp(1.65rem, 3.8vw, 2.65rem);
+    font-weight: 600;
+    line-height: 1.28;
+    letter-spacing: -0.025em;
+    color: var(--black);
+}
+
+.ktcc-team__filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px 20px;
+    margin-bottom: clamp(40px, 6vw, 56px);
+    padding-bottom: clamp(28px, 4vw, 36px);
+    border-bottom: 1px solid rgba(30, 136, 229, 0.15);
+}
+
+.ktcc-team__filter {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: min(100%, 260px);
+}
+
+.ktcc-team__filter label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray);
+}
+
+.ktcc-team__select {
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--black);
+    background: var(--white);
+    border: 1.5px solid rgba(30, 136, 229, 0.22);
+    border-radius: 4px;
+    padding: 14px 40px 14px 16px;
+    min-width: 240px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%231e88e5' d='M1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ktcc-team__select:hover,
+.ktcc-team__select:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.12);
+}
+
+.ktcc-team__filters-or {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--gray);
+    padding-bottom: 14px;
+}
+
+.ktcc-team__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(28px, 4vw, 40px) clamp(20px, 3vw, 28px);
+    text-align: left;
+}
+
+.ktcc-team .team-card {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.ktcc-team .team-card.is-filtered-out {
+    display: none;
+}
+
+.ktcc-team .team-card__portrait {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    max-height: 320px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.ktcc-team .team-card__portrait--tone-1 {
+    background: var(--white);
+}
+
+.ktcc-team .team-card__portrait--tone-2 {
+    background: var(--light);
+}
+
+.ktcc-team .team-card__portrait--tone-3 {
+    background: rgba(30, 136, 229, 0.1);
+}
+
+.ktcc-team .team-card__portrait--tone-4 {
+    background: rgba(255, 64, 129, 0.1);
+}
+
+.ktcc-team .team-card--lead .team-card__portrait {
+    background: var(--primary);
+}
+
+.ktcc-team .team-card__portrait img {
+    width: 88%;
+    max-height: 95%;
+    height: auto;
+    object-fit: contain;
+    object-position: bottom center;
+    display: block;
+    filter: none;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ktcc-team .team-card:hover .team-card__portrait img {
+    transform: scale(1.03);
+}
+
+.ktcc-team .team-card--lead:hover .team-card__portrait {
+    background: var(--dark);
+}
+
+.ktcc-team .team-card:hover .team-card__portrait--tone-3 {
+    background: rgba(30, 136, 229, 0.16);
+}
+
+.ktcc-team .team-card:hover .team-card__portrait--tone-4 {
+    background: rgba(255, 64, 129, 0.16);
+}
+
+.ktcc-team .team-card__name {
+    margin: 0 0 6px;
+    font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    line-height: 1.25;
+}
+
+.ktcc-team .team-card__meta {
+    margin: 0 0 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray);
+    line-height: 1.45;
+}
+
+.ktcc-team .team-card__bio {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.72;
+    color: var(--gray);
+    max-width: 28ch;
+}
+
+.ktcc-team .team-card__media,
+.ktcc-team .team-card__body,
+.ktcc-team .team-card__role {
+    display: none;
+}
+
+.ktcc-team__empty {
+    grid-column: 1 / -1;
+    display: none;
+    padding: 48px 24px;
+    text-align: center;
+    font-size: 15px;
+    color: var(--gray);
+    border: 1px dashed rgba(30, 136, 229, 0.25);
+    border-radius: var(--ktcc-radius-md);
+    background: var(--white);
+}
+
+.ktcc-team__empty.is-visible {
+    display: block;
+}
+
+@media (max-width: 1100px) {
+    .ktcc-team__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 820px) {
+    .ktcc-team__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .ktcc-team__filters-or {
+        width: 100%;
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .ktcc-team__grid {
+        grid-template-columns: 1fr;
+        max-width: 360px;
+    }
+
+    .ktcc-team__select {
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .ktcc-team__filter {
+        width: 100%;
+    }
+}

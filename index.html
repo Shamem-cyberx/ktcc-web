@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="css/animate.css?v=ktcc3">
     <link rel="stylesheet" href="css/style.css?v=ktcc15">
     <link rel="stylesheet" href="css/home-gallery.css?v=1">
+    <link rel="stylesheet" href="css/team-editorial.css?v=1">
     <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="64x64">
 
 
@@ -309,98 +310,113 @@
     </section>
 
 
-    <!------------------------------------ TEAM SECTION-------------------------------------->
-    <section class="team" id="team">
-        <div class="container">
-            <div class="section-title wow fadeInUp">
-                <span>Meet The Experts</span>
-                <h2>Our Team</h2>
-                <div class="divider"></div>
-                <p class="team-intro">Leadership, operations, and field specialists delivering trenchless and civil works across Bahrain.</p>
+    <!------------------------------------ TEAM SECTION (editorial) -------------------------------------->
+    <section class="team ktcc-team" id="team">
+        <div class="ktcc-team__wrap">
+            <header class="ktcc-team__header wow fadeInUp">
+                <p class="ktcc-team__kicker">Meet the experts</p>
+                <h2 class="ktcc-team__headline">Leadership, operations, and field specialists delivering trenchless and civil works across Bahrain — the people behind every corridor, crossing, and civil package we deliver.</h2>
+            </header>
+
+            <div class="ktcc-team__filters wow fadeInUp" data-wow-delay="0.05s">
+                <div class="ktcc-team__filter">
+                    <label for="teamFilterFunction">Pick a function</label>
+                    <select id="teamFilterFunction" class="ktcc-team__select" aria-label="Filter team by function">
+                        <option value="all">All functions</option>
+                        <option value="leadership">Leadership</option>
+                        <option value="operations">Operations &amp; admin</option>
+                        <option value="engineering">Engineering &amp; field</option>
+                        <option value="hse">Health &amp; safety</option>
+                    </select>
+                </div>
+                <span class="ktcc-team__filters-or" aria-hidden="true">or</span>
+                <div class="ktcc-team__filter">
+                    <label for="teamFilterFocus">Pick a focus</label>
+                    <select id="teamFilterFocus" class="ktcc-team__select" aria-label="Filter team by focus">
+                        <option value="all">All focus areas</option>
+                        <option value="leadership">Leadership</option>
+                        <option value="delivery">Project delivery</option>
+                        <option value="administration">Administration</option>
+                        <option value="safety">Safety &amp; compliance</option>
+                    </select>
+                </div>
             </div>
-            <div class="team-grid">
-                <article class="team-card team-card--lead wow fadeInUp">
-                    <div class="team-card__media">
+
+            <div class="team-grid ktcc-team__grid" id="ktccTeamGrid">
+                <article class="team-card team-card--lead wow fadeInUp" data-team-function="leadership" data-team-focus="leadership">
+                    <div class="team-card__portrait team-card__portrait--tone-1">
                         <img src="assets/images/team/KARUTHA%20PANDI%20-%20MANAGING%20DIRECTOR.jpeg" alt="Karutha Pandi, Managing Director" loading="lazy" decoding="async" width="400" height="500">
                     </div>
-                    <div class="team-card__body">
-                        <p class="team-card__role">Managing Director</p>
-                        <h3 class="team-card__name">Karutha Pandi</h3>
-                    </div>
+                    <h3 class="team-card__name">Karutha Pandi</h3>
+                    <p class="team-card__meta">Managing Director, Manama</p>
+                    <p class="team-card__bio">Strategic direction for trenchless and civil programmes across Bahrain and the Gulf region.</p>
                 </article>
-                <article class="team-card wow fadeInUp" data-wow-delay="0.05s">
-                    <div class="team-card__media">
+                <article class="team-card wow fadeInUp" data-wow-delay="0.05s" data-team-function="operations" data-team-focus="administration">
+                    <div class="team-card__portrait team-card__portrait--tone-2">
                         <img src="assets/images/team/Mohamed%20Shajid-Admin.webp" alt="Mohamed Shajid, Admin" loading="lazy" decoding="async" width="400" height="500">
                     </div>
-                    <div class="team-card__body">
-                        <p class="team-card__role">Admin</p>
-                        <h3 class="team-card__name">Mohamed Shajid</h3>
-                    </div>
+                    <h3 class="team-card__name">Mohamed Shajid</h3>
+                    <p class="team-card__meta">Admin, Manama</p>
+                    <p class="team-card__bio">Front-office coordination, documentation, and client liaison for day-to-day operations.</p>
                 </article>
-                <article class="team-card wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-card__media">
+                <article class="team-card wow fadeInUp" data-wow-delay="0.08s" data-team-function="operations" data-team-focus="administration">
+                    <div class="team-card__portrait team-card__portrait--tone-3">
                         <img src="assets/images/team/Cyril%20Dixon%20-%20Accountant.jpeg" alt="Cyril Dixon, Accountant" loading="lazy" decoding="async" width="400" height="500">
                     </div>
-                    <div class="team-card__body">
-                        <p class="team-card__role">Accountant</p>
-                        <h3 class="team-card__name">Cyril Dixon</h3>
-                    </div>
+                    <h3 class="team-card__name">Cyril Dixon</h3>
+                    <p class="team-card__meta">Accountant, Manama</p>
+                    <p class="team-card__bio">Financial controls, billing, and compliance for government and private contracts.</p>
                 </article>
-                <article class="team-card wow fadeInUp" data-wow-delay="0.12s">
-                    <div class="team-card__media">
+                <article class="team-card wow fadeInUp" data-wow-delay="0.1s" data-team-function="operations" data-team-focus="administration">
+                    <div class="team-card__portrait team-card__portrait--tone-4">
                         <img src="assets/images/team/FATHIMA%20PAMNAGADAN%20-%20SECERETARY.jpeg" alt="Fathima Pamnagadan, Secretary" loading="lazy" decoding="async" width="400" height="500">
                     </div>
-                    <div class="team-card__body">
-                        <p class="team-card__role">Secretary</p>
-                        <h3 class="team-card__name">Fathima Pamnagadan</h3>
-                    </div>
+                    <h3 class="team-card__name">Fathima Pamnagadan</h3>
+                    <p class="team-card__meta">Secretary, Manama</p>
+                    <p class="team-card__bio">Executive support, correspondence, and records across projects and authorities.</p>
                 </article>
-                <article class="team-card wow fadeInUp" data-wow-delay="0.14s">
-                    <div class="team-card__media">
+                <article class="team-card wow fadeInUp" data-wow-delay="0.12s" data-team-function="operations" data-team-focus="administration">
+                    <div class="team-card__portrait team-card__portrait--tone-1">
                         <img src="assets/images/team/Sanaullah%20khan%20_%20admin%20coordinator.jpeg" alt="Sanaullah Khan, Admin Coordinator" loading="lazy" decoding="async" width="400" height="500">
                     </div>
-                    <div class="team-card__body">
-                        <p class="team-card__role">Admin Coordinator</p>
-                        <h3 class="team-card__name">Sanaullah Khan</h3>
-                    </div>
+                    <h3 class="team-card__name">Sanaullah Khan</h3>
+                    <p class="team-card__meta">Admin Coordinator, Manama</p>
+                    <p class="team-card__bio">Scheduling, permits, and cross-team coordination for active sites.</p>
                 </article>
-                <article class="team-card wow fadeInUp" data-wow-delay="0.16s">
-                    <div class="team-card__media">
+                <article class="team-card wow fadeInUp" data-wow-delay="0.14s" data-team-function="engineering" data-team-focus="delivery">
+                    <div class="team-card__portrait team-card__portrait--tone-2">
                         <img src="assets/images/team/MANSOOR%20IMTIAZ%20-%20CONSTRUCTION%20MANAGER.jpeg" alt="Mansoor Imtiaz, Construction Manager" loading="lazy" decoding="async" width="400" height="500">
                     </div>
-                    <div class="team-card__body">
-                        <p class="team-card__role">Construction Manager</p>
-                        <h3 class="team-card__name">Mansoor Imtiaz</h3>
-                    </div>
+                    <h3 class="team-card__name">Mansoor Imtiaz</h3>
+                    <p class="team-card__meta">Construction Manager, Manama</p>
+                    <p class="team-card__bio">Site leadership for civil packages, staging, and subcontractor alignment.</p>
                 </article>
-                <article class="team-card wow fadeInUp" data-wow-delay="0.18s">
-                    <div class="team-card__media">
+                <article class="team-card wow fadeInUp" data-wow-delay="0.16s" data-team-function="engineering" data-team-focus="delivery">
+                    <div class="team-card__portrait team-card__portrait--tone-3">
                         <img src="assets/images/team/MOHAMMED%20EHTESHAMUDDIN%20-%20PROJECT%20COORDINATOR.jpeg" alt="Mohammed Ehteshamuddin, Project Coordinator" loading="lazy" decoding="async" width="400" height="500">
                     </div>
-                    <div class="team-card__body">
-                        <p class="team-card__role">Project Coordinator</p>
-                        <h3 class="team-card__name">Mohammed Ehteshamuddin</h3>
-                    </div>
+                    <h3 class="team-card__name">Mohammed Ehteshamuddin</h3>
+                    <p class="team-card__meta">Project Coordinator, Manama</p>
+                    <p class="team-card__bio">Programme tracking, milestones, and field–office reporting for live jobs.</p>
                 </article>
-                <article class="team-card wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="team-card__media">
+                <article class="team-card wow fadeInUp" data-wow-delay="0.18s" data-team-function="hse" data-team-focus="safety">
+                    <div class="team-card__portrait team-card__portrait--tone-4">
                         <img src="assets/images/team/VINESH%20KADAVATHUVALAPPIL%20-%20HSE%20LEAD.jpeg" alt="Vinesh Kadavathuvalappil, HSE Lead" loading="lazy" decoding="async" width="400" height="500">
                     </div>
-                    <div class="team-card__body">
-                        <p class="team-card__role">HSE Lead</p>
-                        <h3 class="team-card__name">Vinesh Kadavathuvalappil</h3>
-                    </div>
+                    <h3 class="team-card__name">Vinesh Kadavathuvalappil</h3>
+                    <p class="team-card__meta">HSE Lead, Manama</p>
+                    <p class="team-card__bio">Safety systems, site audits, and authority-aligned HSE practice on every package.</p>
                 </article>
-                <article class="team-card wow fadeInUp" data-wow-delay="0.22s">
-                    <div class="team-card__media">
+                <article class="team-card wow fadeInUp" data-wow-delay="0.2s" data-team-function="engineering" data-team-focus="delivery">
+                    <div class="team-card__portrait team-card__portrait--tone-1">
                         <img src="assets/images/team/ASHOK%20RAJAN%20-%20SITE%20INSPECTOR.jpeg" alt="Ashok Rajan, Site Inspector" loading="lazy" decoding="async" width="400" height="500">
                     </div>
-                    <div class="team-card__body">
-                        <p class="team-card__role">Site Inspector</p>
-                        <h3 class="team-card__name">Ashok Rajan</h3>
-                    </div>
+                    <h3 class="team-card__name">Ashok Rajan</h3>
+                    <p class="team-card__meta">Site Inspector, Manama</p>
+                    <p class="team-card__bio">Quality inspection and conformance checks on trenchless and civil works.</p>
                 </article>
             </div>
+            <p class="ktcc-team__empty" id="ktccTeamEmpty" role="status">No team members match this filter. Try another function or focus.</p>
         </div>
     </section>
 
@@ -956,7 +972,7 @@
     <script src="js/site-config.js?v=1"></script>
     <script src="js/marketing-tracking.js?v=1"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src="js/main.js?v=ktcc18"></script>
+    <script src="js/main.js?v=ktcc19"></script>
     <script src="js/chatbot.js?v=ktcc4"></script>
 </body>
 </html>
