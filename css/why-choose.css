@@ -1,0 +1,383 @@
+/* Why clients choose KTCC — mosaic bento layout (Design #12 style, KTCC colors) */
+
+.ktcc-why-choose {
+    margin-top: clamp(36px, 5vw, 52px);
+    padding: clamp(32px, 5vw, 48px);
+    background: var(--white);
+    border-radius: var(--ktcc-radius-lg);
+    border: 1px solid rgba(30, 136, 229, 0.1);
+    box-shadow: var(--ktcc-shadow-soft);
+}
+
+.ktcc-why-choose__top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 280px);
+    gap: clamp(20px, 4vw, 40px);
+    align-items: start;
+    margin-bottom: clamp(32px, 5vw, 44px);
+    padding-bottom: clamp(24px, 4vw, 32px);
+    border-bottom: 1px dashed rgba(30, 136, 229, 0.22);
+}
+
+.ktcc-why-choose__kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--secondary);
+}
+
+.ktcc-why-choose__kicker::before {
+    content: '';
+    width: 18px;
+    height: 3px;
+    background: var(--secondary);
+    transform: skewX(-28deg);
+    border-radius: 1px;
+}
+
+.ktcc-why-choose__title {
+    margin: 0;
+    font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+    font-weight: 700;
+    line-height: 1.22;
+    letter-spacing: -0.025em;
+    color: var(--black);
+    max-width: 18ch;
+}
+
+.ktcc-why-choose__note {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--gray);
+    padding-top: 8px;
+}
+
+.ktcc-why-choose__note::before {
+    content: '*';
+    color: var(--primary);
+    font-weight: 700;
+    margin-right: 6px;
+}
+
+.ktcc-why-choose__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 300px) minmax(0, 1fr);
+    gap: clamp(16px, 2.5vw, 24px);
+    align-items: start;
+}
+
+.ktcc-why-choose__col {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(16px, 2.5vw, 20px);
+}
+
+.ktcc-why-choose__card {
+    padding: clamp(22px, 3vw, 28px);
+    border-radius: var(--ktcc-radius-md);
+    border: 1px solid rgba(30, 136, 229, 0.1);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.ktcc-why-choose__card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--ktcc-shadow-blue);
+}
+
+.ktcc-why-choose__card--light {
+    background: var(--white);
+}
+
+.ktcc-why-choose__card--muted {
+    background: var(--light-gray);
+}
+
+.ktcc-why-choose__card-title {
+    margin: 0 0 12px;
+    font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: -0.02em;
+}
+
+.ktcc-why-choose__card-rule {
+    display: block;
+    width: 36px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 2px;
+    margin-bottom: 14px;
+}
+
+.ktcc-why-choose__card-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.72;
+    color: var(--gray);
+}
+
+.ktcc-why-choose__card-text--spaced {
+    margin-top: 14px;
+}
+
+.ktcc-why-choose__card-lead {
+    display: block;
+    color: var(--dark);
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.ktcc-why-choose__stat {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(30, 136, 229, 0.12);
+}
+
+.ktcc-why-choose__stat-value {
+    display: block;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--primary);
+}
+
+.ktcc-why-choose__stat-label {
+    display: block;
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray);
+}
+
+.ktcc-why-choose__icon-stat {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.ktcc-why-choose__icon-stat i {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(30, 136, 229, 0.1);
+    color: var(--primary);
+    font-size: 16px;
+}
+
+.ktcc-why-choose__icon-stat .ktcc-why-choose__stat-value {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+}
+
+.ktcc-why-choose__center {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.ktcc-why-choose__mosaic {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 6px;
+    aspect-ratio: 1;
+    max-width: 300px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.ktcc-why-choose__mosaic-cell {
+    border-radius: 4px;
+    background: var(--light-gray);
+    overflow: hidden;
+}
+
+.ktcc-why-choose__mosaic-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ktcc-why-choose__mosaic-cell--photo {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.ktcc-why-choose__mosaic-cell--photo-a {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 2;
+}
+
+.ktcc-why-choose__mosaic-cell--photo-b {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 2;
+}
+
+.ktcc-why-choose__mosaic-cell--photo-c {
+    grid-column: 4 / span 2;
+    grid-row: 2 / span 2;
+}
+
+.ktcc-why-choose__mosaic-cell--photo-d {
+    grid-column: 3 / span 2;
+    grid-row: 4 / span 2;
+}
+
+.ktcc-why-choose__capabilities {
+    padding: clamp(18px, 3vw, 22px);
+    border-radius: var(--ktcc-radius-md);
+    background: var(--light-gray);
+    border: 1px solid rgba(30, 136, 229, 0.1);
+}
+
+.ktcc-why-choose__capabilities-label {
+    margin: 0 0 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+.ktcc-why-choose__capabilities-title {
+    margin: 0 0 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.ktcc-why-choose__cap-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ktcc-why-choose__cap-list li {
+    padding-left: 14px;
+    border-left: 2px solid var(--primary);
+}
+
+.ktcc-why-choose__cap-list strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 3px;
+}
+
+.ktcc-why-choose__cap-list span {
+    display: block;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--gray);
+}
+
+.ktcc-why-choose__cta-wrap {
+    text-align: center;
+}
+
+.ktcc-why-choose__cta-lead {
+    margin: 0 0 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--gray);
+}
+
+.ktcc-why-choose__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 22px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--white);
+    background: var(--dark);
+    border-radius: 999px;
+    transition: background 0.22s ease, transform 0.22s ease;
+}
+
+.ktcc-why-choose__cta:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.ktcc-why-choose__compliance-list {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ktcc-why-choose__compliance-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--gray);
+}
+
+.ktcc-why-choose__compliance-list i {
+    color: var(--primary);
+    margin-top: 3px;
+    font-size: 11px;
+}
+
+@media (max-width: 1024px) {
+    .ktcc-why-choose__layout {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ktcc-why-choose__center {
+        grid-column: 1 / -1;
+        order: -1;
+    }
+
+    .ktcc-why-choose__mosaic {
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 680px) {
+    .ktcc-why-choose__top {
+        grid-template-columns: 1fr;
+    }
+
+    .ktcc-why-choose__title {
+        max-width: none;
+    }
+
+    .ktcc-why-choose__layout {
+        grid-template-columns: 1fr;
+    }
+
+    .ktcc-why-choose__center {
+        order: 0;
+    }
+}
