@@ -135,6 +135,10 @@ body {
 }
 
 @media (max-width: 576px) {
+    .mini-contact-cta + footer .footer-container {
+        padding-top: 0;
+    }
+
     .footer-container {
         grid-template-columns: 1fr;
         gap: 28px;
