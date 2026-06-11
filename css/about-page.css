@@ -359,7 +359,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
     display: block;
+    transition: transform 0.35s ease;
+}
+
+.ktcc-about-approach__item:hover .ktcc-about-approach__thumb img {
+    transform: scale(1.05);
 }
 
 .ktcc-about-approach__item-title {

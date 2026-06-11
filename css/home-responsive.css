@@ -56,35 +56,7 @@ body {
 }
 
 /* ----- Why choose (extra mobile) ----- */
-@media (max-width: 680px) {
-    .ktcc-why-choose {
-        padding: 22px 14px;
-        margin-top: 28px;
-        border-radius: var(--ktcc-radius-md);
-    }
-
-    .ktcc-why-choose__note {
-        font-size: 13px;
-    }
-
-    .ktcc-why-choose__mosaic {
-        max-width: min(100%, 320px);
-    }
-
-    .ktcc-why-choose__card {
-        padding: 18px 16px;
-    }
-
-    .ktcc-why-choose__stat-value {
-        font-size: 1.35rem;
-    }
-}
-
-@media (max-width: 400px) {
-    .ktcc-why-choose__title {
-        font-size: 1.45rem;
-    }
-}
+/* why-choose mobile rules live in css/why-choose.css */
 
 /* ----- Team filters ----- */
 @media (max-width: 520px) {

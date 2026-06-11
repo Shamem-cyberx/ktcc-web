@@ -1,17 +1,22 @@
-/* Why clients choose KTCC — mosaic bento layout (Design #12 style, KTCC colors) */
+/* Why clients choose KTCC — mosaic bento layout (KTCC colors) */
+
+.about-body-inner:has(.ktcc-why-choose) {
+    max-width: min(1240px, 100%);
+}
 
 .ktcc-why-choose {
     margin-top: clamp(36px, 5vw, 52px);
-    padding: clamp(32px, 5vw, 48px);
+    padding: clamp(32px, 4vw, 52px);
     background: var(--white);
     border-radius: var(--ktcc-radius-lg);
     border: 1px solid rgba(30, 136, 229, 0.1);
     box-shadow: var(--ktcc-shadow-soft);
+    width: 100%;
 }
 
 .ktcc-why-choose__top {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 280px);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
     gap: clamp(20px, 4vw, 40px);
     align-items: start;
     margin-bottom: clamp(32px, 5vw, 44px);
@@ -47,7 +52,7 @@
     line-height: 1.22;
     letter-spacing: -0.025em;
     color: var(--black);
-    max-width: 18ch;
+    max-width: 22ch;
 }
 
 .ktcc-why-choose__note {
@@ -67,8 +72,8 @@
 
 .ktcc-why-choose__layout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(220px, 300px) minmax(0, 1fr);
-    gap: clamp(16px, 2.5vw, 24px);
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 380px) minmax(0, 1fr);
+    gap: clamp(18px, 2.8vw, 28px);
     align-items: start;
 }
 
@@ -79,15 +84,16 @@
 }
 
 .ktcc-why-choose__card {
-    padding: clamp(22px, 3vw, 28px);
+    padding: clamp(20px, 3vw, 28px);
     border-radius: var(--ktcc-radius-md);
     border: 1px solid rgba(30, 136, 229, 0.1);
     transition: transform 0.28s ease, box-shadow 0.28s ease;
+    height: 100%;
 }
 
 .ktcc-why-choose__card:hover {
     transform: translateY(-3px);
-    box-shadow: var(--ktcc-shadow-blue);
+    box-shadow: var(--ktcc-shadow-soft);
 }
 
 .ktcc-why-choose__card--light {
@@ -181,7 +187,7 @@
     margin-top: 0;
     padding-top: 0;
     border-top: none;
-    font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+    font-size: clamp(1.35rem, 2.5vw, 1.85rem);
 }
 
 .ktcc-why-choose__center {
@@ -194,15 +200,18 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    gap: 6px;
+    gap: 7px;
     aspect-ratio: 1;
-    max-width: 300px;
-    margin: 0 auto;
     width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    border-radius: var(--ktcc-radius-md);
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(13, 71, 161, 0.12);
 }
 
 .ktcc-why-choose__mosaic-cell {
-    border-radius: 4px;
+    border-radius: 5px;
     background: var(--light-gray);
     overflow: hidden;
 }
@@ -211,7 +220,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center;
     display: block;
+    transition: transform 0.45s ease;
+}
+
+.ktcc-why-choose__mosaic-cell--photo:hover img {
+    transform: scale(1.06);
 }
 
 .ktcc-why-choose__mosaic-cell--photo {
@@ -236,6 +251,16 @@
 
 .ktcc-why-choose__mosaic-cell--photo-d {
     grid-column: 3 / span 2;
+    grid-row: 4 / span 2;
+}
+
+.ktcc-why-choose__mosaic-cell--photo-e {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+}
+
+.ktcc-why-choose__mosaic-cell--photo-f {
+    grid-column: 5 / span 1;
     grid-row: 4 / span 2;
 }
 
@@ -349,6 +374,16 @@
     font-size: 11px;
 }
 
+@media (max-width: 1100px) {
+    .ktcc-why-choose__layout {
+        grid-template-columns: minmax(0, 1fr) minmax(250px, 320px) minmax(0, 1fr);
+    }
+
+    .ktcc-why-choose__mosaic {
+        max-width: 320px;
+    }
+}
+
 @media (max-width: 1024px) {
     .ktcc-why-choose__layout {
         grid-template-columns: 1fr 1fr;
@@ -357,14 +392,33 @@
     .ktcc-why-choose__center {
         grid-column: 1 / -1;
         order: -1;
+        display: grid;
+        grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+        gap: 18px;
+        align-items: start;
     }
 
     .ktcc-why-choose__mosaic {
-        max-width: 280px;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .ktcc-why-choose__capabilities {
+        align-self: stretch;
+    }
+
+    .ktcc-why-choose__cta-wrap {
+        grid-column: 1 / -1;
     }
 }
 
 @media (max-width: 680px) {
+    .ktcc-why-choose {
+        padding: 22px 16px;
+        margin-top: 28px;
+        border-radius: var(--ktcc-radius-md);
+    }
+
     .ktcc-why-choose__top {
         grid-template-columns: 1fr;
         gap: 16px;
@@ -384,13 +438,30 @@
 
     .ktcc-why-choose__center {
         order: 0;
+        grid-template-columns: 1fr;
     }
 
     .ktcc-why-choose__mosaic {
-        max-width: min(100%, 300px);
+        max-width: min(100%, 340px);
+        margin: 0 auto;
     }
 
     .ktcc-why-choose__cta {
         width: 100%;
+    }
+
+    .ktcc-why-choose__card {
+        padding: 18px 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .ktcc-why-choose__title {
+        font-size: 1.4rem;
+    }
+
+    .ktcc-why-choose__mosaic {
+        gap: 5px;
+        max-width: 100%;
     }
 }
