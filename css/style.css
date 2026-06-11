@@ -3991,8 +3991,8 @@ footer {
 }
 
 .btn-cta {
-    background-color: #ff9800;
-    color: #333;
+    background-color: var(--secondary);
+    color: var(--white);
     font-weight: 700;
     padding: 15px 35px;
     border-radius: 50px;
@@ -4000,40 +4000,46 @@ footer {
     align-items: center;
     gap: 10px;
     transition: all 0.3s ease;
+    border: 2px solid var(--secondary);
 }
 
 .btn-cta:hover {
-    background-color: #ffb74d;
+    background-color: var(--white);
+    color: var(--secondary);
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .cta-image {
     position: relative;
-    flex: 1;
-    max-width: 500px;
-    margin-top: -200px;
+    flex: 0 1 42%;
+    max-width: 420px;
+    margin-top: 0;
+    align-self: flex-end;
     z-index: 4;
 }
 
 .worker-img {
     width: 100%;
+    height: auto;
+    max-height: clamp(280px, 38vw, 460px);
+    display: block;
+    object-fit: contain;
+    object-position: bottom center;
     position: relative;
     z-index: 1;
-    /* No border-radius, box-shadow, or transform to maintain plain image */
 }
 
 .years-badge {
     position: absolute;
-    bottom: -10px;
-    right: -10px;
-    background-color: #ff9800;
-    color: #333;
-    padding: 20px;
-    border-radius: 10px;
+    bottom: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, var(--secondary), #e91e63);
+    color: var(--white);
+    padding: 16px 18px;
+    border-radius: var(--ktcc-radius-md);
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    animation: pulse 2s infinite;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .years-number {
@@ -4076,74 +4082,108 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
+    .mini-contact-cta {
+        overflow: hidden;
+        padding: 48px 0 40px;
+    }
+
     .cta-content {
         flex-direction: column;
-        position: relative;
+        align-items: center;
+        text-align: center;
+        gap: 28px;
     }
-    
+
     .cta-text {
         max-width: 100%;
-        text-align: center;
-        padding-top: 180px; /* Space for top-right image */
+        padding-top: 0;
+        order: 1;
     }
-    
+
     .cta-words {
         justify-content: center;
     }
-    
+
     .cta-image {
-        position: absolute;
-        top: 0;
-        right: 0;
-        max-width: 200px; /* Smaller size for mobile */
-        margin-top: 0;
+        position: relative;
+        order: 2;
+        flex: none;
+        width: min(300px, 78vw);
+        max-width: 300px;
+        align-self: center;
     }
-    
+
     .worker-img {
-        max-height: 200px;
-        object-fit: cover;
+        max-height: 320px;
+        object-fit: contain;
     }
 }
 
 @media (max-width: 768px) {
+    .mini-contact-cta {
+        padding: 40px 0 36px;
+    }
+
     .cta-title {
-        font-size: 28px;
+        font-size: clamp(1.45rem, 5.5vw, 1.75rem);
     }
-    
+
     .cta-description {
-        font-size: 16px;
+        font-size: 15px;
+        margin-bottom: 22px;
     }
-    
-    .cta-text {
-        padding-top: 150px; /* Adjusted for smaller screens */
+
+    .cta-subtitle {
+        font-size: 14px;
     }
-    
+
     .cta-image {
-        max-width: 150px; /* Further scaled for smaller screens */
+        width: min(260px, 82vw);
+        max-width: 260px;
     }
-    
+
     .worker-img {
-        max-height: 150px;
-        object-fit: cover;
+        max-height: 280px;
     }
-    
+
     .years-badge {
-        bottom: 10px; /* Aligned with image */
-        right: 10px;
-        padding: 10px; /* Reduced for smaller badge */
-        font-size: 0.8em; /* Further scaled down */
+        bottom: 8px;
+        right: 8px;
+        padding: 12px 14px;
     }
-    
+
     .years-number {
-        font-size: 18px; /* Smaller for proportionality */
+        font-size: 22px;
     }
-    
+
     .years-text {
-        font-size: 10px; /* Smaller for proportionality */
+        font-size: 11px;
     }
-    
+
     .btn-cta {
-        padding: 15px 25px; /* Reduced width for mobile */
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+        padding: 14px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-words {
+        gap: 8px;
+    }
+
+    .cta-word {
+        font-size: 11px;
+        padding: 7px 14px;
+    }
+
+    .cta-image {
+        width: min(220px, 88vw);
+    }
+
+    .worker-img {
+        max-height: 240px;
     }
 }
 

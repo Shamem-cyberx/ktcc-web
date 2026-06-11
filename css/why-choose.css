@@ -367,17 +367,30 @@
 @media (max-width: 680px) {
     .ktcc-why-choose__top {
         grid-template-columns: 1fr;
+        gap: 16px;
+        padding-bottom: 20px;
+        margin-bottom: 24px;
     }
 
     .ktcc-why-choose__title {
         max-width: none;
+        font-size: 1.5rem;
     }
 
     .ktcc-why-choose__layout {
         grid-template-columns: 1fr;
+        gap: 14px;
     }
 
     .ktcc-why-choose__center {
         order: 0;
+    }
+
+    .ktcc-why-choose__mosaic {
+        max-width: min(100%, 300px);
+    }
+
+    .ktcc-why-choose__cta {
+        width: 100%;
     }
 }
