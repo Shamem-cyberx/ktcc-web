@@ -1,0 +1,484 @@
+/* Contact page — polished contracting company layout (KTCC colors) */
+
+.ktcc-contact-page {
+    padding-top: var(--ktcc-header-h, 72px);
+    background: var(--white);
+}
+
+/* ----- Hero ----- */
+.ktcc-contact-hero {
+    position: relative;
+    min-height: clamp(280px, 42vh, 400px);
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--dark);
+}
+
+.ktcc-contact-hero__media {
+    position: absolute;
+    inset: 0;
+}
+
+.ktcc-contact-hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ktcc-contact-hero__shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(13, 71, 161, 0.2) 0%,
+        rgba(13, 71, 161, 0.72) 55%,
+        rgba(13, 71, 161, 0.92) 100%
+    );
+}
+
+.ktcc-contact-hero__content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: clamp(40px, 7vw, 64px) 0 clamp(32px, 5vw, 48px);
+    color: var(--white);
+}
+
+.ktcc-contact-hero__title {
+    margin: 0 0 12px;
+    font-size: clamp(2rem, 5.5vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.ktcc-contact-hero__lead {
+    margin: 0;
+    max-width: 40rem;
+    font-size: clamp(1rem, 2vw, 1.12rem);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ----- Breadcrumb ----- */
+.ktcc-contact-breadcrumb {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(30, 136, 229, 0.12);
+    background: var(--white);
+}
+
+.ktcc-contact-breadcrumb .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--gray);
+}
+
+.ktcc-contact-breadcrumb a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.ktcc-contact-breadcrumb a:hover {
+    color: var(--secondary);
+}
+
+.ktcc-contact-breadcrumb__sep {
+    opacity: 0.5;
+}
+
+.ktcc-contact-breadcrumb__current {
+    color: var(--black);
+    font-weight: 500;
+}
+
+/* ----- Quick actions ----- */
+.ktcc-contact-actions {
+    padding: clamp(28px, 5vw, 40px) 0;
+    background: var(--light-gray);
+    border-bottom: 1px solid rgba(30, 136, 229, 0.08);
+}
+
+.ktcc-contact-actions__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(12px, 2.5vw, 20px);
+}
+
+.ktcc-contact-actions__card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: clamp(16px, 3vw, 22px);
+    background: var(--white);
+    border: 1px solid rgba(30, 136, 229, 0.12);
+    border-radius: var(--ktcc-radius-md);
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 8px 24px rgba(13, 71, 161, 0.06);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.ktcc-contact-actions__card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--ktcc-shadow-soft);
+    border-color: rgba(30, 136, 229, 0.28);
+}
+
+.ktcc-contact-actions__icon {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+}
+
+.ktcc-contact-actions__card--wa .ktcc-contact-actions__icon {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.ktcc-contact-actions__card--mail .ktcc-contact-actions__icon {
+    background: linear-gradient(135deg, var(--secondary), #e91e63);
+}
+
+.ktcc-contact-actions__label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 3px;
+}
+
+.ktcc-contact-actions__value {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+    line-height: 1.35;
+}
+
+/* ----- Main grid ----- */
+.ktcc-contact-main {
+    padding: clamp(48px, 8vw, 72px) 0;
+    background: linear-gradient(180deg, var(--white) 0%, var(--light-gray) 100%);
+}
+
+.ktcc-contact-main__head {
+    max-width: 36rem;
+    margin-bottom: clamp(32px, 5vw, 44px);
+}
+
+.ktcc-contact-main__kicker {
+    margin: 0 0 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--secondary);
+}
+
+.ktcc-contact-main__title {
+    margin: 0 0 12px;
+    font-size: clamp(1.5rem, 3.2vw, 2rem);
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.25;
+}
+
+.ktcc-contact-main__text {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--gray);
+}
+
+.ktcc-contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: clamp(24px, 4vw, 40px);
+    align-items: start;
+    margin-bottom: clamp(32px, 5vw, 48px);
+}
+
+/* Office panel */
+.ktcc-contact-office {
+    padding: clamp(24px, 4vw, 32px);
+    background: var(--white);
+    border-radius: var(--ktcc-radius-lg);
+    border: 1px solid rgba(30, 136, 229, 0.1);
+    box-shadow: var(--ktcc-shadow-soft);
+}
+
+.ktcc-contact-office__title {
+    margin: 0 0 22px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.ktcc-contact-office__list {
+    list-style: none;
+    margin: 0 0 24px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.ktcc-contact-office__item {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 14px;
+    align-items: start;
+}
+
+.ktcc-contact-office__item i {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(30, 136, 229, 0.1);
+    color: var(--primary);
+    font-size: 16px;
+}
+
+.ktcc-contact-office__item strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 4px;
+}
+
+.ktcc-contact-office__item p,
+.ktcc-contact-office__item a {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--gray);
+    text-decoration: none;
+}
+
+.ktcc-contact-office__item a:hover {
+    color: var(--primary);
+}
+
+.ktcc-contact-office__creds {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(30, 136, 229, 0.1);
+}
+
+.ktcc-contact-office__cred {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: var(--light-gray);
+    color: var(--dark);
+    border: 1px solid rgba(30, 136, 229, 0.12);
+}
+
+.ktcc-contact-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.ktcc-contact-social a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ktcc-contact-social a:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+/* Form card */
+.ktcc-contact-form-card {
+    padding: clamp(24px, 4vw, 36px);
+    background: var(--white);
+    border-radius: var(--ktcc-radius-lg);
+    border: 1px solid rgba(30, 136, 229, 0.1);
+    box-shadow: var(--ktcc-shadow-soft);
+}
+
+.ktcc-contact-form-card__title {
+    margin: 0 0 6px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.ktcc-contact-form-card__hint {
+    margin: 0 0 22px;
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.55;
+}
+
+.ktcc-contact-form-card .form-group {
+    margin-bottom: 18px;
+}
+
+.ktcc-contact-form-card label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 8px;
+}
+
+.ktcc-contact-form-card .form-control {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid rgba(30, 136, 229, 0.18);
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    background: var(--white);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ktcc-contact-form-card .form-control:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.12);
+}
+
+.ktcc-contact-form-card textarea.form-control {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.ktcc-contact-form-card .btn-primary {
+    width: 100%;
+    padding: 15px 24px;
+    font-weight: 700;
+    border-radius: 10px;
+    margin-top: 4px;
+}
+
+.ktcc-contact-form-card form.contact-form {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.ktcc-contact-form-card form.contact-form:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Map */
+.ktcc-contact-map {
+    padding: clamp(24px, 4vw, 32px);
+    background: var(--white);
+    border-radius: var(--ktcc-radius-lg);
+    border: 1px solid rgba(30, 136, 229, 0.1);
+    box-shadow: var(--ktcc-shadow-soft);
+}
+
+.ktcc-contact-map__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 20px;
+    margin-bottom: 16px;
+}
+
+.ktcc-contact-map__title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.ktcc-contact-map__link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ktcc-contact-map__link:hover {
+    color: var(--secondary);
+}
+
+.ktcc-contact-map__frame {
+    position: relative;
+    border-radius: var(--ktcc-radius-md);
+    overflow: hidden;
+    border: 1px solid rgba(30, 136, 229, 0.12);
+    aspect-ratio: 21 / 9;
+    min-height: 260px;
+    max-height: 400px;
+    background: #e3f2fd;
+}
+
+.ktcc-contact-map__frame .contact-map-leaflet {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Override legacy contact section when using new page */
+.ktcc-contact-page .contact {
+    padding: 0;
+    background: transparent;
+}
+
+@media (max-width: 900px) {
+    .ktcc-contact-actions__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ktcc-contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .ktcc-contact-actions__card {
+        padding: 14px;
+    }
+
+    .ktcc-contact-map__frame {
+        aspect-ratio: 4 / 3;
+        min-height: 220px;
+    }
+}
