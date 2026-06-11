@@ -99,6 +99,11 @@ body {
         padding: 56px 0 24px;
     }
 
+    .mini-contact-cta + footer {
+        padding-top: 0;
+        padding-bottom: 24px;
+    }
+
     .footer-container {
         grid-template-columns: 1fr 1fr;
         gap: 32px 24px;
@@ -135,10 +140,6 @@ body {
 }
 
 @media (max-width: 576px) {
-    .mini-contact-cta + footer .footer-container {
-        padding-top: 0;
-    }
-
     .footer-container {
         grid-template-columns: 1fr;
         gap: 28px;
